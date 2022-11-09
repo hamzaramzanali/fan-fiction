@@ -1,4 +1,4 @@
-const { User } = require('../models');
+const { User, Adventure } = require('../models');
 // for authentication functions in resolvers object
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
@@ -50,6 +50,24 @@ const resolvers = {
             // Return an `Auth` object that consists of the signed token and user's information
             return { token, user };
         },
+        addAdventure: async (parent, { adventureTitle, adventureBody }, context) => {
+            if (context.user) {
+              const adventure = await Adventure.create({
+                adventureTitle,
+                adventureBody,
+                adventureAuthor: context.user.username,
+              });
+      
+              await User.findOneAndUpdate(
+                { _id: context.user._id },
+                { $addToSet: { adventures: adventure._id } },
+                { new: true, runValidators: true }
+              );
+      
+              return adventure;
+            }
+            throw new AuthenticationError('You need to be logged in!');
+          },
     }
 }
 
