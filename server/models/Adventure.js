@@ -2,15 +2,20 @@ const { Schema, model } = require('mongoose');
 
 const adventureSchema = new Schema(
   { //creating fields
-    title: { //validators for fields
+    adventureTitle: { //validators for fields
       type: String,
       required: true,
     },
-    body: {
+    adventureBody: {
       type: String,
       required: true,
+      trim: true,
     },
-    
+    createdAt: {
+      type: Date,
+      default: Date.now,
+      get: (timestamp) => dateFormat(timestamp),
+    },
   },
   // set this to use virtual below
   {
