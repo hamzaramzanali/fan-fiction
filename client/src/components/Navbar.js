@@ -4,7 +4,7 @@ import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
 
-// import Auth from '../utils/auth';
+import Auth from '../utils/auth';
 
 const AppNavbar = () => {
   // set modal display state
@@ -18,14 +18,13 @@ const AppNavbar = () => {
             Marvel Fan Fiction
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
-          {/*  */}
-           <Navbar.Collapse id='navbar'>
+          <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
               {/* <Nav.Link as={Link} to='/'>
                 Search For Books
               </Nav.Link> */}
               {/* if user is logged in show saved books and logout */}
-               {Auth.loggedIn() ? (
+              {Auth.loggedIn() ? (
                 <>
                   {/* <Nav.Link as={Link} to='/saved'>
                     See Your Books
@@ -36,8 +35,7 @@ const AppNavbar = () => {
                 <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
               )}
             </Nav>
-          </Navbar.Collapse> 
-          {/*  */}
+          </Navbar.Collapse>
         </Container>
       </Navbar>
       {/* set modal data up */}
@@ -77,3 +75,10 @@ const AppNavbar = () => {
 };
 
 export default AppNavbar;
+
+
+
+
+
+
+

@@ -5,10 +5,10 @@ import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@ap
 import { setContext } from '@apollo/client/link/context';
 
 import LoginForm from "./components/Login"
+import Home from './pages/HomePage'
 
-
-// import logo from './logo.svg';
-// import './App.css';
+import logo from './logo.svg';
+import './App.css';
 
 
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
@@ -35,29 +35,29 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <LoginForm>
+      /* <LoginForm>
         
-      </LoginForm>
-      {/* <Router>
+      </LoginForm> */
+      /* <Router>
         <>
         
           <Navbar />
           <Routes>
             <Route
               path='/'
-              element={<SearchBooks />}
+              element={<HomePage />}
             />
-            <Route
+            {/* <Route
               path='/saved'
               element={<SavedBooks />}
-            />
-            <Route
+            /> */}
+            {/* <Route
               path='*'
               element={<h1 className='display-2'>Wrong page!</h1>}
-            />
-          </Routes>
-        </>
-      </Router> */}
+            /> */}
+          </Routes> */
+        /* </>
+      </Router>
     </ApolloProvider>
   );
 }
