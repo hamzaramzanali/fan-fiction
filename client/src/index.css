@@ -34,19 +34,19 @@ code {
 }
 
 .hero-item {
-  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/divinity-ori-sin.jpg');
+  background-image: url('https://www.superherohype.com/assets/uploads/2022/09/avengers-war-across-time-1280x720.jpg');
 }
 
 .standard-item:nth-child(2) {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/re7-chris-large.jpg");
+  background-image: url("https://c8.alamy.com/comp/2G5WTC9/comics-speech-bubble-for-text-pop-art-design-white-empty-dialog-cloud-for-text-message-halftone-shadow-comics-sketch-explosion-star-splash-comic-boo-2G5WTC9.jpg");
 }
 
 .standard-item:nth-child(3) {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/bioshock-large.jpg");
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYE8UyPvhlSSXQRime6m4jFS5DPmXO8zwNcg&usqp=CAU");
 }
 
 .standard-item:nth-child(4) {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/dishonored-large.jpg");
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSehm3Nd2DMoxOx9TNZunV5K10IXu_0aXDlng&usqp=CAU");
 }
 
 @supports (display: grid) {
@@ -55,20 +55,27 @@ code {
     min-height: 0;
   }
 
-  .hero-item {
+  /* .hero-item {
     grid-column: 1 / span 2;
+    grid-row: 1 / 50;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 75px), 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 75px), 0 100%);
+  } */
+
+  .hero-item {
+    grid-column: 1 / span 1;
     grid-row: 1 / 50;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 75px), 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 75px), 0 100%);
   }
 
-  .standard-item:nth-child(2) {
+  /* .standard-item:nth-child(2) {
     grid-column: 1 / span 1;
     grid-row: 50 / 100;
     -webkit-clip-path: polygon(0 14%, 0 86%, 90% 81%, 100% 6%);
     clip-path: polygon(0 14%, 0 86%, 90% 81%, 100% 6%);
     margin-top: -73px;
-  }
+  } */
 
   .standard-item:nth-child(3) {
     grid-column: 2 / span 1;
@@ -93,6 +100,16 @@ code {
 nav {
   position: absolute;
   background-color: #8c1000;
-  color: #c8c8bf;
-  margin-left: 35rem;
+  margin-left: inherit;
+  overflow: sticky;
 }
+
+.navbar-brand {
+  color: rgb(255 215 104);
+}
+
+
+/* .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+    color: rgb(255 221 117);
+} */
+
