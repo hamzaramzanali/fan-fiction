@@ -7,7 +7,7 @@ import { setContext } from '@apollo/client/link/context';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import Header from './components/Header';
-
+import ProfilePage from './pages/ProfilePage'
 import SearchAllCharacters from './pages/SearchAllCharacters';
 import ProfilePage from './pages/ProfilePage';
 
@@ -47,9 +47,10 @@ function App() {
               path='/'
               element={<HomePage />}
             />
-             <Route 
+             <Route
               path='/profile'
-              element={<ProfilePage/>}/>
+              element={<ProfilePage />}
+            />
             <Route 
               path='/search'
               element={<SearchAllCharacters/>}/>
