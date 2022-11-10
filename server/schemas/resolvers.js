@@ -13,6 +13,16 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
+        // get All Adventures From User
+        getAdventuresFromUser: async (parent, { username }) => {
+            const params = username ? { username } : {};
+            return Adventure.find(params).sort({ createdAt: -1 });
+        },
+        // get All Adventures
+        getAdventures: async () => {
+            // Sort From most recent to latest
+            return Adventure.find().sort({ createdAt: -1 });
+        },
     },
 
     Mutation: {
@@ -75,28 +85,47 @@ const resolvers = {
             throw new AuthenticationError('You need to be logged in!');
         },
         // Update adventure NOT DONE!!!
-        // updatedAdventure: async (parent, { adventureTitle, adventureBody }, context) => {
-        //     // grabbing user info from context
-        //     if (context.user) {
-        //         // creating a new adventure
-        //         const adventure = await Adventure.create({
-        //             // these fields comming from typeDefs
-        //             adventureTitle,
-        //             adventureBody,
-        //             // this field comming from context front end
-        //             adventureAuthor: context.user.username,
-        //         });
-        //         // updating the user model to include a new adventure
-        //         await User.findOneAndUpdate(
-        //             { _id: context.user._id },
-        //             { $addToSet: { adventures: adventure._id } },
-        //             { new: true, runValidators: true }
-        //         );
+        updateAdventure: async (parent, { adventureTitle, adventureBody, adventureId }, context) => {
+            // grabbing user info from context
+            if (context.user) {
+                // creating a new adventure
+                const adventure = await Adventure.findOneAndUpdate(
+                    {_id: adventureId},
+                    {// these fields comming from typeDefs
+                    $set: {adventure: { adventureTitle,
+                    adventureBody,
+                    // this field comming from context front end
+                    adventureAuthor: context.user.username}},
+                });
+                // updating the user model to include a new adventure
+                await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $addToSet: { adventures: adventure._id } },
+                    { new: true, runValidators: true }
+                );
 
-        //         return adventure;
-        //     }
-        //     throw new AuthenticationError('You need to be logged in!');
-        // },
+                return adventure;
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
+        // Remove adventure
+        removeAdventure: async (parent, { adventureId }, context) => {
+            if (context.user) {
+                const adventure = await Adventure.findOneAndDelete({
+                    _id: adventureId,
+                    adventureAuthor: context.user.username,
+                });
+
+                await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $pull: { adventures: adventure._id } },
+                    { new: true, runValidators: true }
+                );
+
+                return adventure;
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
     }
 }
 
