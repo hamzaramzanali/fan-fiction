@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
+import ProfileAside from '../components/ProfileAside';
+import AddAdventure from '../components/AddAdventure';
 
-function ProfilePage() {
+const Profile = () => {
     return (
-        <div>Hello Profile</div>
+        <div>
+            <ProfileAside />
+            <AddAdventure />
+        </div>
     )
 }
 
-export default ProfilePage;
+export default Profile; 

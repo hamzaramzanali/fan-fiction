@@ -23,3 +23,15 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_ADVENTURE = gql`
+mutation addAdventure(adventureTitle: String!, adventureBody: String!) {
+    addAdventure(title: $adventureTitle, body: $adventureBody) {
+        adventure {
+            _id
+            title
+            body
+      }
+    }
+  }
+`;
