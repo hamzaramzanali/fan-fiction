@@ -74,28 +74,28 @@ const resolvers = {
             throw new AuthenticationError('You need to be logged in!');
         },
         // Update adventure NOT DONE!!!
-        updatedAdventure: async (parent, { adventureTitle, adventureBody }, context) => {
-            // grabbing user info from context
-            if (context.user) {
-                // creating a new adventure
-                const adventure = await Adventure.create({
-                    // these fields comming from typeDefs
-                    adventureTitle,
-                    adventureBody,
-                    // this field comming from context front end
-                    adventureAuthor: context.user.username,
-                });
-                // updating the user model to include a new adventure
-                await User.findOneAndUpdate(
-                    { _id: context.user._id },
-                    { $addToSet: { adventures: adventure._id } },
-                    { new: true, runValidators: true }
-                );
+        // updatedAdventure: async (parent, { adventureTitle, adventureBody }, context) => {
+        //     // grabbing user info from context
+        //     if (context.user) {
+        //         // creating a new adventure
+        //         const adventure = await Adventure.create({
+        //             // these fields comming from typeDefs
+        //             adventureTitle,
+        //             adventureBody,
+        //             // this field comming from context front end
+        //             adventureAuthor: context.user.username,
+        //         });
+        //         // updating the user model to include a new adventure
+        //         await User.findOneAndUpdate(
+        //             { _id: context.user._id },
+        //             { $addToSet: { adventures: adventure._id } },
+        //             { new: true, runValidators: true }
+        //         );
 
-                return adventure;
-            }
-            throw new AuthenticationError('You need to be logged in!');
-        },
+        //         return adventure;
+        //     }
+        //     throw new AuthenticationError('You need to be logged in!');
+        // },
     }
 }
 
