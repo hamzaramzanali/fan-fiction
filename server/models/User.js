@@ -20,7 +20,14 @@ const userSchema = new Schema(
         password: {
             type: String,
             required: true,
-        }
+        },
+
+        adventures: [
+            {
+              type: Schema.Types.ObjectId,
+              ref: 'Adventure',
+            },
+          ],
     },
     // set this to use virtual below
     {
