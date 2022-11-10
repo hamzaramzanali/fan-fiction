@@ -9,6 +9,7 @@ import HomePage from './pages/HomePage';
 import Header from './components/Header';
 import ProfilePage from './pages/ProfilePage'
 import SearchAllCharacters from './pages/SearchAllCharacters';
+import ProfilePage from './pages/ProfilePage';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
