@@ -50,24 +50,52 @@ const resolvers = {
             // Return an `Auth` object that consists of the signed token and user's information
             return { token, user };
         },
+        // addAdventure resolver, grabbing user input in a destructured object format in args, context will have user data from the front end
         addAdventure: async (parent, { adventureTitle, adventureBody }, context) => {
+            // grabbing user info from context
             if (context.user) {
-              const adventure = await Adventure.create({
-                adventureTitle,
-                adventureBody,
-                adventureAuthor: context.user.username,
-              });
-      
-              await User.findOneAndUpdate(
-                { _id: context.user._id },
-                { $addToSet: { adventures: adventure._id } },
-                { new: true, runValidators: true }
-              );
-      
-              return adventure;
+                // creating a new adventure
+                const adventure = await Adventure.create({
+                    // these fields comming from typeDefs
+                    adventureTitle,
+                    adventureBody,
+                    // this field comming from context front end
+                    adventureAuthor: context.user.username,
+                });
+                // updating the user model to include a new adventure
+                await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $addToSet: { adventures: adventure._id } },
+                    { new: true, runValidators: true }
+                );
+
+                return adventure;
             }
             throw new AuthenticationError('You need to be logged in!');
-          },
+        },
+        // Update adventure NOT DONE!!!
+        updatedAdventure: async (parent, { adventureTitle, adventureBody }, context) => {
+            // grabbing user info from context
+            if (context.user) {
+                // creating a new adventure
+                const adventure = await Adventure.create({
+                    // these fields comming from typeDefs
+                    adventureTitle,
+                    adventureBody,
+                    // this field comming from context front end
+                    adventureAuthor: context.user.username,
+                });
+                // updating the user model to include a new adventure
+                await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $addToSet: { adventures: adventure._id } },
+                    { new: true, runValidators: true }
+                );
+
+                return adventure;
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
     }
 }
 
