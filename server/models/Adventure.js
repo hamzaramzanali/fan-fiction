@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const dateFormat = require('../utils/dateFormat')
 
 const adventureSchema = new Schema(
   { //creating fields
@@ -7,6 +8,11 @@ const adventureSchema = new Schema(
       required: true,
     },
     adventureBody: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    adventureAuthor: {
       type: String,
       required: true,
       trim: true,
