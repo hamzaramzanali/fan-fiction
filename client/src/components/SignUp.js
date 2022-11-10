@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
+import { Link } from 'react-router-dom';
+import ProfilePage from '../pages/ProfilePage'
 
 // import { createUser } from '../utils/API';
 import Auth from '../utils/auth';
@@ -14,7 +16,7 @@ const SignupForm = () => {
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
 
-  const [addUser] = useMutation(ADD_USER);
+  const [addUser, { error, data }] = useMutation(ADD_USER);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -48,12 +50,13 @@ const SignupForm = () => {
       password: '',
     });
   };
-
   return (
     <>
-      {/* This is needed for the validation functionality above */}
+    {data ? (
+      <Link to="/profile">back to the homepage.</Link>
+    ) : (
+      <>
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
-        {/* show alert if server response is bad */}
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
           Something went wrong with your signup!
         </Alert>
@@ -103,8 +106,10 @@ const SignupForm = () => {
           Submit
         </Button>
       </Form>
+      </>
+    )}
     </>
-  );
+  )
 };
 
 export default SignupForm;
