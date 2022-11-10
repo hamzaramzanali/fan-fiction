@@ -5,6 +5,7 @@ import { ADD_USER } from '../utils/mutations';
 import { Link } from 'react-router-dom';
 import ProfilePage from '../pages/ProfilePage'
 
+
 // import { createUser } from '../utils/API';
 import Auth from '../utils/auth';
 
@@ -105,6 +106,7 @@ const SignupForm = () => {
           variant='success'>
           Submit
         </Button>
+    
       </Form>
       </>
     )}
