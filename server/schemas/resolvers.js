@@ -53,6 +53,7 @@ const resolvers = {
         // addAdventure resolver, grabbing user input in a destructured object format in args, context will have user data from the front end
         addAdventure: async (parent, { adventureTitle, adventureBody }, context) => {
             // grabbing user info from context
+            console.log(`CONTEXT USER: ${context.user.username}`);
             if (context.user) {
                 // creating a new adventure
                 const adventure = await Adventure.create({
