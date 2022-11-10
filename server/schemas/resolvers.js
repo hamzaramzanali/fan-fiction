@@ -84,7 +84,7 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
-        // Update adventure NOT DONE!!!
+        // Update adventure
         updateAdventure: async (parent, { adventureTitle, adventureBody, adventureId }, context) => {
             // grabbing user info from context
             if (context.user) {
