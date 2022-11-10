@@ -3,8 +3,6 @@ import { Form, Button, Alert } from 'react-bootstrap';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 import { Link } from 'react-router-dom';
-import ProfilePage from '../pages/ProfilePage'
-
 
 // import { createUser } from '../utils/API';
 import Auth from '../utils/auth';
