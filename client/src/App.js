@@ -8,6 +8,8 @@ import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import Header from './components/Header';
 
+import SearchAllCharacters from './pages/SearchAllCharacters';
+
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -44,6 +46,9 @@ function App() {
               path='/'
               element={<HomePage />}
             />
+            <Route 
+              path='/search'
+              element={<SearchAllCharacters/>}/>
             {/* <Route
               path='/saved'
               element={<SavedBooks />}
