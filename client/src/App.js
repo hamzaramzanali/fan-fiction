@@ -41,19 +41,19 @@ function App() {
       <Router>
         <>
           <Navbar />
-      <Header />
+          {/* <Header /> */}
           <Routes>
             <Route
               path='/'
               element={<HomePage />}
             />
-             <Route
+            <Route
               path='/profile'
               element={<ProfilePage />}
             />
-            <Route 
+            <Route
               path='/search'
-              element={<SearchAllCharacters/>}/>
+              element={<SearchAllCharacters />} />
             {/* <Route
               path='/saved'
               element={<SavedBooks />}
