@@ -118,8 +118,16 @@ nav {
 
 /* Navbar */
 .navbar {
-  background-color: #8c1000;
+  background-color: #fec229;
   color: #c8c8bf;
   margin-left: inherit;
 }
 
+/* Profile Page */
+
+.profile {
+  background-image: url("./images/profile-page.jpeg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
