@@ -13,7 +13,7 @@ import { QUERY_ME } from '../utils/queries';
 // QUERY_USER,
 
 import Auth from '../utils/auth';
-import RandomCharacterGenerator from '../components/RandomCharacter';
+// import RandomCharacterGenerator from '../components/RandomCharacter';
 
 const Profile = () => {
 
@@ -63,7 +63,7 @@ const Profile = () => {
 
     return (
         <Container className="profile">
-            <RandomCharacterGenerator/>
+            {/* <RandomCharacterGenerator/> */}
             <Row>
                 <Col>
                     <div>
