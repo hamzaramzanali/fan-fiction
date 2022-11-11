@@ -126,3 +126,10 @@ nav {
   color: red;
 }
 
+/* Navbar */
+.navbar {
+  background-color: #8c1000;
+  color: #c8c8bf;
+  margin-left: inherit;
+}
+

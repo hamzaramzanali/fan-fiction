@@ -12,7 +12,8 @@ const AppNavbar = () => {
 
   return (
     <>
-      <Navbar  expand="lg">
+      <Navbar fixed='top' expand='lg'>
+
         <Container fluid>
           <Navbar.Brand id="navText" as={Link} to='/'>
             Marvel Fan Fiction
