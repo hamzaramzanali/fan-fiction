@@ -17,6 +17,8 @@ const AdventureList = ({
             <h3>{adventure.adventureTitle}</h3>
             <h4>by: {adventure.adventureAuthor}</h4>
             <p>{adventure.adventureBody}</p>
+            <button>Update Button</button>
+            <button>Delete Button</button>
             {/* 
             <div>
                 {adventure.comments.length && adventure.comments.map(comment => (
