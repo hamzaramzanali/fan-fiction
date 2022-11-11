@@ -13,6 +13,7 @@ import { QUERY_ME } from '../utils/queries';
 // QUERY_USER,
 
 import Auth from '../utils/auth';
+import RandomCharacterGenerator from '../components/RandomCharacter';
 
 const Profile = () => {
     const { username: userParam } = useParams();
@@ -23,7 +24,7 @@ const Profile = () => {
 
     const { loading, data } = useQuery(QUERY_ME);
 
-    console.log(`DATA: ${data}`);
+    // console.log(`DATA: ${data}`);
 
     const user = data?.me || data?.user || [];
     // navigate to personal profile page if username is yours
@@ -48,6 +49,7 @@ const Profile = () => {
 
     return (
         <Container className="profile">
+            <RandomCharacterGenerator/>
             <Row>
                 <Col>
                     <div>
