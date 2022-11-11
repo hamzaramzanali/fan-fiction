@@ -92,7 +92,7 @@ const Profile = () => {
                 <Col>Character of the day</Col>
             </Row>
 
-        </Container>
+         </Container>
 
     );
 };
