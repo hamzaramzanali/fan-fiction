@@ -7,11 +7,11 @@ export const QUERY_ME = gql`
       _id
       username
       email
-    adventures {
-        _id
-        adventureTitle
-        adventureBody
-        createdAt
+      adventures {
+          _id
+          adventureTitle
+          adventureBody
+          createdAt
       }
     }
   }
