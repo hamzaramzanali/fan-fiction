@@ -8,7 +8,7 @@ const resolvers = {
         // By adding context to our query, we can retrieve the logged in user without specifically searching for them
         me: async (parent, args, context) => {
             if (context.user) {
-                const user = await User.findOne({ _id: context.user._id });
+                const user = await User.findOne({ _id: context.user._id }).populate('adventures');
                 return user;
             }
             throw new AuthenticationError('You need to be logged in!');
@@ -84,6 +84,23 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
+        addComment: async (parent, { adventureId, commentText }, context) => {
+            if (context.user) {
+              return Adventure.findOneAndUpdate(
+                { _id: adventureId },
+                {
+                  $addToSet: {
+                    comments: { commentText, commentAuthor: context.user.username },
+                  },
+                },
+                {
+                  new: true,
+                  runValidators: true,
+                }
+              );
+            }
+            throw new AuthenticationError('You need to be logged in!');
+          },
         // Update adventure
         updateAdventure: async (parent, { adventureTitle, adventureBody, adventureId }, context) => {
             // grabbing user info from context
@@ -126,6 +143,23 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
+        removeComment: async (parent, { adventureId, commentId }, context) => {
+            if (context.user) {
+              return Adventure.findOneAndUpdate(
+                { _id: adventureId },
+                {
+                  $pull: {
+                    comments: {
+                      _id: commentId,
+                      commentAuthor: context.user.username,
+                    },
+                  },
+                },
+                { new: true }
+              );
+            }
+            throw new AuthenticationError('You need to be logged in!');
+          },
     }
 }
 

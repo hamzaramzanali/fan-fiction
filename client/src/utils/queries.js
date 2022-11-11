@@ -11,6 +11,7 @@ export const QUERY_ME = gql`
           _id
           adventureTitle
           adventureBody
+          adventureAuthor
           createdAt
       }
     }
@@ -60,6 +61,12 @@ export const QUERY_SINGLE_ADVENTURE = gql`
       adventureTitle
       adventureBody
       createdAt
+      comments {
+        _id
+        commentText
+        commentAuthor
+        createdAt
+      }
     }
   }
 `;
