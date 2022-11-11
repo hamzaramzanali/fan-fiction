@@ -9,8 +9,7 @@ import HomePage from './pages/HomePage';
 import Header from './components/Header';
 import ProfilePage from './pages/ProfilePage'
 import SearchAllCharacters from './pages/SearchAllCharacters'
-import RandomCharacterGenerator from './components/RandomCharacter';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -56,7 +55,6 @@ function App() {
             <Route
               path='/search'
               element={<SearchAllCharacters />} />
-            
             {/* <Route
               path='/saved'
               element={<SavedBooks />}

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from '../components/SignUp';
 import LoginForm from '../components/Login';
-import './componentsCSS/navbar.css';
 
 import Auth from '../utils/auth';
 
@@ -14,6 +13,7 @@ const AppNavbar = () => {
   return (
     <>
       <Navbar fixed='top' expand='lg'>
+
         <Container fluid>
           <Navbar.Brand id="navText" as={Link} to='/'>
             Marvel Fan Fiction
