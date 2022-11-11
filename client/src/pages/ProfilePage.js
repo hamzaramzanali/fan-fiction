@@ -45,7 +45,7 @@ const Profile = () => {
                 <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
                     Viewing {userParam ? `${user.username}'s` : 'your'} profile.
                 </h2>
-                {!userParam && (
+                {data && (
                     <div
                         className="col-12 col-md-10 mb-3 p-3"
                         style={{ border: '1px dotted #1a1a1a' }}

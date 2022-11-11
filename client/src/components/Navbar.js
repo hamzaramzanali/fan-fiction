@@ -13,7 +13,7 @@ const AppNavbar = () => {
 
   return (
     <>
-      <Navbar className="sticky" expand="lg">
+      <Navbar fixed='top' expand='lg'>
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
             Marvel Fan Fiction
