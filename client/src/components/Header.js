@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../images/marvel-intro.gif'; 
+import logo from '../images/orange-yellow.jpg'; 
 
 const styles = {
   

@@ -41,7 +41,8 @@ function App() {
       <Router>
         <>
           <Navbar />
-          {/* <Header /> */}
+      <Header />
+
           <Routes>
             <Route
               path='/'
