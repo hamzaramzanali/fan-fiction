@@ -90,9 +90,8 @@ code {
 }
 
 /* Navbar */
-nav {
-  position: absolute;
+.navbar {
   background-color: #8c1000;
   color: #c8c8bf;
-  margin-left: 35rem;
+  margin-left: inherit;
 }
