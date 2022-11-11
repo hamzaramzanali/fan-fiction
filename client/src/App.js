@@ -41,11 +41,8 @@ function App() {
       <Router>
         <>
           <Navbar />
-<<<<<<< HEAD
       {/* <Header /> */}
-=======
-          {/* <Header /> */}
->>>>>>> main
+
           <Routes>
             <Route
               path='/'
