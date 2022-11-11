@@ -5,7 +5,7 @@ import { useQuery } from '@apollo/client';
 // import ProfileAside from '../components/ProfileAside';
 import AddAdventure from '../components/AddAdventure';
 
-import { QUERY_ME } from '../utils/queries';
+import { QUERY_USER, QUERY_ME } from '../utils/queries';
 // QUERY_USER,
 
 import Auth from '../utils/auth';
