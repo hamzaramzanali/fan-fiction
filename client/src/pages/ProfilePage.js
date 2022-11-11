@@ -8,13 +8,27 @@ import Col from 'react-bootstrap/Col';
 
 import ProfileAside from '../components/ProfileAside';
 import AddAdventure from '../components/AddAdventure';
-
+import AdventureList from '../components/AdventureList'
 import { QUERY_ME } from '../utils/queries';
 // QUERY_USER,
 
 import Auth from '../utils/auth';
+// import RandomCharacterGenerator from '../components/RandomCharacter';
 
 const Profile = () => {
+
+//   const { username: userParam } = useParams();
+
+//     const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+//         variables: { username: userParam },
+//       });
+  
+//       const user = data?.me || data?.user || {};
+//   // navigate to personal profile page if username is yours
+//   if (Auth.loggedIn() === userParam) {
+//     return <Navigate to="/profile" />;
+//   }
+
     const { username: userParam } = useParams();
 
     // const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
@@ -23,9 +37,10 @@ const Profile = () => {
 
     const { loading, data } = useQuery(QUERY_ME);
 
-    console.log(`DATA: ${data}`);
+    console.log(data);
 
     const user = data?.me || data?.user || [];
+    console.log(user)
     // navigate to personal profile page if username is yours
     if (Auth.loggedIn() && Auth.getProfile().data.username === userParam)
     {
@@ -49,6 +64,7 @@ const Profile = () => {
     return (
         
         <Container className="profile">
+            {/* <RandomCharacterGenerator/> */}
             <Row>
                 <Col>
                     <div>
@@ -66,6 +82,9 @@ const Profile = () => {
                             style={{ border: '1px dotted #1a1a1a' }}
                             >
                                 <AddAdventure />
+                                <AdventureList
+                                adventures= {user.adventures}
+                                />
                             </div>
                         )}
                     </div>

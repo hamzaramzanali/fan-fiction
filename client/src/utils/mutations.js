@@ -26,11 +26,27 @@ export const ADD_USER = gql`
 
 export const ADD_ADVENTURE = gql`
 mutation addAdventure($adventureTitle: String!, $adventureBody: String!) {
-    addAdventure(adventureTitle: $adventureTitle, adventurebody: $adventureBody) {
+    addAdventure(adventureTitle: $adventureTitle, adventureBody: $adventureBody) {
             _id
             adventureTitle
             adventureBody
             createdAt
       }
     }
+`;
+
+export const ADD_COMMENT = gql`
+  mutation addComment($adventureId: ID!, $commentText: String!) {
+    addComment(adventureId: $adventureId, commentText: $commentText) {
+      _id
+      adventureText
+      adventureAuthor
+      createdAt
+      comments {
+        _id
+        commentText
+        createdAt
+      }
+    }
+  }
 `;

@@ -16,6 +16,14 @@ const typeDefs = gql`
     adventureBody: String
     adventureAuthor: String
     createdAt: String
+    comments: [Comment]!
+  }
+
+  type Comment {
+    _id: ID
+    commentText: String
+    commentAuthor: String
+    createdAt: String
   }
 
   type Auth {
@@ -33,8 +41,10 @@ const typeDefs = gql`
     login(username: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addAdventure(adventureTitle: String!, adventureBody: String!): Adventure 
+    addComment(adventureId: ID!, commentText: String!): Adventure
     updateAdventure(adventureTitle : String, adventureBody : String!, adventureId: ID!): Adventure 
     removeAdventure(adventureId: ID!): Adventure 
+    removeComment(adventureId: ID!, commentId: ID!): Adventure
   }
 `;
 
