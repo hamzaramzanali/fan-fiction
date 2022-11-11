@@ -7,6 +7,7 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
+    adventures: [Adventure]
   }
   
   type Adventure {

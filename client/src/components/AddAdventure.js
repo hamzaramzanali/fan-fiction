@@ -57,8 +57,11 @@ const AddAdventure = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'adventureBody' && value.length <= 500) {
+    if (name === 'adventureTitle' && value.length <= 500) {
       setAdventureTitle(value);
+      setCharacterCount(value.length);
+    }
+    else if (name === 'adventureBody' && value.length <= 500) {
       setAdventureBody(value);
       setCharacterCount(value.length);
     }
