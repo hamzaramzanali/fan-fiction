@@ -1,18 +1,18 @@
-import React from 'react';
-import logo from '../images/marvel-intro.gif'; 
+// import React from 'react';
+// import logo from '../images/marvel-intro.gif'; 
 
-const styles = {
+// const styles = {
   
-    image: {
-        width: "100%",
-        height: "200px"
-    },
-} 
+//     image: {
+//         width: "100%",
+//         height: "200px"
+//     },
+// } 
 
-function Header() {
+// function Header() {
   
-  return <img src={logo} alt="intro" style={styles.image}/>;
-}
+//   return <img src={logo} alt="intro" style={styles.image}/>;
+// }
 
-export default Header;
+// export default Header;
 
