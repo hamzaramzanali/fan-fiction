@@ -38,7 +38,7 @@ code {
 }
 
 .standard-item:nth-child(2) {
-  background-image: url("https://c8.alamy.com/comp/2G5WTC9/comics-speech-bubble-for-text-pop-art-design-white-empty-dialog-cloud-for-text-message-halftone-shadow-comics-sketch-explosion-star-splash-comic-boo-2G5WTC9.jpg");
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrD7EVzum8o6vfHNikvCRSxJf8zQYykHKxkg&usqp=CAU");
 }
 
 .standard-item:nth-child(3) {
@@ -96,6 +96,7 @@ code {
   }
 }
 
+
 /* Navbar */
 nav {
   position: absolute;
@@ -107,6 +108,7 @@ nav {
 .navbar-brand {
   color: rgb(255 215 104);
 }
+
 
 
 /* .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {

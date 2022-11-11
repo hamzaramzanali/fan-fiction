@@ -5,6 +5,7 @@ function HomePage() {
         <div className="wrapper">
             <div className="news-item hero-item">
             </div>
+            <div className='About'>About Us</div>
             
             <div className="news-item standard-item">
             </div>
