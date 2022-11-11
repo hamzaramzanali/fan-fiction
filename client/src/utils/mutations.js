@@ -26,7 +26,7 @@ export const ADD_USER = gql`
 
 export const ADD_ADVENTURE = gql`
 mutation addAdventure($adventureTitle: String!, $adventureBody: String!) {
-    addAdventure(adventureTitle: $adventureTitle, adventurebody: $adventureBody) {
+    addAdventure(adventureTitle: $adventureTitle, adventureBody: $adventureBody) {
             _id
             adventureTitle
             adventureBody

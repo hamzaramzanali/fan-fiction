@@ -11,6 +11,7 @@ export const QUERY_ME = gql`
           _id
           adventureTitle
           adventureBody
+          adventureAuthor
           createdAt
       }
     }

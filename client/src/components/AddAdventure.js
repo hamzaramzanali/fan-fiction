@@ -8,8 +8,13 @@ import { QUERY_ADVENTURES, QUERY_ME} from '../utils/queries';
 import Auth from '../utils/auth';
 
 const AddAdventure = () => {
-  const [adventureTitle, setAdventureTitle] = useState('');
-  const [adventureBody, setAdventureBody] = useState('');
+  const [adventureForm, setAdventureForm] = useState({
+    adventureTitle: '',
+    adventureBody: '',
+    // characterCount: 0
+  })
+  // const [adventureTitle, setAdventureTitle] = useState('');
+  // const [adventureBody, setAdventureBody] = useState('');
 
   const [characterCount, setCharacterCount] = useState(0);
 
@@ -40,15 +45,21 @@ const AddAdventure = () => {
 
     try {
       const { data } = await addAdventure({
-        variables: {
-          adventureTitle,
-          adventureBody,
-          adventureAuthor: Auth.getProfile().data.username,
+        variables: { ...adventureForm,
+          // adventureTitle,
+          // adventureBody,
+          // adventureAuthor: Auth.getProfile().data.username,
         },
       });
+      console.log(data);
+      setAdventureForm({
+        adventureTitle: '',
+        adventureBody: '',
+        characterCount: 0
+      })
 
-      setAdventureTitle('');
-      setAdventureBody('');
+      // setAdventureTitle('');
+      // setAdventureBody('');
     } catch (err) {
       console.error(err);
     }
@@ -57,14 +68,19 @@ const AddAdventure = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'adventureTitle' && value.length <= 500) {
-      setAdventureTitle(value);
-      setCharacterCount(value.length);
-    }
-    else if (name === 'adventureBody' && value.length <= 500) {
-      setAdventureBody(value);
-      setCharacterCount(value.length);
-    }
+    // if (name === 'adventureTitle' && value.length <= 500) {
+      setAdventureForm({
+        ...adventureForm,
+        [name]: value,
+        characterCount: value.length
+      })
+      // setAdventureTitle(value);
+      // setCharacterCount(value.length);
+    // }
+    // else if (name === 'adventureBody' && value.length <= 500) {
+    //   setAdventureBody(value);
+    //   setCharacterCount(value.length);
+    // }
   };
 
   return (
@@ -85,10 +101,18 @@ const AddAdventure = () => {
             onSubmit={handleFormSubmit}
           >
             <div className="col-12 col-lg-9">
+            <textarea
+                name="adventureTitle"
+                placeholder="Title your Adventure"
+                value={adventureForm.adventureTitle}
+                className="form-input w-100"
+                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                onChange={handleChange}
+              ></textarea>
               <textarea
                 name="adventureBody"
                 placeholder="Once upon in the Marvel Universe..."
-                value={adventureBody}
+                value={adventureForm.adventureBody}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
