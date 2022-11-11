@@ -14,7 +14,7 @@ const AppNavbar = () => {
     <>
       <Navbar expand='lg'>
         <Container fluid>
-          <Navbar.Brand as={Link} to='/'>
+          <Navbar.Brand id="navText" as={Link} to='/'>
             Marvel Fan Fiction
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
@@ -32,7 +32,7 @@ const AppNavbar = () => {
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
+                <Nav.Link id="navText" onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>
