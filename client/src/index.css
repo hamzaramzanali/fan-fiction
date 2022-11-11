@@ -91,10 +91,14 @@ code {
 
 /* Navbar */
 nav {
-  position: absolute;
+  /* position: fixed;
+  top: 0; */
   background-color: #8c1000;
   color: #c8c8bf;
-  margin-left: 35rem;
+  /* margin-left: 35rem; */
 }
 
-
+header{
+  position: fixed;
+  top: 0;
+}
