@@ -34,7 +34,7 @@ body {
 }
 
 .hero-item {
-  background-image: url("https://www.superherohype.com/assets/uploads/2022/09/avengers-war-across-time-1280x720.jpg");
+  background-image: url("./images/marvel-intro.gif");
 }
 
 .standard-item:nth-child(2) {
@@ -46,7 +46,7 @@ body {
 }
 
 .standard-item:nth-child(4) {
-  background-image: url("./images/marvel-squad.jpg");
+  background-image: url("https://www.superherohype.com/assets/uploads/2022/09/avengers-war-across-time-1280x720.jpg");
 }
 
 @supports (display: grid) {
@@ -99,6 +99,8 @@ body {
 .blurb {
   margin: 7rem;
   font-weight: bold;
+  text-align: center;
+  margin-top: 10rem;
 }
 
 
@@ -106,19 +108,19 @@ body {
 /* Navbar */
 nav {
   position: absolute;
-  background-color: #fec229;
+  background-color: rgb(137, 15, 0);
   margin-left: inherit;
   overflow: sticky;
 }
 
 
 #navText {
-  color: red;
+  color: #c8d3c6;
 }
 
 /* Navbar */
 .navbar {
-  background-color: #fec229;
+  background-color: rgb(137, 15, 0);
   color: #c8c8bf;
   margin-left: inherit;
 }
@@ -130,4 +132,8 @@ nav {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+#dropdown-basic {
+margin-top:25rem;
 }
