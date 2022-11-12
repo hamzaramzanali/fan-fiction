@@ -4,22 +4,23 @@ import React from 'react';
 const AdventureList = ({
     adventures,
 }) => {
+    console.log(`adventures.length: ${adventures} `);
     if (!adventures.length) {
         return <h4>No adventures, yet. Create a new adventure!</h4>
     }
 
     return (
         <>
-        {adventures.map(adventure => (
-            <>
-            {/* <h1>hello</h1> */}
-            {/* <h1>{adventure._id}</h1> */}
-            <h3>{adventure.adventureTitle}</h3>
-            <h4>by: {adventure.adventureAuthor}</h4>
-            <p>{adventure.adventureBody}</p>
-            <button>Update Button</button>
-            <button>Delete Button</button>
-            {/* 
+            {adventures.map(adventure => (
+                <>
+                    {/* <h1>hello</h1> */}
+                    {/* <h1>{adventure._id}</h1> */}
+                    <h3>{adventure.adventureTitle}</h3>
+                    <h4>by: {adventure.adventureAuthor}</h4>
+                    <p>{adventure.adventureBody}</p>
+                    <button>Update Button</button>
+                    <button>Delete Button</button>
+                    {/* 
             <div>
                 {adventure.comments.length && adventure.comments.map(comment => (
                     <>
@@ -31,8 +32,8 @@ const AdventureList = ({
                 ))}
                 {!adventure.comments.length && <h5>No comments yets.</h5>}
             </div> */}
-            </>
-        ))}
+                </>
+            ))}
         </>
     )
 }

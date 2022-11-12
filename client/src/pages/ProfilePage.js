@@ -3,22 +3,27 @@ import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card'
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
+// import Card from 'react-bootstrap/Card'
 
 // import ProfileAside from '../components/ProfileAside';
+import ProfileContent from '../components/profileContent';
 // import RandomCharacterGenerator from '../components/RandomCharacter';
-import AddAdventure from '../components/AddAdventure';
+// import AddAdventure from '../components/AddAdventure';
+// import AdventureList from '../components/AdventureList';
 
 import { QUERY_ME } from '../utils/queries';
 // QUERY_USER,
 
 import Auth from '../utils/auth';
-import { ListGroup, ListGroupItem } from 'react-bootstrap';
+// import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
 const Profile = () => {
     const { username: userParam } = useParams();
+
+
+
 
     // const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     //     variables: { username: userParam },
@@ -48,16 +53,14 @@ const Profile = () => {
     console.log(user.username);
     return (
         <Container className="profile">
-            
-            <Row>
-                <Col>
-                    <Card>
-                        {/* <div> */}
-                        {/* <ProfileAside /> */}
+                    <ProfileContent />
+            {/* {/* <Row> */}
+                {/* <Col> */}
+                    {/* <Card>
                         <Card.Title>
                             Your adventure awaits!
                         </Card.Title>
-                        <ListGroup>
+                        <ListGroup currentComponent={currentComponent} handleComponentChange={handleComponentChange}>
                             <ListGroupItem>
                                 <Card.Link href='/search'>Search</Card.Link>
                             </ListGroupItem>
@@ -68,37 +71,47 @@ const Profile = () => {
                                 <Card.Link href='/profile'>Start an Adventure</Card.Link>
                             </ListGroupItem>
                             <ListGroupItem>
-                                <Card.Link href='#/action-3'>View your Adventures</Card.Link>
+                                <Card.Link
+                                    onClick={() => handleComponentChange('viewYourAdventure')}
+                                    href='/adventureList'
+                                    className={currentComponent === 'viewYourAdventure' ? 'nav-link active' : 'nav-link'}
+                                >
+                                    View your Adventures
+                                </Card.Link>
                             </ListGroupItem>
                             <ListGroupItem>
                                 <Card.Link href='#/action-3'>Add to your Adventure</Card.Link>
                             </ListGroupItem>
                         </ListGroup>
-                        {/* </div> */}
-                    </Card>
-                </Col>
-                <Col xs={6}>
+                    </Card> */}
+                {/* </Col> */}
+                {/* <Col xs={6}>
                     <Card>
                         <div className="flex-row justify-center mb-3">
                             <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
                                 Viewing {userParam ? `${user.username}'s` : 'your'} profile.
                             </h2>
-                            {!userParam && (
+                            <div>
+                                <ProfileContent/>
+                            </div>
+
+
+                            {/* {data && (
                                 <div
                                     className="col-12 col-md-10 mb-3 p-3"
                                     style={{ border: '1px dotted #1a1a1a' }}
                                 >
                                     <AddAdventure />
                                 </div>
-                            )}
-                        </div>
+                            )} */}
+                        {/* </div>
                     </Card>
-                </Col>
+                        </Col> 
                 <Col>
                     <h2>Random Character</h2>
                     {/* <RandomCharacterGenerator/> */}
-                </Col>
-            </Row>
+                {/* </Col>  */}
+            {/* </Row> */} 
 
         </Container>
 
