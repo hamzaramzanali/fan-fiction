@@ -66,3 +66,4 @@ export const searchMarvelCharacters = async (query) => {
 
     return data;
 };
+
