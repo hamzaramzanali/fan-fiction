@@ -2,7 +2,7 @@
 // 
 
 import React, { useState, useEffect } from 'react';
-import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
+import { Jumbotron, Container, Col, Form, Button, Card, CardColumns, Image } from 'react-bootstrap';
 import "../css/searchPage.css"
 
 import { useMutation } from '@apollo/client';
@@ -54,10 +54,11 @@ const SearchCharacters = () => {
           characterId: character.id,
           description: character.description || ['No description to display'],
           name: character.name,
-        //   image: character.thumbnail?.path || '',
+          image: character.thumbnail.path          
         }));
   
         setSearchedCharacters(characterData);
+        console.log(characterData)
         setSearchInput('');
       } catch (err) {
         console.error(err);
@@ -128,7 +129,7 @@ const SearchCharacters = () => {
               return (
                 <Card className ="searchCard" key={character.characterId}>
                   {character.image ? (
-                    <Card.Img src={character.image} alt={`The picture for ${character.name}`} variant='top' />
+                    <Card.Img src={`${character.image}.jpg`} alt={`The picture for ${character.name}`} variant='top' />
                   ) : null}
                   <Card.Body>
                     <Card.Title className='characterName'>{character.name}</Card.Title>

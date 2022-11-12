@@ -14,5 +14,4 @@
 //   return <img src={logo} alt="intro" style={styles.image}/>;
 // }
 
-// export default Header;
-
+export default Header;
