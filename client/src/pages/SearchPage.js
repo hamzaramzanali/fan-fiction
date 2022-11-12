@@ -3,6 +3,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
+import "../css/searchPage.css"
 
 import { useMutation } from '@apollo/client';
 
@@ -91,9 +92,9 @@ const SearchCharacters = () => {
   
     return (
       <>
-        <Jumbotron fluid className='text-light bg-dark'>
+        <Jumbotron fluid className='text bg jumbo'>
           <Container>
-            <h1>Search for Characters!</h1>
+            <h1 className='searchTitle'>Search for Characters!</h1>
             <Form onSubmit={handleFormSubmit}>
               <Form.Row>
                 <Col xs={12} md={8}>
@@ -107,7 +108,7 @@ const SearchCharacters = () => {
                   />
                 </Col>
                 <Col xs={12} md={4}>
-                  <Button type='submit' variant='success' size='lg'>
+                  <Button className="btnIcon" type='submit' variant='success' size='lg'>
                     Submit Search
                   </Button>
                 </Col>
@@ -117,7 +118,7 @@ const SearchCharacters = () => {
         </Jumbotron>
   
         <Container>
-          <h2>
+          <h2 className='searchedTitle'>
             {searchedCharacters?.length
               ? `Viewing ${searchedCharacters.length} results:`
               : 'Search for a character to begin'}
@@ -125,7 +126,7 @@ const SearchCharacters = () => {
           <CardColumns>
             {searchedCharacters?.map((character) => {
               return (
-                <Card key={character.characterId} border='dark'>
+                <Card className ="searchCard" key={character.characterId} border='dark'>
                   {character.image ? (
                     <Card.Img src={character.image} alt={`The picture for ${character.name}`} variant='top' />
                   ) : null}

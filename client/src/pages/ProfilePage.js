@@ -2,6 +2,7 @@ import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
+import "../css/profilePage.css";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -48,11 +49,11 @@ const Profile = () => {
     console.log(user.username);
     return (
         
-        <Container className="profile">
+        <Container className="profilePage">
             
             <Row>
                 <Col>
-                    <Card>
+                    <Card className="profileAside">
                         {/* <div> */}
                         {/* <ProfileAside /> */}
                         <Card.Title>

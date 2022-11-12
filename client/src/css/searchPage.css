@@ -1,0 +1,37 @@
+.text-light {
+    color: #f8f9fa;
+}
+
+.jumbotron-fluid {
+    border-color: #880f00;
+    border: double;
+}
+
+.searchTitle {
+    color: #880f00;
+    font-weight: bold;
+    font-size: revert;
+}
+
+.btnIcon {
+    background-color:#880f00 !important;
+    border-color:#880f00 !important;
+    color: #f8f9fa !important;
+}
+
+.searchedTitle {
+    color: #880f00;
+    font-weight: bold;
+    font-size: revert;
+}
+
+.btn-info .btn-block .btn .btn-primary {
+    color: #f8f9fa !important;
+    background-color: #880f00 !important;
+    border-color: #880f00 !important;
+}
+
+/* .searchCard {
+    border-color: #880f00!important;
+    border-width: revert;
+} */
