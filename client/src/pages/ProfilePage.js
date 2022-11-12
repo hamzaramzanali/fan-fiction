@@ -111,10 +111,16 @@ const Profile = () => {
                     </Card>
                         </Col> 
                 <Col>
+
+                  <DailyCharacter />
+                </Col>
+            </Row>
+
                     <h2 className='title'>Today's Marvel Showdown</h2>
                     {/* <RandomCharacterGenerator/> */}
                 {/* </Col>  */}
             {/* </Row> */} 
+
 
          </Container>
 

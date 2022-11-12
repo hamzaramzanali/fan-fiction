@@ -19,10 +19,10 @@ const resolvers = {
             return Adventure.find(params).sort({ createdAt: -1 });
         },
         // get All Adventures
-        getAdventures: async () => {
-            // Sort From most recent to latest
-            return Adventure.find().sort({ createdAt: -1 });
-        },
+        getAdventures: async (parent, { username }) => {
+            const params = username ? { username } : {};
+            return Adventure.find(params).sort({ createdAt: -1 });
+          },
     },
 
     Mutation: {
