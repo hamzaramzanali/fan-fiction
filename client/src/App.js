@@ -14,7 +14,6 @@ import SavedCharacters from './pages/SavedCharactersPage';
 import CommunityPage from './pages/CommunityPage';
 
 
-
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -45,8 +44,6 @@ function App() {
       <Router>
         <>
           <Navbar />
-      {/* <Header /> */}
-
           <Routes>
             <Route
               path='/'
@@ -62,23 +59,19 @@ function App() {
             />
             <Route
               path='/search'
-              element={<SearchAllCharacters />} 
+              element={<SearchAllCharacters />}
             />
             <Route
               path='/searchSpecific'
-              element={<SearchPage />} 
-            />
-            <Route
-              path='/savedCharacters'
-              element={<SavedCharacters />} 
+              element={<SearchPage />}
             />
             
-            
-            {/* <Route
-              path='/saved'
-              element={<SavedBooks />}
-            />
             <Route
+              path='/adventureList'
+              element={<AdventureList />}
+            />
+
+            {/*<Route
               path='*'
               element={<h1 className='display-2'>Wrong page!</h1>}
             /> */}
