@@ -4,16 +4,24 @@ import AddAdventure from "./AddAdventure";
 import AdventureList from "./AdventureList";
 import { Col, Row } from "react-bootstrap";
 import DailyCharacter from "./DailyCharacter";
+import { useQuery } from "@apollo/client";
+import { QUERY_ME } from "../utils/queries";
 
 const ProfileContent = () => {
     const [currentComponent, setCurrentComponent] = useState("addAdventure");
 
+    const { data } = useQuery(QUERY_ME);
+
+    console.log(`DATA: ${data}`);
+
+    const user = data?.me || data?.user || [];
+    
     const renderComponent = () => {
         if (currentComponent === "addAdventure") {
             return <AddAdventure />
         }
         if (currentComponent === "viewYourAdventure") {
-            return <AdventureList />
+            return <AdventureList adventures={user.adventures}/>
         }
         // last one will be view contributions
     }
