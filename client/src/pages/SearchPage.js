@@ -1,3 +1,6 @@
+// NOTE TO SELF: ADD A CONDITION THAT PRINTS WHEN USER ENTERS WRONG CHARACTER
+// 
+
 import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
 
