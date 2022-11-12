@@ -16,7 +16,11 @@
         "react-bootstrap": "^1.0.1",
         "react-dom": "^17.0.2",
         "react-router-dom": "^6.2.1",
-        "react-scripts": "4.0.1"
+        "react-scripts": "4.0.1",
+        "blueimp-md5": "^2.19.0",
+        "crypto-js": "^4.1.1",
+        "js-md5": "^0.7.3",
+        "md5": "^2.3.0"
     },
     "scripts": {
         "start": "react-scripts start",
