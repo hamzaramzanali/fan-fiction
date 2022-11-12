@@ -4,6 +4,7 @@ import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from '../components/SignUp';
 import LoginForm from '../components/Login';
 import './componentsCSS/navbar.css';
+import '../css/navBar.css';
 
 import Auth from '../utils/auth';
 
@@ -22,6 +23,7 @@ const AppNavbar = () => {
             Community Adventures
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
+          <Navbar.Toggle className="toggleIcon" aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
               {/* if user is logged in show saved books and logout */}

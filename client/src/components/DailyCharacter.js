@@ -33,13 +33,13 @@ console.log(character2);
   return (
     <Container>
       <Row>
-        <Col>Today's Marvel Showdown</Col>
+        <Col></Col>
       </Row>
     <CardGroup>
       
         <Card>
         
-          {/* <Card.Img src= {character1.thumbnail.path} alt="" /> */}
+          {/* <Card.Img src= {character1.thumbnail.path+".jpg"} alt="" /> */}
      
           <Card.Body>
             <Card.Title>{character1.name}</Card.Title>
