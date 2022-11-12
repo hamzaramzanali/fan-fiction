@@ -11,6 +11,7 @@ import ProfilePage from './pages/ProfilePage'
 import SearchAllCharacters from './pages/SearchAllCharacters';
 import SearchPage from './pages/SearchPage';
 import SavedCharacters from './pages/SavedCharactersPage';
+import AdventureList from './components/AdventureList';
 
 
 // Construct our main GraphQL API endpoint
@@ -43,8 +44,6 @@ function App() {
       <Router>
         <>
           <Navbar />
-      {/* <Header /> */}
-
           <Routes>
             <Route
               path='/'
@@ -56,22 +55,22 @@ function App() {
             />
             <Route
               path='/search'
-              element={<SearchAllCharacters />} 
+              element={<SearchAllCharacters />}
             />
             <Route
               path='/searchSpecific'
-              element={<SearchPage />} 
+              element={<SearchPage />}
             />
             <Route
               path='/savedCharacters'
-              element={<SavedCharacters />} 
-            />
-            
-            {/* <Route
-              path='/saved'
-              element={<SavedBooks />}
+              element={<SavedCharacters />}
             />
             <Route
+              path='/adventureList'
+              element={<AdventureList />}
+            />
+
+            {/*<Route
               path='*'
               element={<h1 className='display-2'>Wrong page!</h1>}
             /> */}

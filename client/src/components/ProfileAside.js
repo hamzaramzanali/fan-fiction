@@ -1,23 +1,54 @@
 import React from 'react';
-import Dropdown from 'react-bootstrap/Dropdown';
+// import Dropdown from 'react-bootstrap/Dropdown';
+import Card from 'react-bootstrap/Card'
+import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
+function ProfileAside({ currentComponent, handleComponentChange }) {
+  return (
+    <div>
+      <Card>
+        {/* <div> */}
+        {/* <ProfileAside /> */}
+        <Card.Title>
+          Your adventure awaits!
+        </Card.Title>
+          <ListGroupItem>
+            <Card.Link 
+              href='/'
+              >
+                Homepage
+              </Card.Link>
+          </ListGroupItem>
+        <ListGroup>
+          <ListGroupItem>
+            <Card.Link
+              href='#'
+              >
+                Search Other Users
+              </Card.Link>
+          </ListGroupItem>
+          <ListGroupItem>
+            <Card.Link 
+              href='#addAdventure'
+              onClick={() => handleComponentChange('viewYourAdventure')}
+              className={currentComponent === 'viewYourAdventure' ? 'nav-link active' : 'nav-link'}
+              >
+                Start an Adventure
+              </Card.Link>
+          </ListGroupItem>
+          <ListGroupItem>
+            <Card.Link
+              href='#viewYourAdventure'
+              onClick={() => handleComponentChange('viewYourAdventure')}
+              className={currentComponent === 'viewYourAdventure' ? 'nav-link active' : 'nav-link'}
+            >
+              View your Adventures
+            </Card.Link>
+          </ListGroupItem>
+        </ListGroup>
+      </Card>
+    </div>
+  );
+};
 
-const ProfileAside = () => {
-    return (
-        <Dropdown>
-          <Dropdown.Toggle variant="success" id="dropdown-basic">
-            Your adventure awaits!
-          </Dropdown.Toggle>
-    
-          <Dropdown.Menu>
-            {/* <Dropdown.Item href="/search">Search</Dropdown.Item> */}
-            <Dropdown.Item href="/">Homepage</Dropdown.Item>
-            <Dropdown.Item href="/profile">Start an Adventure</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">View your Adventure</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Add to your Adventure</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-
-      );};
-
-// export default ProfileAside; 
+export default ProfileAside; 
