@@ -4,7 +4,7 @@ import DailyCharacter from '../components/DailyCharacter';
 function HomePage() {
     return (
         <div>
-             <DailyCharacter />
+             {/* <DailyCharacter /> */}
             <div className="wrapper">
                 <div className="news-item hero-item">
                 </div>

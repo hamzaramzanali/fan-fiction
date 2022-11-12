@@ -38,7 +38,7 @@ const DailyCharacter = () => {
       
         <Card>
         
-          <Card.Img src= {character1.thumbnail.path+".jpg"} alt="" />
+          {/* <Card.Img src= {character1.thumbnail.path+".jpg"} alt="" /> */}
      
           <Card.Body>
             <Card.Title>{character1.name}</Card.Title>
@@ -50,7 +50,7 @@ const DailyCharacter = () => {
 
         <Card>
         
-          <Card.Img src= {character2.thumbnail.path+".jpg"} alt=""/>
+          {/* <Card.Img src= {character2.thumbnail.path+".jpg"} alt=""/> */}
      
           <Card.Body>
             <Card.Title>{character2.name}</Card.Title>
