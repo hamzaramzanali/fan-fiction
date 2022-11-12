@@ -32,7 +32,7 @@ const DailyCharacter = () => {
   return (
     <Container>
       <Row>
-        <Col>Today's Marvel Showdown</Col>
+        <Col></Col>
       </Row>
     <CardGroup>
       

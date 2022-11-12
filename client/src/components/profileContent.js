@@ -3,6 +3,7 @@ import ProfileAside from "./ProfileAside";
 import AddAdventure from "./AddAdventure";
 import AdventureList from "./AdventureList";
 import { Col, Row } from "react-bootstrap";
+import DailyCharacter from "./DailyCharacter";
 
 const ProfileContent = () => {
     const [currentComponent, setCurrentComponent] = useState("addAdventure");
@@ -36,7 +37,7 @@ const ProfileContent = () => {
                 </Col>
                 <Col>
                     <h2>Random Character</h2>
-                    {/* <RandomCharacterGenerator/> */}
+                    <DailyCharacter />
                 </Col>
             </Row>
 

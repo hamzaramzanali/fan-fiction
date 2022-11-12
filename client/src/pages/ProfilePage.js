@@ -11,8 +11,9 @@ import Container from 'react-bootstrap/Container';
 // import ProfileAside from '../components/ProfileAside';
 import ProfileContent from '../components/profileContent';
 // import RandomCharacterGenerator from '../components/RandomCharacter';
-// import AddAdventure from '../components/AddAdventure';
-// import AdventureList from '../components/AdventureList';
+import AddAdventure from '../components/AddAdventure';
+import AdventureList from '../components/AdventureList'
+import DailyCharacter from '../components/DailyCharacter';
 
 import { QUERY_ME } from '../utils/queries';
 // QUERY_USER,
@@ -90,7 +91,7 @@ const Profile = () => {
                     <Card>
                         <div className="flex-row justify-center mb-3">
                             <h2 className="profileHead col-12 col-md-10 text-light p-3 mb-5">
-                                Viewing {userParam ? `${user.username}'s` : 'your'} profile.
+                                Viewing {userParam ? `${user.username}'s` : 'your'} profile
                             </h2>
                             <div>
                                 <ProfileContent/>
@@ -103,13 +104,14 @@ const Profile = () => {
                                     style={{ border: '1px dotted #1a1a1a' }}
                                 >
                                     <AddAdventure />
+                                    <AdventureList adventures={user.adventures} />
                                 </div>
                             )} */}
                         {/* </div>
                     </Card>
                         </Col> 
                 <Col>
-                    <h2 className='title'>Random Character</h2>
+                    <h2 className='title'>Today's Marvel Showdown</h2>
                     {/* <RandomCharacterGenerator/> */}
                 {/* </Col>  */}
             {/* </Row> */} 
