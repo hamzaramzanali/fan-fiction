@@ -28,7 +28,8 @@ const DailyCharacter = () => {
       useEffect(() => {
         searchCharacter2();
       }, []);
-
+console.log(character1);
+console.log(character2);
   return (
     <Container>
       <Row>
@@ -38,7 +39,7 @@ const DailyCharacter = () => {
       
         <Card>
         
-          <Card.Img src= {character1.thumbnail.path+".jpg"} alt="" />
+          {/* <Card.Img src= {character1.thumbnail.path} alt="" /> */}
      
           <Card.Body>
             <Card.Title>{character1.name}</Card.Title>
@@ -50,7 +51,7 @@ const DailyCharacter = () => {
 
         <Card>
         
-          <Card.Img src= {character2.thumbnail.path+".jpg"} alt=""/>
+          {/* <Card.Img src= {character2.thumbnail.path+".jpg"} alt=""/> */}
      
           <Card.Body>
             <Card.Title>{character2.name}</Card.Title>

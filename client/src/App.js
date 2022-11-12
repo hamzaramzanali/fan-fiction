@@ -11,6 +11,7 @@ import ProfilePage from './pages/ProfilePage'
 import SearchAllCharacters from './pages/SearchAllCharacters';
 import SearchPage from './pages/SearchPage';
 import SavedCharacters from './pages/SavedCharactersPage';
+import CommunityPage from './pages/CommunityPage';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -52,6 +53,10 @@ function App() {
             <Route
               path='/profile'
               element={<ProfilePage />}
+            />
+            <Route
+              path='/community'
+              element={<CommunityPage />} 
             />
             <Route
               path='/search'

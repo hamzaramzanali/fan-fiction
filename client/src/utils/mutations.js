@@ -66,3 +66,11 @@ export const ADD_COMMENT = gql`
     }
   }
 `;
+
+export const DELETE_ADVENTURE = gql`
+  mutation removeAdventure($adventureId: ID!) {
+    removeAdventure(adventureId: $adventureId) {
+      _id
+    } 
+  }
+`; 

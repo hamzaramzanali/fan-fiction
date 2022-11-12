@@ -18,6 +18,9 @@ const AppNavbar = () => {
           <Navbar.Brand id="navText" as={Link} to='/'>
             Marvel Fan Fiction
           </Navbar.Brand>
+          <Navbar.Brand id="navText" as={Link} to='/community'>
+            Community Adventures
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
