@@ -27,7 +27,7 @@ export const QUERY_ME = gql`
 
 export const QUERY_ADVENTURES = gql`
   query getAdventures {
-    adventures {
+    getAdventures {
       _id
       adventureTitle
       adventureBody

@@ -24,7 +24,6 @@ const typeDefs = gql`
     adventureBody: String
     adventureAuthor: String
     createdAt: String
-    comments: [Comment]!
   }
 
   type Character {
@@ -49,7 +48,7 @@ const typeDefs = gql`
   type Query {
     me: User
     getAdventuresFromUser(username: String!): [Adventure]
-    getAdventures: [Adventure]
+    getAdventures(username: String): [Adventure]
   }
 
   type Mutation {
