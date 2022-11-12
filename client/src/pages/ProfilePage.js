@@ -2,6 +2,7 @@ import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
+import "../css/profilePage.css";
 import Container from 'react-bootstrap/Container';
 // import Row from 'react-bootstrap/Row';
 // import Col from 'react-bootstrap/Col';
@@ -62,13 +63,13 @@ const Profile = () => {
                         </Card.Title>
                         <ListGroup currentComponent={currentComponent} handleComponentChange={handleComponentChange}>
                             <ListGroupItem>
-                                <Card.Link href='/search'>Search</Card.Link>
+                                <Card.Link className='searchBy' href='/search'>Search</Card.Link>
                             </ListGroupItem>
                             <ListGroupItem>
-                                <Card.Link href='/'>Homepage</Card.Link>
+                                <Card.Link className='searchBy' href='/'>Homepage</Card.Link>
                             </ListGroupItem>
                             <ListGroupItem>
-                                <Card.Link href='/profile'>Start an Adventure</Card.Link>
+                                <Card.Link className='searchBy' href='/profile'>Start an Adventure</Card.Link>
                             </ListGroupItem>
                             <ListGroupItem>
                                 <Card.Link
@@ -80,7 +81,7 @@ const Profile = () => {
                                 </Card.Link>
                             </ListGroupItem>
                             <ListGroupItem>
-                                <Card.Link href='#/action-3'>Add to your Adventure</Card.Link>
+                                <Card.Link className='searchBy' href='#/action-3'>Add to your Adventure</Card.Link>
                             </ListGroupItem>
                         </ListGroup>
                     </Card> */}
@@ -88,7 +89,7 @@ const Profile = () => {
                 {/* <Col xs={6}>
                     <Card>
                         <div className="flex-row justify-center mb-3">
-                            <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
+                            <h2 className="profileHead col-12 col-md-10 text-light p-3 mb-5">
                                 Viewing {userParam ? `${user.username}'s` : 'your'} profile.
                             </h2>
                             <div>
@@ -98,7 +99,7 @@ const Profile = () => {
 
                             {/* {data && (
                                 <div
-                                    className="col-12 col-md-10 mb-3 p-3"
+                                    className="adventureBox col-12 col-md-10 mb-3 p-3"
                                     style={{ border: '1px dotted #1a1a1a' }}
                                 >
                                     <AddAdventure />
@@ -108,12 +109,12 @@ const Profile = () => {
                     </Card>
                         </Col> 
                 <Col>
-                    <h2>Random Character</h2>
+                    <h2 className='title'>Random Character</h2>
                     {/* <RandomCharacterGenerator/> */}
                 {/* </Col>  */}
             {/* </Row> */} 
 
-        </Container>
+         </Container>
 
     );
 };

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
 import { randomCharacterGenerator } from '../utils/random';
 import Auth from '../utils/auth';
+import '../css/profilePage.css'
 
 // const heroesArr = [
 //     "Captain America",
