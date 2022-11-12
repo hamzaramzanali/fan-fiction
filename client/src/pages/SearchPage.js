@@ -131,7 +131,7 @@ const SearchCharacters = () => {
                     <Card.Img src={character.image} alt={`The picture for ${character.name}`} variant='top' />
                   ) : null}
                   <Card.Body>
-                    <Card.Title>{character.name}</Card.Title>
+                    <Card.Title className='characterName'>{character.name}</Card.Title>
                     <p className='small'>Description: {character.description}</p>
                     <Card.Text>{character.description}</Card.Text>
                     {Auth.loggedIn() && (

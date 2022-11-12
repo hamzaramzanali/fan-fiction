@@ -23,6 +23,9 @@
 /* View Your Profile Center */
 .profileCard {
     display: contents !important;
+    text-align: center;
+    border-color: #880f00 !important;
+
 }
 
 .profileHead {
@@ -41,19 +44,30 @@
 }
 
 .adventureBox {
-    border: 1px dotted rgb(136 15 0) !important;
+    border: 3px dotted rgb(136 15 0) !important;
 }
 
 .startAdventure {
     color: #880f00;
     font-weight: bold;
     font-size: revert;
+    text-align: center;
 }
 
 #characterCount {
     color: #880f00;
     font-weight: bold;
     font-size: revert;
+    text-align: center;
+}
+
+.adventureForm {
+    margin:5px !important;
+}
+
+.adventureTitle {
+    max-width:max-content !important;
+    display:inline-block !important;
 }
 
 /* Random Character */

@@ -3,8 +3,7 @@
 }
 
 .jumbotron-fluid {
-    border-color: #880f00;
-    border: double;
+    border: 3px dotted rgb(136 15 0) !important;
 }
 
 .searchTitle {
@@ -39,4 +38,9 @@
 .resultsPage {
     background-color:#f8f9fa !important;
     max-width: fit-content !important;
+}
+
+.characterName {
+    color: #880f00 !important;
+    font-weight: bold !important;
 }
