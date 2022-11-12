@@ -12,8 +12,8 @@ const AdventureList = ({
         <>
         {adventures.map(adventure => (
             <>
-            <h1>hello</h1>
-            <h1>{adventure._id}</h1>
+            {/* <h1>hello</h1> */}
+            {/* <h1>{adventure._id}</h1> */}
             <h3>{adventure.adventureTitle}</h3>
             <h4>by: {adventure.adventureAuthor}</h4>
             <p>{adventure.adventureBody}</p>

@@ -2,6 +2,7 @@
 const { Schema, model } = require('mongoose');
 // Requiring bcrypt for password hashing
 const bcrypt = require('bcrypt');
+const characterSchema = require('./Character');
 
 // new userSchema subclass of class Schema //ask??
 const userSchema = new Schema(
@@ -21,13 +22,13 @@ const userSchema = new Schema(
             type: String,
             required: true,
         },
-
         adventures: [
             {
-              type: Schema.Types.ObjectId,
-              ref: 'Adventure',
+                type: Schema.Types.ObjectId,
+                ref: 'Adventure',
             },
-          ],
+        ],
+        savedCharacters: [characterSchema],
     },
     // set this to use virtual below
     {
