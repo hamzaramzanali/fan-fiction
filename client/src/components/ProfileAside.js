@@ -17,6 +17,7 @@ const ProfileAside = () => {
             <Dropdown.Item href="#/action-3">Add to your Adventure</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
+
       );};
 
-export default ProfileAside; 
+// export default ProfileAside; 
