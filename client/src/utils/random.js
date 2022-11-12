@@ -14,12 +14,15 @@ console.log(randomId);
 let hero = herroesArr[randomId];
 hero = hero.replace(/ /g, "%20");
 console.log(hero);
-const randomCharacterGenerator = () =>
-    axios.get(`https://gateway.marvel.com/v1/public/characters?nameStartsWith=${hero}&ts=1&apikey=1b59a5721097a34e22d115c829ed2043&hash=41968d567170fd402dc7e97f94a09889`);
+export const randomCharacterGenerator = async () => {
+    let response = await axios.get(`https://gateway.marvel.com/v1/public/characters?name=${hero}&ts=1&apikey=1b59a5721097a34e22d115c829ed2043&hash=41968d567170fd402dc7e97f94a09889`);
 
+    let data = await response.json();
 
+    return data;
+}
 
-export default randomCharacterGenerator;
+// export default randomCharacterGenerator;
 
 
 

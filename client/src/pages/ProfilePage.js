@@ -13,7 +13,7 @@ import { QUERY_ME } from '../utils/queries';
 // QUERY_USER,
 
 import Auth from '../utils/auth';
-// import RandomCharacterGenerator from '../components/RandomCharacter';
+import RandomCharacterGenerator from '../components/RandomCharacter';
 
 const Profile = () => {
 
@@ -63,7 +63,7 @@ const Profile = () => {
 
     return (
         <Container className="profile">
-            {/* <RandomCharacterGenerator/> */}
+            
             <Row>
                 <Col>
                     <div>
@@ -88,7 +88,10 @@ const Profile = () => {
                         )}
                     </div>
                 </Col>
-                <Col>Character of the day</Col>
+                <Col>
+                    <h2>Random Character</h2>
+                    {/* <RandomCharacterGenerator/> */}
+                </Col>
             </Row>
 
         </Container>

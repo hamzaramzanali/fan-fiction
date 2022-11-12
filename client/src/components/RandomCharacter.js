@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from "react"
-import randomCharacterGenerator from '../utils/random';
+import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
+import { randomCharacterGenerator } from '../utils/random';
+import Auth from '../utils/auth';
 
 // const heroesArr = [
 //     "Captain America",
@@ -8,31 +10,68 @@ import randomCharacterGenerator from '../utils/random';
 //     "Hulk"
 // ]
 
- const CharacterGenerator = () => {
-    const [results, setResults] = useState([]);
+const CharacterGenerator = async () => {
+    const [randomCharacter, setRandomCharacter] = useState([]);
 
-    const randomCharacter = async () => {
-        const response = await randomCharacterGenerator();
-        console.log(`RESPONSE: ${response.data.results[1].name}`);
-        console.log("Random character response: " +response?.data?.results[0]);
+    try {
+        let response = await randomCharacterGenerator();
+        console.log(`RESPONSE: ${response.data}`);
+        response = response.data.results;
 
-        // if(response.code === 200) {
-        //     setResults(response.data.results);
-        //     return;
-        // }
-        setResults(response.data.results);
-    };
+        const characterData = response.map((character) => ({
+            // fields correspond to character model
+            characterId: character.id,
+            description: character.description || ['No description to display'],
+            name: character.name,
+            //   image: character.thumbnail?.path || '',
+        }));
+
+        setRandomCharacter(characterData);
+    }
+    catch (err) {
+        console.error(err);
+    }
+
+    // console.log(`RESPONSE: ${response.data.results[1].name}`);
+
+
+    // if(response.code === 200) {
+    //     setResults(response.data.results);
+    //     return;
+    // }
+    // setResults(response.data.results);
 
     useEffect(() => {
         randomCharacter();
-      }, []);
+    }, []);
 
-    return(
-        <div>
-            hello
-        </div>
+    return (
+        <>
+            <Container>
+                <CardColumns>
+                    {randomCharacter?.map((character) => {
+                        return (
+                            <Card key={character.characterId} border='dark'>
+                                {character.image ? (
+                                    <Card.Img src={character.image} alt={`The picture for ${character.name}`} variant='top' />
+                                ) : null}
+                                <Card.Body>
+                                    <Card.Title>{character.name}</Card.Title>
+                                    <p className='small'>Description: {character.description}</p>
+                                    <Card.Text>{character.description}</Card.Text>
+                                    {/* <Button
+                                        className='btn-block btn-info'
+                                        onClick
+                                    </Button> */}
+                                </Card.Body>
+                            </Card>
+                        );
+                    })}
+                </CardColumns>
+            </Container>
+        </>
 
     );
-}
+};
 
 export default CharacterGenerator;
