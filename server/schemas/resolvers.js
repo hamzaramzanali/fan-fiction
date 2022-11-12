@@ -84,6 +84,21 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
+        saveCharacter: async (parent, { characterInput }, context) => {
+            // method 1
+            console.log(`saveCharacter 1`)
+            if (context.user) {
+                console.log(`saveCharacter 2`)
+                const updatedUser = await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $addToSet: { savedCharacters: characterInput } },
+                    { new: true, runValidators: true }
+                )
+                console.log(`saveCharacter 3`)
+                return updatedUser;
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
         addComment: async (parent, { adventureId, commentText }, context) => {
             if (context.user) {
               return Adventure.findOneAndUpdate(

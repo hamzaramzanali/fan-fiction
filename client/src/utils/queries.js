@@ -14,6 +14,12 @@ export const QUERY_ME = gql`
           adventureAuthor
           createdAt
       }
+      savedCharacters {
+          characterId
+          name
+          description
+          image
+      }
     }
   }
 `;

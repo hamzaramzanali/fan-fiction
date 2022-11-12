@@ -10,7 +10,7 @@ const ProfileAside = () => {
           </Dropdown.Toggle>
     
           <Dropdown.Menu>
-            <Dropdown.Item href="/search">Search</Dropdown.Item>
+            {/* <Dropdown.Item href="/search">Search</Dropdown.Item> */}
             <Dropdown.Item href="/">Homepage</Dropdown.Item>
             <Dropdown.Item href="/profile">Start an Adventure</Dropdown.Item>
             <Dropdown.Item href="#/action-3">View your Adventure</Dropdown.Item>
