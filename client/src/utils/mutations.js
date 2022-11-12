@@ -35,6 +35,17 @@ mutation addAdventure($adventureTitle: String!, $adventureBody: String!) {
     }
 `;
 
+export const REMOVE_ADVENTURE = gql`
+mutation removeAdventure($adventureId: ID!) {
+  removeAdventure(adventureId: $adventureId) {
+            _id
+            adventureTitle
+            adventureBody
+            createdAt
+      }
+    }
+`;
+
 export const SAVE_CHARACTER = gql`
   mutation saveCharacter($characterInput: CharacterInput) {
     saveCharacter(characterInput: $characterInput){

@@ -28,3 +28,4 @@ export const removeCharacterId = (characterId) => {
 
     return true;
 };
+
