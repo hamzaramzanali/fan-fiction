@@ -1,26 +1,31 @@
 import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card'
 
 
 const PublicAdventureList = ({
     adventures,
 }) => {
-    if (!adventures.length) {
-        return <h3>No Adventures Yet</h3>;
-    }
 
     return (
-        <div>
-                {adventures.map((adventure) => (
-                    <div key={adventure._id} className="card mb-3">
-                        <h4 className="card-header bg-primary text-light p-2 m-0">
-                            {adventure.adventureTitle}
-                        </h4>
-                        <div className="card-body bg-light p-2">
-                            <p>{adventure.adventureBody}</p>
-                        </div>
-                    </div>
-                ))}
-        </div>
+        
+        <Container>
+            {adventures.map(adventure => (
+            <Row>
+                <Col>
+                    <Card>
+                        <Card.Title>{adventure.adventureTitle}</Card.Title>
+                        <Card.Body>{adventure.adventureBody}</Card.Body>
+                    </Card>
+                </Col>
+            </Row>
+             ))}
+        </Container>
+        
+        
+        
     );
 };
 

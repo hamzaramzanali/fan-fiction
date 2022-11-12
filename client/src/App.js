@@ -14,6 +14,7 @@ import SavedCharacters from './pages/SavedCharactersPage';
 import CommunityPage from './pages/CommunityPage';
 
 
+
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -71,6 +72,7 @@ function App() {
               path='/savedCharacters'
               element={<SavedCharacters />} 
             />
+            
             
             {/* <Route
               path='/saved'
