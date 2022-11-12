@@ -117,7 +117,7 @@ const SearchCharacters = () => {
           </Container>
         </Jumbotron>
   
-        <Container>
+        <Container className='resultsPage'>
           <h2 className='searchedTitle'>
             {searchedCharacters?.length
               ? `Viewing ${searchedCharacters.length} results:`
@@ -126,7 +126,7 @@ const SearchCharacters = () => {
           <CardColumns>
             {searchedCharacters?.map((character) => {
               return (
-                <Card className ="searchCard" key={character.characterId} border='dark'>
+                <Card className ="searchCard" key={character.characterId}>
                   {character.image ? (
                     <Card.Img src={character.image} alt={`The picture for ${character.name}`} variant='top' />
                   ) : null}
@@ -137,7 +137,7 @@ const SearchCharacters = () => {
                     {Auth.loggedIn() && (
                       <Button
                         disabled={savedCharacterIds?.some((savedCharacterId) => savedCharacterId === character.characterId)}
-                        className='btn-block btn-info'
+                        className='btn-block btn-info btnDesign'
                         onClick={() => handleSaveCharacter(character.characterId)}>
                         {savedCharacterIds?.some((savedCharacterId) => savedCharacterId === character.characterId)
                           ? 'This character has already been saved!'

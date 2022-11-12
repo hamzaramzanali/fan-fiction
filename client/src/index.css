@@ -106,7 +106,7 @@ body {
 
 
 /* Navbar */
-nav {
+/* nav {
   position: absolute;
   background-color: rgb(137, 15, 0);
   margin-left: inherit;
@@ -119,11 +119,11 @@ nav {
 }
 
 /* Navbar */
-.navbar {
+/* .navbar {
   background-color: rgb(137, 15, 0);
   color: #c8c8bf;
   /* margin-left: inherit; */
-}
+
 
 /* Profile Page */
 

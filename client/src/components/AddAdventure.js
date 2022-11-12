@@ -3,6 +3,7 @@ import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import { ADD_ADVENTURE } from '../utils/mutations';
 import { QUERY_ADVENTURES, QUERY_ME} from '../utils/queries';
+import "../css/profilePage.css"
 
 
 import Auth from '../utils/auth';
@@ -85,11 +86,11 @@ const AddAdventure = () => {
 
   return (
     <div>
-      <h3>Start an Adventure</h3>
+      <h3 className='startAdventure'>Start an Adventure</h3>
 
       {Auth.loggedIn() ? (
         <>
-          <p
+          <p id="characterCount"
             className={`m-0 ${
               characterCount === 280 || error ? 'text-danger' : ''
             }`}
@@ -119,8 +120,8 @@ const AddAdventure = () => {
               ></textarea>
             </div>
 
-            <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
+            <div className="adventureBtn col-12 col-lg-3">
+              <button className="submitAdventure btn btn-primary btn-block py-3" type="submit">
                 Submit Adventure
               </button>
             </div>

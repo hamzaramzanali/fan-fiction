@@ -25,13 +25,18 @@
     font-size: revert;
 }
 
-.btn-info .btn-block .btn .btn-primary {
+.btnDesign {
     color: #f8f9fa !important;
     background-color: #880f00 !important;
     border-color: #880f00 !important;
 }
 
-/* .searchCard {
+.searchCard {
     border-color: #880f00!important;
-    border-width: revert;
-} */
+    border-width: revert !important;
+}
+
+.resultsPage {
+    background-color:#f8f9fa !important;
+    max-width: fit-content !important;
+}

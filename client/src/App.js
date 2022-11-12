@@ -12,8 +12,6 @@ import SearchAllCharacters from './pages/SearchAllCharacters';
 import SearchPage from './pages/SearchPage';
 import SavedCharacters from './pages/SavedCharactersPage';
 
-//import css
-import './css/profilePage.css';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
