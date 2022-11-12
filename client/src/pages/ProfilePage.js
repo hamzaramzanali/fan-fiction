@@ -8,6 +8,7 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card'
 
 // import ProfileAside from '../components/ProfileAside';
+// import RandomCharacterGenerator from '../components/RandomCharacter';
 import AddAdventure from '../components/AddAdventure';
 
 import { QUERY_ME } from '../utils/queries';
@@ -47,6 +48,7 @@ const Profile = () => {
     console.log(user.username);
     return (
         <Container className="profile">
+            
             <Row>
                 <Col>
                     <Card>
@@ -92,7 +94,10 @@ const Profile = () => {
                         </div>
                     </Card>
                 </Col>
-                <Card>Character of the day</Card>
+                <Col>
+                    <h2>Random Character</h2>
+                    {/* <RandomCharacterGenerator/> */}
+                </Col>
             </Row>
 
         </Container>

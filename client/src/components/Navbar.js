@@ -24,8 +24,9 @@ const AppNavbar = () => {
               {/* if user is logged in show saved books and logout */}
               {Auth.loggedIn() ? (
                 <>
-                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
-                  <Nav.Link as={Link} to={"/profile"}>Profile</Nav.Link>
+                  <Nav.Link className="active" onClick={Auth.logout}>Logout</Nav.Link>
+                  <Nav.Link className="active" as={Link} to={"/profile"}>Profile</Nav.Link>
+                  <Nav.Link className="active" as={Link} target="_blank" to={"/searchSpecific"}>Search</Nav.Link>
                 </>
               ) : (
                 <Nav.Link id="navText" onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>

@@ -35,6 +35,22 @@ mutation addAdventure($adventureTitle: String!, $adventureBody: String!) {
     }
 `;
 
+export const SAVE_CHARACTER = gql`
+  mutation saveCharacter($characterInput: CharacterInput) {
+    saveCharacter(characterInput: $characterInput){
+        _id
+        username
+        savedCharacters {
+          characterId
+          name
+          description
+          image
+        }
+    }
+  }
+`;
+
+
 export const ADD_COMMENT = gql`
   mutation addComment($adventureId: ID!, $commentText: String!) {
     addComment(adventureId: $adventureId, commentText: $commentText) {
