@@ -20,6 +20,7 @@
 }
 
 
+
 /* Comment List JS File */
 .commentText {
     color: #880f00;
@@ -27,7 +28,7 @@
     font-size: revert;
     text-align: center;
 }
-#thoughtHeader {
+.thoughtHeader {
     background-color: #880f00 !important;
 
 }

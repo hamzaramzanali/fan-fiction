@@ -10,6 +10,8 @@ import CommentForm from '../components/CommentForm';
 
 import { QUERY_SINGLE_ADVENTURE } from '../utils/queries';
 
+import "../css/commentsPage.css"
+
 const styles = {
     margin: 200,
     padding:100
@@ -30,10 +32,10 @@ const SingleAdventure = () => {
   }
   return (
     <div className="my-3" style={styles}>
-      <h3 className="card-header bg-dark text-light p-2 m-0">
+      <h3 className=" thoughtHeader card-header text-light p-2 m-0">
         {adventure.adventureAuthor} <br />
         <span style={{ fontSize: '1rem' }}>
-          had this thought on {adventure.createdAt}
+          Had this thought on {adventure.createdAt}
         </span>
       </h3>
       <div className="bg-light py-4">
@@ -42,7 +44,7 @@ const SingleAdventure = () => {
           style={{
             fontSize: '1.5rem',
             fontStyle: 'italic',
-            border: '2px dotted #1a1a1a',
+            border: '2px dotted #880f00',
             lineHeight: '1.5',
           }}
         >
@@ -53,7 +55,7 @@ const SingleAdventure = () => {
       <div className="my-5">
         <CommentList comments={adventure.comments} />
       </div>
-      <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
+      <div className="m-3 p-4" style={{ border: '3px dotted #880f00' }}>
         <CommentForm adventureId={adventure._id} />
       </div>
     </div>
