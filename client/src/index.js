@@ -7,6 +7,10 @@ import './reset.css';
 import './css/profilePage.css';
 import './css/searchPage.css';
 import './css/navBar.css';
+import './css/login.css';
+import './css/publicAdventures.css';
+import './css/viewAdventures.css';
+import './css/homepage.css';
 
 ReactDOM.render(
   <React.StrictMode>

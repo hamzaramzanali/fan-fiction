@@ -7,6 +7,8 @@ import { ADD_COMMENT } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
+import '../css/commentsPage.css'
+
 const CommentForm = ({ adventureId }) => {
   const [commentText, setCommentText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
@@ -41,18 +43,18 @@ const CommentForm = ({ adventureId }) => {
   };
 
   return (
-    <div>
-      <h4>What are your thoughts on this thought?</h4>
+    <div >
+      <h4 className='thoughtText'>What are your thoughts on this thought?</h4>
 
       {Auth.loggedIn() ? (
         <>
-          <p
+          <p id='thoughtText'
             className={`m-0 ${
               characterCount === 280 || error ? 'text-danger' : ''
             }`}
           >
             Character Count: {characterCount}/280
-            {error && <span className="ml-2">{error.message}</span>}
+            {error && <span className="thoughtText ml-2">{error.message}</span>}
           </p>
           <form
             className="flex-row justify-center justify-space-between-md align-center"
@@ -70,16 +72,16 @@ const CommentForm = ({ adventureId }) => {
             </div>
 
             <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
+              <button className="addCommentBtn btn btn-primary btn-block py-3" type="submit">
                 Add Comment
               </button>
             </div>
           </form>
         </>
       ) : (
-        <p>
+        <p className='thoughtText'>
           You need to be logged in to share your thoughts. Please{' '}
-          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+          <Link className='thoughtText' to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}
     </div>
