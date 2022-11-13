@@ -43,7 +43,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <>
-          <Navbar />
+          <Navbar className="p-5"/>
           <Routes>
             <Route
               path='/'
