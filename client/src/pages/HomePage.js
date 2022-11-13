@@ -1,8 +1,4 @@
 import React from 'react'
-<<<<<<< HEAD
-// import DailyCharacter from '../components/DailyCharacter';
-=======
->>>>>>> main
 
 function HomePage() {
     return (

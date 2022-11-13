@@ -80,22 +80,20 @@ export const QUERY_USER = gql`
   }
 `;
 
-<<<<<<< HEAD
-=======
-export const QUERY_SINGLE_ADVENTURE = gql`
-  query adventure($adventureId: ID!) {
-    adventure(adventureId: $adventureId) {
-      _id
-      adventureTitle
-      adventureBody
-      createdAt
-      comments {
-        _id
-        commentText
-        commentAuthor
-        createdAt
-      }
-    }
-  }
-`;
->>>>>>> main
+
+// export const QUERY_SINGLE_ADVENTURE = gql`
+//   query adventure($adventureId: ID!) {
+//     adventure(adventureId: $adventureId) {
+//       _id
+//       adventureTitle
+//       adventureBody
+//       createdAt
+//       comments {
+//         _id
+//         commentText
+//         commentAuthor
+//         createdAt
+//       }
+//     }
+//   }
+// `;
