@@ -18,6 +18,9 @@ const resolvers = {
             const params = username ? { username } : {};
             return Adventure.find(params).sort({ createdAt: -1 });
         },
+        adventure: async (parent, { adventureId }) => {
+            return Adventure.findOne({ _id: adventureId });
+        },
         // get All Adventures
         getAdventures: async (parent, { username }) => {
             const params = username ? { username } : {};

@@ -1,4 +1,4 @@
-import ReactReact, { useState } from 'react';
+import React, { useState } from 'react';
 import { Card, Button, Modal, Nav, Tab } from 'react-bootstrap';
 import { useMutation } from '@apollo/client'
 // import { QUERY_ME } from '../utils/queries';

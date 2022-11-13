@@ -31,6 +31,7 @@ export const QUERY_ADVENTURES = gql`
       _id
       adventureTitle
       adventureBody
+      adventureAuthor
       createdAt
     }
   }
@@ -60,8 +61,9 @@ export const QUERY_USER = gql`
     }
   }
 `;
+
 export const QUERY_SINGLE_ADVENTURE = gql`
-  query getSingleAdventure($adventureId: ID!) {
+  query adventure($adventureId: ID!) {
     adventure(adventureId: $adventureId) {
       _id
       adventureTitle
