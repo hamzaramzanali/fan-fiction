@@ -51,20 +51,21 @@ export const SAVE_CHARACTER = gql`
 `;
 
 
-// export const ADD_COMMENT = gql`
-  // mutation addComment($adventureId: ID!, $commentText: String!) {
-  //   addComment(adventureId: $adventureId, commentText: $commentText) {
-  //     _id
-  //     adventureText
-  //     adventureAuthor
-  //     createdAt
-  //     comments {
-  //       _id
-  //       commentText
-  //       createdAt
-  //     }
-  //   }
-  // }
+export const ADD_COMMENT = gql`
+  mutation addComment($adventureId: ID!, $commentText: String!) {
+    addComment(adventureId: $adventureId, commentText: $commentText) {
+      _id
+      adventureText
+      adventureAuthor
+      createdAt
+      comments {
+        _id
+        commentText
+        createdAt
+      }
+    }
+  }
+  `;
 
 
 export const DELETE_ADVENTURE = gql`

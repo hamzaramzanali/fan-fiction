@@ -66,10 +66,10 @@ function App() {
               element={<SearchPage />}
             />
             
-            <Route
+            {/* <Route
               path='/adventureList'
               element={<AdventureList />}
-            />
+            /> */}
 
             {/*<Route
               path='*'
