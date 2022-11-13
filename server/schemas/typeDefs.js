@@ -49,7 +49,11 @@ const typeDefs = gql`
     me: User
     getAdventuresFromUser(username: String!): [Adventure]
     getAdventures(username: String): [Adventure]
+<<<<<<< HEAD
     getSingleAdventure(adventureId: ID!): Adventure
+=======
+    adventure(adventureId: ID!): Adventure
+>>>>>>> main
   }
 
   type Mutation {
