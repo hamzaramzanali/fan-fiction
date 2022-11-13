@@ -6,9 +6,7 @@ import { ListGroup, ListGroupItem } from 'react-bootstrap';
 function ProfileAside({ currentComponent, handleComponentChange }) {
   return (
     <div>
-      <Card>
-        {/* <div> */}
-        {/* <ProfileAside /> */}
+      <Card className="nav nav-pills danger nav-justified">
         <Card.Title>
           Your adventure awaits!
         </Card.Title>
@@ -21,17 +19,10 @@ function ProfileAside({ currentComponent, handleComponentChange }) {
           </ListGroupItem>
         <ListGroup>
           <ListGroupItem>
-            <Card.Link
-              href='#'
-              >
-                Search Other Users
-              </Card.Link>
-          </ListGroupItem>
-          <ListGroupItem>
             <Card.Link 
               href='#addAdventure'
-              onClick={() => handleComponentChange('viewYourAdventure')}
-              className={currentComponent === 'viewYourAdventure' ? 'nav-link active' : 'nav-link'}
+              onClick={() => handleComponentChange('addAdventure')}
+              className={currentComponent === 'addAdventure' ? 'nav-item nav-link active text-white bold font-weight-bold' : 'nav-link nav-item text-dark bold font-weight-bold'}
               >
                 Start an Adventure
               </Card.Link>
@@ -40,10 +31,17 @@ function ProfileAside({ currentComponent, handleComponentChange }) {
             <Card.Link
               href='#viewYourAdventure'
               onClick={() => handleComponentChange('viewYourAdventure')}
-              className={currentComponent === 'viewYourAdventure' ? 'nav-link active' : 'nav-link'}
+              className={currentComponent === 'viewYourAdventure' ? 'nav-item nav-link active text-white font-weight-bold' : 'nav-link nav-item text-dark font-weight-bold'}
             >
               View your Adventures
             </Card.Link>
+          </ListGroupItem>
+          <ListGroupItem>
+            <Card.Link
+              href='#'
+              >
+                Search Other Users
+              </Card.Link>
           </ListGroupItem>
         </ListGroup>
       </Card>

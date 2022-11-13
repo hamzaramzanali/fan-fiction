@@ -69,13 +69,13 @@ const AdventureList = ({
                         show={showModal}
                         onHide={() => setShowModal(false)}
                         aria-labelledby='signup-modal'>
-                        {/* tab container to do either signup or login component */}
+                        {/* tab container to update */}
                         <Tab.Container defaultActiveKey='login'>
                             <Modal.Header closeButton>
                                 <Modal.Title id='signup-modal'>
                                     <Nav variant='pills'>
                                         <Nav.Item>
-                                            <Nav.Link eventKey='update'>Update Adventure</Nav.Link>
+                                            <Nav.Link className="active"eventKey='update'>Update Adventure</Nav.Link>
                                         </Nav.Item>
                                     </Nav>
                                 </Modal.Title>

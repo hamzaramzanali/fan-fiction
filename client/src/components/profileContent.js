@@ -35,7 +35,7 @@ const ProfileContent = () => {
 
             <Row>
                 <Col>
-                    <ProfileAside currentComponent={currentComponent} handleComponentChange={handleComponentChange} />
+                    <ProfileAside currentComponent={currentComponent} handleComponentChange={handleComponentChange} className="mt-3"/>
                 </Col>
                 <Col>
                     <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
