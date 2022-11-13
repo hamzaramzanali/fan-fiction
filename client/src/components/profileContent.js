@@ -12,8 +12,6 @@ const ProfileContent = () => {
 
     const { data } = useQuery(QUERY_ME);
 
-    console.log(`DATA: ${data}`);
-
     const user = data?.me || data?.user || [];
     
     const renderComponent = () => {
@@ -48,9 +46,6 @@ const ProfileContent = () => {
                     <DailyCharacter />
                 </Col>
             </Row>
-
-            {/* Here we are calling the renderComponent method which will return a component  */}
-
         </div>
     );
 

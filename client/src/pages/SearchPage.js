@@ -2,7 +2,7 @@
 // 
 
 import React, { useState, useEffect } from 'react';
-import { Jumbotron, Container, Col, Form, Button, Card, CardColumns, Image } from 'react-bootstrap';
+import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
 import "../css/searchPage.css"
 
 import { useMutation } from '@apollo/client';

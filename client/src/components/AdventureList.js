@@ -1,4 +1,4 @@
-import ReactReact, { useState } from 'react';
+import React, { useState } from 'react';
 import { Card, Button, Modal, Nav, Tab } from 'react-bootstrap';
 import { useMutation } from '@apollo/client'
 // import { QUERY_ME } from '../utils/queries';
@@ -17,6 +17,7 @@ const AdventureList = ({
 
     // set modal display state
     const [showModal, setShowModal] = useState(false);
+    const [AdventureID, setAdventureID] = useState('');
 
     if (!adventures.length) {
         return <h4>No adventures, yet. Create a new adventure!</h4>

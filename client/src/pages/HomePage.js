@@ -1,5 +1,5 @@
 import React from 'react'
-import DailyCharacter from '../components/DailyCharacter';
+// import DailyCharacter from '../components/DailyCharacter';
 
 function HomePage() {
     return (

@@ -10,7 +10,7 @@ import HomePage from './pages/HomePage';
 import ProfilePage from './pages/ProfilePage'
 import SearchAllCharacters from './pages/SearchAllCharacters';
 import SearchPage from './pages/SearchPage';
-import SavedCharacters from './pages/SavedCharactersPage';
+// import SavedCharacters from './pages/SavedCharactersPage';
 import CommunityPage from './pages/CommunityPage';
 
 
