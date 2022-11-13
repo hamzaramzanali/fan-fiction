@@ -1,10 +1,9 @@
 import React from 'react'
-import DailyCharacter from '../components/DailyCharacter';
 
 function HomePage() {
     return (
         <div>
-             {/* <DailyCharacter /> */}
+         
             <div className="wrapper">
                 <div className="news-item hero-item">
                 </div>

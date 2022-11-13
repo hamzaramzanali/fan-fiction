@@ -11,6 +11,8 @@ import ProfilePage from './pages/ProfilePage'
 import SearchAllCharacters from './pages/SearchAllCharacters';
 import SearchPage from './pages/SearchPage';
 import SavedCharacters from './pages/SavedCharactersPage';
+import CommunityPage from './pages/CommunityPage';
+import SingleAdventure from './pages/SingleAdventure';
 
 
 // Construct our main GraphQL API endpoint
@@ -42,9 +44,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <>
-          <Navbar />
-      {/* <Header /> */}
-
+          <Navbar className="p-5"/>
           <Routes>
             <Route
               path='/'
@@ -55,23 +55,28 @@ function App() {
               element={<ProfilePage />}
             />
             <Route
+              path='/community'
+              element={<CommunityPage />} 
+            />
+            <Route 
+                path="/adventure/:adventureId" 
+                element={<SingleAdventure />}
+              />
+            <Route
               path='/search'
-              element={<SearchAllCharacters />} 
+              element={<SearchAllCharacters />}
             />
             <Route
               path='/searchSpecific'
-              element={<SearchPage />} 
-            />
-            <Route
-              path='/savedCharacters'
-              element={<SavedCharacters />} 
+              element={<SearchPage />}
             />
             
             {/* <Route
-              path='/saved'
-              element={<SavedBooks />}
-            />
-            <Route
+              path='/adventureList'
+              element={<AdventureList />}
+            /> */}
+
+            {/*<Route
               path='*'
               element={<h1 className='display-2'>Wrong page!</h1>}
             /> */}

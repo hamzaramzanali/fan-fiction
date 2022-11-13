@@ -30,6 +30,18 @@ mutation addAdventure($adventureTitle: String!, $adventureBody: String!) {
             _id
             adventureTitle
             adventureBody
+            adventureAuthor
+            createdAt
+      }
+    }
+`;
+
+export const REMOVE_ADVENTURE = gql`
+mutation removeAdventure($adventureId: ID!) {
+  removeAdventure(adventureId: $adventureId) {
+            _id
+            adventureTitle
+            adventureBody
             createdAt
       }
     }
@@ -65,4 +77,15 @@ export const ADD_COMMENT = gql`
       }
     }
   }
-`;
+  `;
+
+
+export const DELETE_ADVENTURE = gql`
+  mutation removeAdventure($adventureId: ID!) {
+    removeAdventure(adventureId: $adventureId) {
+      _id
+    } 
+  }
+`; 
+
+

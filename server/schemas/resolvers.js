@@ -18,11 +18,14 @@ const resolvers = {
             const params = username ? { username } : {};
             return Adventure.find(params).sort({ createdAt: -1 });
         },
-        // get All Adventures
-        getAdventures: async () => {
-            // Sort From most recent to latest
-            return Adventure.find().sort({ createdAt: -1 });
+        adventure: async (parent, { adventureId }) => {
+            return Adventure.findOne({ _id: adventureId });
         },
+        // get All Adventures
+        getAdventures: async (parent, { username }) => {
+            const params = username ? { username } : {};
+            return Adventure.find(params).sort({ createdAt: -1 });
+          },
     },
 
     Mutation: {

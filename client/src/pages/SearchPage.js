@@ -42,8 +42,10 @@ const SearchCharacters = () => {
         let response = await searchMarvelCharacters(searchInput);
         console.log(`RESPONSE: ${response.data}`);
         response = response.data.results;
-        // if (!response.ok) {
-        //   throw new Error('something went wrong!');
+        // if (!response) {
+        //   alert('Character input wrong. Please try again');
+        //   // window.location.reload();
+        //   // throw new Error('something went wrong!');
         // }
   
         // const { items } = await response.json();
