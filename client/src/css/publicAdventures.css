@@ -1,0 +1,39 @@
+.cardTitle {
+    color: #880f00;
+    font-weight: bold;
+    font-size: revert;
+}
+
+.continueAdventureBtn {
+    background-color: #880f00 !important;
+    border-color: #880f00 !important;
+    color: #f8f9fa !important;
+}
+
+.adventureText {
+    color: #880f00;
+}
+
+.communityCard {
+    max-width: fit-content !important;
+    background: #e9ecef !important;
+
+}
+
+.communityTitle {
+    color: #880f00;
+    font-weight: bold;
+    font-size: revert;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #e9ecef !important;
+    background-clip: border-box;
+    border: 2px solid rgb(136 15 0) !important;
+    border-radius: 0.25rem;
+}
