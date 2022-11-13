@@ -45,25 +45,6 @@ export const QUERY_USER_ADVENTURES = gql`
   }
 `;
 
-export const QUERY_SINGLE_ADVENTURE = gql`
-  query getSingleAdventure($adventureId: ID!) {
-    getSingleAdventure(adventureId: $adventureId) {
-      _id
-      adventureTitle
-      adventureBody
-      adventureAuthor
-      createdAt
-      comments {
-        _id
-        commentText
-        commentAuthor
-        createdAt
-      }
-    }
-  }
-`;
-
-
 export const QUERY_USER = gql`
   query user($username: String!) {
     user(username: $username) {
@@ -80,20 +61,19 @@ export const QUERY_USER = gql`
   }
 `;
 
-
-// export const QUERY_SINGLE_ADVENTURE = gql`
-//   query adventure($adventureId: ID!) {
-//     adventure(adventureId: $adventureId) {
-//       _id
-//       adventureTitle
-//       adventureBody
-//       createdAt
-//       comments {
-//         _id
-//         commentText
-//         commentAuthor
-//         createdAt
-//       }
-//     }
-//   }
-// `;
+export const QUERY_SINGLE_ADVENTURE = gql`
+  query adventure($adventureId: ID!) {
+    adventure(adventureId: $adventureId) {
+      _id
+      adventureTitle
+      adventureBody
+      createdAt
+      comments {
+        _id
+        commentText
+        commentAuthor
+        createdAt
+      }
+    }
+  }
+`;

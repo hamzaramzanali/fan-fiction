@@ -26,9 +26,6 @@ const resolvers = {
             const params = username ? { username } : {};
             return Adventure.find(params).sort({ createdAt: -1 });
         },
-        getSingleAdventure: async (parent, { adventureId }) => {
-            return Adventure.findOne({ _id: adventureId });
-          },
     },
 
     Mutation: {

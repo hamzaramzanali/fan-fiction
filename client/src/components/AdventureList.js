@@ -1,28 +1,98 @@
 import React, { useState } from 'react';
-import { Card, Button, Modal, Nav, Tab } from 'react-bootstrap';
+// import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import { Card, Button, Modal, Nav, Tab, InputGroup, Form } from 'react-bootstrap';
 import { useMutation } from '@apollo/client'
 // import { QUERY_ME } from '../utils/queries';
-import { REMOVE_ADVENTURE } from '../utils/mutations';
+import { REMOVE_ADVENTURE, UPDATE_ADVENTURE } from '../utils/mutations';
 import Auth from '../utils/auth';
+import { QUERY_ADVENTURES, QUERY_ME } from '../utils/queries';
 // import { removeAdventureId } from '../utils/localStorage';
 
 
 const AdventureList = ({
     adventures,
 }) => {
-    console.log(`ADVENTURE LIST`);
-    // const { loading, data } = useQuery(QUERY_ME);
-    // const userData = data?.me || [];
-    const [deleteAdventure] = useMutation(REMOVE_ADVENTURE);
+    // Hooks must come first
+    const [adventureForm, setAdventureForm] = useState({
+        adventureTitle: '',
+        adventureBody: '',
+    })
 
+    const [deleteAdventure] = useMutation(REMOVE_ADVENTURE);
+    
     // set modal display state
     const [showModal, setShowModal] = useState(false);
-    const [AdventureID, setAdventureID] = useState('');
+    
+    const [updateAdventure, {error}] = useMutation(UPDATE_ADVENTURE, {
+    // const { loading, data } = useQuery(QUERY_ME);
+    // const userData = data?.me || [];
+    
+        update(cache, {data: {updateAdventure}}) {
+            try {
+                const { adventure } = cache.readQuery({query:
+                QUERY_ADVENTURES });
+
+                cache.writeQuery({
+                    query: QUERY_ADVENTURES,
+                    data: { adventures: [updateAdventure, ...adventure]},
+                })
+            }catch(err) {
+                console.error(err);
+            }
+
+            const {me} = cache.readQuery({query: QUERY_ME});
+            cache.writeQuery({
+                query: QUERY_ME,
+                data: {me: {...me, adventure: [...me.adventures,
+                updateAdventure]}},
+            })
+        }
+    });
+
 
     if (!adventures.length) {
         return <h4>No adventures, yet. Create a new adventure!</h4>
     }
 
+    const handleUpdateFormSubmit = async (event) => {
+        event.preventDefault();
+    
+        try {
+          const { data } = await updateAdventure({
+            variables: { ...adventureForm,
+            },
+          });
+          console.log(data);
+          setAdventureForm({
+            adventureTitle: '',
+            adventureBody: '',
+            characterCount: 0
+          })
+    
+          // setAdventureTitle('');
+          // setAdventureBody('');
+        } catch (err) {
+          console.error(err);
+        }
+    };
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+    
+        // if (name === 'adventureTitle' && value.length <= 500) {
+          setAdventureForm({
+            ...adventureForm,
+            [name]: value,
+            characterCount: value.length
+          })
+          // setAdventureTitle(value);
+          // setCharacterCount(value.length);
+        // }
+        // else if (name === 'adventureBody' && value.length <= 500) {
+        //   setAdventureBody(value);
+        //   setCharacterCount(value.length);
+        // }
+    };
 
     const handleDeleteAdventure = async (adventureId) => {
         const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -39,19 +109,37 @@ const AdventureList = ({
                 console.log(`ERROR`)
             }
 
-            // upon success, remove adventure's id from localStorage
-            //   removeADventureId(adventureId);
         } catch (err) {
             console.error(err);
         }
     };
+
+    // const handleUpdateAdventure = async (adventureId) => {
+    //     const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+
+    //     if (!token) {
+    //         return false;
+    //     }
+
+    //     try {
+    //         const updatedAdventure = await updateAdventure({
+    //             variables: { adventureId }
+    //         })
+    //         if (!updatedAdventure) {
+    //             console.log(`ERROR`)
+    //         }
+
+    //     } catch (err) {
+    //         console.error(err);
+    //     }
+    // }
 
     return (
         <>
             {adventures.map(adventure => (
                 <>
                     <Card key={adventure._id}>
-                        {console.log(`ADVENTURE ID: ${adventure._id}`)}
                         <Card.Body>
                             <Card.Title>{adventure.adventureTitle}</Card.Title>
                             <p className='small'>by: {adventure.adventureAuthor}</p>
@@ -60,7 +148,10 @@ const AdventureList = ({
                                     <Card.Text >{adventure.adventureBody}</Card.Text>
                                 </div>
                             </Card.Body>
-                            <Button className='btn-block btn-info' onClick={() => setShowModal(true)} >Update Button</Button>
+                            <Button className='btn-block btn-info' onClick={() => setShowModal(true)}
+                            >
+                                Update Button
+                            </Button>
                             <Button className='btn-block btn-danger' onClick={() => handleDeleteAdventure(adventure._id)}>Delete Button</Button>
                         </Card.Body>
                     </Card>
@@ -76,17 +167,26 @@ const AdventureList = ({
                                 <Modal.Title id='signup-modal'>
                                     <Nav variant='pills'>
                                         <Nav.Item>
-                                            <Nav.Link className="active"eventKey='update'>Update Adventure</Nav.Link>
+                                            <Nav.Link className="active text-white" eventKey='update'>Updating Adventure: {adventure.adventureTitle}</Nav.Link>
                                         </Nav.Item>
                                     </Nav>
                                 </Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
-                                <Tab.Content>
-                                    <Tab.Pane eventKey='title'>
-                                        {/* <LoginForm handleModalClose={() => setShowModal(false)} /> */}
-                                    </Tab.Pane>
-                                </Tab.Content>
+                                <Form onSubmit={handleUpdateFormSubmit}>
+                                    <Form.Group className="mb-3" >
+                                        <Form.Label>Adventure Title</Form.Label>
+                                        <Form.Control type="text" className="form-input form-control" value={adventure.adventureTitle} onChange={handleChange}/>
+                                        <Form.Label className='mt-4'>Adventure Body</Form.Label>
+                                        <Form.Control
+                                            as="textarea"
+                                            style={{ height: '100px' }}
+                                            value={adventure.adventureBody}
+                                            onChange={handleChange}
+                                        />
+                                        <Button className="btn-block mt-2" variant="success" type="submit" >Update This Adventure</Button>
+                                    </Form.Group>
+                                </Form>
                             </Modal.Body>
                         </Tab.Container>
                     </Modal>
