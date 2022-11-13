@@ -30,6 +30,7 @@ mutation addAdventure($adventureTitle: String!, $adventureBody: String!) {
             _id
             adventureTitle
             adventureBody
+            adventureAuthor
             createdAt
       }
     }
