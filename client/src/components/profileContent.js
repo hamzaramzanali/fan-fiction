@@ -6,6 +6,7 @@ import { Col, Row } from "react-bootstrap";
 import DailyCharacter from "./DailyCharacter";
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
+import '../css/profilePage.css'
 
 const ProfileContent = () => {
     const [currentComponent, setCurrentComponent] = useState("addAdventure");
@@ -33,16 +34,16 @@ const ProfileContent = () => {
 
             <Row>
                 <Col>
-                    <ProfileAside currentComponent={currentComponent} handleComponentChange={handleComponentChange} className="mt-3"/>
+                    <ProfileAside currentComponent={currentComponent} handleComponentChange={handleComponentChange} className="profileAside mt-3"/>
                 </Col>
-                <Col>
-                    <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
+                <Col className="profileContent">
+                    <h2 className="profileHead col-12 col-md-10 text-light p-3 mb-5">
                         Your Profile
                     </h2>
                     {renderComponent()}
                 </Col>
-                <Col>
-                    <h2>Random Character</h2>
+                <Col className="characterCol">
+                    <h2 className="characterTitle">Random Character</h2>
                     <DailyCharacter />
                 </Col>
             </Row>

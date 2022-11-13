@@ -8,6 +8,8 @@ import { LOGIN_USER } from '../utils/mutations';
 // import { loginUser } from '../utils/API';
 import Auth from '../utils/auth';
 
+import '../css/login.css';
+
 const LoginForm = () => {
   const [userFormData, setUserFormData] = useState({ username: '', password: '' });
   const [validated] = useState(false);
@@ -51,16 +53,17 @@ const LoginForm = () => {
 
   return (
     <>
+    <div className='loginForm'>
     {data ? (
-      <Link to="/profile">back to the homepage.</Link>
+      <Link className='modalBodyText' to="/profile">back to the homepage.</Link>
     ) : (
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
           Something went wrong with your login credentials!
         </Alert>
         <Form.Group>
-          <Form.Label htmlFor='username'>Username</Form.Label>
-          <Form.Control
+          <Form.Label className='modalBodyText' htmlFor='username'>Username</Form.Label>
+          <Form.Control className='inputBackground'
             type='text'
             placeholder='Your username'
             name='username'
@@ -72,8 +75,8 @@ const LoginForm = () => {
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor='password'>Password</Form.Label>
-          <Form.Control
+          <Form.Label className='modalBodyText' htmlFor='password'>Password</Form.Label>
+          <Form.Control className='inputBackground'
             type='password'
             placeholder='Your password'
             name='password'
@@ -81,9 +84,9 @@ const LoginForm = () => {
             value={userFormData.password}
             required
           />
-          <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
+          <Form.Control.Feedback className='modalBodyText' type='invalid'>Password is required!</Form.Control.Feedback>
         </Form.Group>
-        <Button
+        <Button className='submitBtn'
           disabled={!(userFormData.username && userFormData.password)}
           type='submit'
           variant='success'>
@@ -91,6 +94,7 @@ const LoginForm = () => {
         </Button>
       </Form>
     )}
+    </div>
     </>
   );
 };

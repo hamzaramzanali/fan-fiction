@@ -5,13 +5,13 @@ import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
 function ProfileAside({ currentComponent, handleComponentChange }) {
   return (
-    <div>
+    <div className='profileAside'>
       <Card className="nav nav-pills danger nav-justified">
-        <Card.Title>
-          Your adventure awaits!
+        <Card.Title className="adventureAwaits">
+          Your Adventure Awaits!
         </Card.Title>
           <ListGroupItem>
-            <Card.Link 
+            <Card.Link className='searchBy'
               href='/'
               >
                 Homepage
@@ -19,25 +19,25 @@ function ProfileAside({ currentComponent, handleComponentChange }) {
           </ListGroupItem>
         <ListGroup>
           <ListGroupItem>
-            <Card.Link 
+            <Card.Link id = 'addAdventureNav'
               href='#addAdventure'
               onClick={() => handleComponentChange('addAdventure')}
-              className={currentComponent === 'addAdventure' ? 'nav-item nav-link active text-white bold font-weight-bold' : 'nav-link nav-item text-dark bold font-weight-bold'}
+              className={currentComponent === 'addAdventure' ? 'nav-item nav-link active text-white' : 'nav-link nav-item text-dark bold font-weight-bold'}
               >
                 Start an Adventure
               </Card.Link>
           </ListGroupItem>
           <ListGroupItem>
-            <Card.Link
+            <Card.Link id='viewAdventuresNav'
               href='#viewYourAdventure'
               onClick={() => handleComponentChange('viewYourAdventure')}
-              className={currentComponent === 'viewYourAdventure' ? 'nav-item nav-link active text-white font-weight-bold' : 'nav-link nav-item text-dark font-weight-bold'}
+              className={currentComponent === 'viewYourAdventure' ? 'nav-item nav-link active text-white' : 'nav-link nav-item text-dark font-weight-bold'}
             >
               View your Adventures
             </Card.Link>
           </ListGroupItem>
           <ListGroupItem>
-            <Card.Link
+            <Card.Link className='searchBy'
               href='#'
               >
                 Search Other Users

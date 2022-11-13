@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 // import { createUser } from '../utils/API';
 import Auth from '../utils/auth';
 
+import '../css/login.css'
+
 const SignupForm = () => {
   // set initial form state
   const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
@@ -52,7 +54,7 @@ const SignupForm = () => {
   return (
     <>
     {data ? (
-      <Link to="/profile">back to the homepage.</Link>
+      <Link to="/profile">Back to the homepage.</Link>
     ) : (
       <>
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
@@ -61,7 +63,7 @@ const SignupForm = () => {
         </Alert>
 
         <Form.Group>
-          <Form.Label htmlFor='username'>Username</Form.Label>
+          <Form.Label className='modalBodyText' htmlFor='username'>Username</Form.Label>
           <Form.Control
             type='text'
             placeholder='Your username'
@@ -70,11 +72,11 @@ const SignupForm = () => {
             value={userFormData.username}
             required
           />
-          <Form.Control.Feedback type='invalid'>Username is required!</Form.Control.Feedback>
+          <Form.Control.Feedback className='modalBodyText' type='invalid'>Username is required!</Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor='email'>Email</Form.Label>
+          <Form.Label className='modalBodyText' htmlFor='email'>Email</Form.Label>
           <Form.Control
             type='email'
             placeholder='Your email address'
@@ -83,11 +85,11 @@ const SignupForm = () => {
             value={userFormData.email}
             required
           />
-          <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>
+          <Form.Control.Feedback className='modalBodyText' type='invalid'>Email is required!</Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor='password'>Password</Form.Label>
+          <Form.Label className='modalBodyText' htmlFor='password'>Password</Form.Label>
           <Form.Control
             type='password'
             placeholder='Your password'
@@ -96,9 +98,9 @@ const SignupForm = () => {
             value={userFormData.password}
             required
           />
-          <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
+          <Form.Control.Feedback className='modalBodyText' type='invalid'>Password is required!</Form.Control.Feedback>
         </Form.Group>
-        <Button
+        <Button className='submitBtn'
           disabled={!(userFormData.username && userFormData.email && userFormData.password)}
           type='submit'
           variant='success'>

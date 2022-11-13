@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import search from '../utils/baseAPI';
 import {Card} from 'react-bootstrap';
-
+import '../css/profilePage.css'
 
 
 const DailyCharacter = () => {
@@ -21,7 +21,7 @@ const DailyCharacter = () => {
       }, []);
 
   return (
-        <Card>
+        <Card className="characterCard">
           <Card.Body>
             <Card.Title>Random Character</Card.Title>
             <Card.Text>

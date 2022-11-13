@@ -36,7 +36,7 @@
 }
 
 .resultsPage {
-    background-color:#f8f9fa !important;
+    background: #e9ecef !important;
     max-width: fit-content !important;
 }
 
@@ -44,3 +44,4 @@
     color: #880f00 !important;
     font-weight: bold !important;
 }
+
