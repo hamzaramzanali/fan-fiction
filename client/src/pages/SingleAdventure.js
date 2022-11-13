@@ -1,3 +1,5 @@
+// idea for CSS-- use tooltips so they can hover to show commentAuthor so the flow looks like an ongoing story
+
 import React from 'react';
 
 import { useParams } from 'react-router-dom';
