@@ -40,17 +40,7 @@ const SearchCharacters = () => {
   
       try {
         let response = await searchMarvelCharacters(searchInput);
-        console.log(`RESPONSE: ${response.data}`);
         response = response.data.results;
-        // if (!response) {
-        //   alert('Character input wrong. Please try again');
-        //   // window.location.reload();
-        //   // throw new Error('something went wrong!');
-        // }
-  
-        // const { items } = await response.json();
-        // const { items } = await response;
-        // console.log(`ITEMS: ${items}`)
         const characterData = response.map((character) => ({
             // fields correspond to character model
           characterId: character.id,
@@ -60,7 +50,6 @@ const SearchCharacters = () => {
         }));
   
         setSearchedCharacters(characterData);
-        console.log(characterData)
         setSearchInput('');
       } catch (err) {
         console.error(err);
@@ -80,7 +69,6 @@ const SearchCharacters = () => {
       }
   
       try {
-        // const response = await saveCharacter(characterToSave, token);
         await saveCharacter({
           // grabbing characterInput from mutations and giving back character information to save
           variables: { characterInput: characterToSave}

@@ -3,18 +3,14 @@ import search from '../utils/baseAPI';
 import { Card } from 'react-bootstrap';
 import '../css/profilePage.css'
 
-
 const DailyCharacter = () => {
 
   const [character, setCharacter] = useState([]);
-
 
   const searchCharacter = async () => {
     const response = await search();
     setCharacter(response.data.data.results[Math.floor(Math.random() * 100)]);
   };
-
-
 
   useEffect(() => {
     searchCharacter();
@@ -33,7 +29,6 @@ const DailyCharacter = () => {
     </>
   )
 }
-
 
 export default DailyCharacter;
 

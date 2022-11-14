@@ -1,19 +1,13 @@
 import React, { useState } from 'react';
 import { Card, Button, Modal, Nav, Tab } from 'react-bootstrap';
 import { useMutation } from '@apollo/client'
-// import { QUERY_ME } from '../utils/queries';
 import { REMOVE_ADVENTURE } from '../utils/mutations';
 import Auth from '../utils/auth';
-// import { removeAdventureId } from '../utils/localStorage';
 import '../css/viewAdventures.css'
-
 
 const AdventureList = ({
     adventures,
 }) => {
-    console.log(`ADVENTURE LIST`);
-    // const { loading, data } = useQuery(QUERY_ME);
-    // const userData = data?.me || [];
     const [deleteAdventure] = useMutation(REMOVE_ADVENTURE);
 
     // set modal display state
@@ -39,8 +33,6 @@ const AdventureList = ({
                 console.log(`ERROR`)
             }
 
-            // upon success, remove adventure's id from localStorage
-            //   removeADventureId(adventureId);
         } catch (err) {
             console.error(err);
         }
@@ -51,7 +43,6 @@ const AdventureList = ({
             {adventures.map(adventure => (
                 <>
                     <Card className='viewTitle' key={adventure._id}>
-                        {console.log(`ADVENTURE ID: ${adventure._id}`)}
                         <Card.Body>
                             <Card.Title>{adventure.adventureTitle}</Card.Title>
                             <p className='small'>by: {adventure.adventureAuthor}</p>
@@ -84,25 +75,11 @@ const AdventureList = ({
                             <Modal.Body>
                                 <Tab.Content>
                                     <Tab.Pane eventKey='title'>
-                                        {/* <LoginForm handleModalClose={() => setShowModal(false)} /> */}
                                     </Tab.Pane>
                                 </Tab.Content>
                             </Modal.Body>
                         </Tab.Container>
                     </Modal>
-
-                    {/* 
-            <div>
-                {adventure.comments.length && adventure.comments.map(comment => (
-                    <>
-                        <h5>
-                            {comment.commentText}
-                        </h5>
-                        <h6>by {comment.commentAuthor}</h6>
-                    </>
-                ))}
-                {!adventure.comments.length && <h5>No comments yets.</h5>}
-            </div> */}
                 </>
             ))}
         </>

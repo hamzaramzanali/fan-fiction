@@ -1,12 +1,8 @@
-//this renders but adding is not working
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-
 import { ADD_COMMENT } from '../utils/mutations';
-
 import Auth from '../utils/auth';
-
 import '../css/commentsPage.css'
 
 const CommentForm = ({ adventureId }) => {
