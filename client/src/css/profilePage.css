@@ -39,6 +39,11 @@
 
 }
 
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #8a1101a2 !important;
+}
+
 /* View Your Profile Center */
 .profileCard {
     display: contents !important;
@@ -74,6 +79,7 @@
     font-weight: bold;
     font-size: revert;
     text-align: center;
+    margin-bottom: revert;
 }
 
 #characterCount {
@@ -83,9 +89,10 @@
     text-align: center;
 }
 
-.adventureForm {
+/* .adventureForm {
     margin:5px !important;
-}
+    max-width: inherit;
+} */
 
 .adventureTitle {
     max-width: inherit !important; 

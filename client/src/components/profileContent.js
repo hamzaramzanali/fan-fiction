@@ -39,9 +39,9 @@ const { data } = useQuery(QUERY_ME);
                         <ProfileAside currentComponent={currentComponent} handleComponentChange={handleComponentChange} className="profileAside mt-3" />
                     </Col>
                     <Col className="profileContent">
-                        <h2 className="profileHead col-12 col-md-10 text-light p-3 mb-5">
+                        {/* <h2 className="profileHead col-12 col-md-10 text-light p-3 mb-5">
                             Your Adventures
-                        </h2>
+                        </h2> */}
                         {renderComponent()}
                     </Col>
                     <Col className="characterCol">

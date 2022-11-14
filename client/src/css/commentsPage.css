@@ -28,6 +28,14 @@
     max-width: none !important;
 }
 
+.adventureBody {
+    color: #880f00;
+    font-weight: bolder;
+    font-size: revert;
+    text-align: center;
+    margin-bottom: revert;
+}
+
 /* Comment List JS File */
 .commentText {
     color: #880f00;
@@ -40,3 +48,25 @@
 
 }
 
+.commentCard{
+    background-color: #880f00 !important;
+
+}
+
+.commentBody {
+    color: #880f00;
+    font-weight: bolder;
+    font-size: revert;
+    text-align: center;
+}
+
+#commentHeader {
+    color: #880f00;
+    font-weight: bolder;
+    font-size: revert;
+    text-align: center;
+}
+
+.commentForm {
+    max-width: inherit !important; 
+}

@@ -53,14 +53,14 @@ const CommentForm = ({ adventureId }) => {
               characterCount === 280 || error ? 'text-danger' : ''
             }`}
           >
-            Character Count: {characterCount}/280
-            {error && <span className="adventureBody ml-2">{error.message}</span>}
+            {/* Character Count: {characterCount}/280
+            {error && <span className="adventureBody ml-2">{error.message}</span>} */}
           </p>
           <form
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
-            <div className="col-12 col-lg-9">
+            <div className="commentForm col-12 col-lg-9">
               <textarea
                 name="commentText"
                 placeholder="Add your comment..."
