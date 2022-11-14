@@ -40,3 +40,6 @@
 
 }
 
+.commentAuthor:hover {
+    visibility: visible;
+}
