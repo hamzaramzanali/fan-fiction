@@ -223,7 +223,7 @@ const AdventureList = ({
                                 <Button 
                                 
                                 data-key={selectedAdventure && selectedAdventure._id}
-                                className="btn-block mt-2" variant="success" type="submit" >Update This Adventure</Button>
+                                className="updateBtnModal btn-block mt-2" variant="success" type="submit" >Update This Adventure</Button>
                             </Form.Group>
                         </Form>
                     </Modal.Body>

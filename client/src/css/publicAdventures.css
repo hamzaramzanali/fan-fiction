@@ -25,6 +25,7 @@
     color: #880f00;
     font-weight: bold;
     font-size: revert;
+    margin-bottom: revert;
 }
 
 .card {
@@ -37,4 +38,6 @@
     background-clip: border-box;
     border: 3px dotted rgb(136 15 0) !important;
     border-radius: 0.25rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
