@@ -92,7 +92,8 @@
 .adventureTitle {
     max-width:max-content !important;
     display:inline-block !important;
-    width: max-content !important;
+    /* This bottom line of code  */
+    /* width: max-content !important; */
 }
 
 /* Random Character */
@@ -110,5 +111,5 @@
     display: flex;
     align-content: center;
     flex-direction: column;
-    margin: 5rem;
+    margin-top: 5rem;
 }

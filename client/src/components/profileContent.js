@@ -32,7 +32,7 @@ const { data } = useQuery(QUERY_ME);
     const handleComponentChange = (component) => setCurrentComponent(component);
 
     return (
-        <>
+        
             <div>
                 {/* We are passing the currentComponent from state and the function to update it */}
                 {/* <ProfileAside currentComponent={currentComponent} handleComponentChange={handleComponentChange} /> */}
@@ -56,7 +56,6 @@ const { data } = useQuery(QUERY_ME);
                 {/* Here we are calling the renderComponent method which will return a component  */}
 
             </div>
-        </>
     );
 
 }
