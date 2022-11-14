@@ -18,7 +18,8 @@ const CommentForm = ({ adventureId }) => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    try {
+    try
+    {
       const { data } = await addComment({
         variables: {
           adventureId,
@@ -28,7 +29,8 @@ const CommentForm = ({ adventureId }) => {
       });
 
       setCommentText('');
-    } catch (err) {
+    } catch (err)
+    {
       console.error(err);
     }
   };
@@ -36,15 +38,17 @@ const CommentForm = ({ adventureId }) => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'commentText' && value.length <= 280) {
+    if (name === 'commentText' && value.length <= 280)
+    {
       setCommentText(value);
       setCharacterCount(value.length);
     }
   };
 
   return (
-    <div >
-      <h4 className='adventureBody'>What are your thoughts on this thought?</h4>
+    <>
+      <div >
+        <h4 className='adventureBody'>What are your thoughts on this adventure?</h4>
 
       {Auth.loggedIn() ? (
         <>
@@ -71,20 +75,21 @@ const CommentForm = ({ adventureId }) => {
               ></textarea>
             </div>
 
-            <div className="col-12 col-lg-3">
-              <button className="addCommentBtn btn btn-primary btn-block py-3" type="submit">
-                Add Comment
-              </button>
-            </div>
-          </form>
-        </>
-      ) : (
-        <p className='adventureBody'>
-          You need to be logged in to share your thoughts. Please{' '}
-          <Link className='adventureBody' to="/login">login</Link> or <Link to="/signup">signup.</Link>
-        </p>
-      )}
-    </div>
+              <div className="commentBtn col-12 col-lg-3">
+                <button className="addCommentBtn btn btn-primary btn-block py-3" type="submit">
+                  Add Comment
+                </button>
+              </div>
+            </form>
+          </>
+        ) : (
+          <p className='adventureBody'>
+            You need to be logged in to share your thoughts. Please{' '}
+            <Link className='adventureBody' to="/login">login</Link> or <Link to="/signup">signup.</Link>
+          </p>
+        )}
+      </div>
+    </>
   );
 };
 

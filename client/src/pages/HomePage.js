@@ -3,6 +3,7 @@ import '../css/homepage.css';
 
 function HomePage() {
     return (
+        <>
         <div>
          
             <div className="wrapper">
@@ -21,6 +22,7 @@ function HomePage() {
                 </div>
             </div>
         </div>
+        </>
     )
 }
 

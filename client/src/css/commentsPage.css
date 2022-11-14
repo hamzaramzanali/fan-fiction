@@ -17,9 +17,16 @@
     background-color:#880f00 !important;
     border-color:#880f00 !important;
     color: #f8f9fa !important;
+    width: -webkit-fill-available;
 }
 
+.commentBtn {
+    max-width:none !important;
+}
 
+.textArea {
+    max-width: none !important;
+}
 
 /* Comment List JS File */
 .commentText {
