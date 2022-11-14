@@ -24,6 +24,7 @@ const CommunityPage = () => {
   console.log(adventures);
   
   return (
+    <>
     <Container>
       <Row>
         <Col>
@@ -42,6 +43,7 @@ const CommunityPage = () => {
         </Col>
       </Row>
     </Container>
+    </>
   )
 }
 
