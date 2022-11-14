@@ -44,17 +44,17 @@ const CommentForm = ({ adventureId }) => {
 
   return (
     <div >
-      <h4 className='thoughtText'>What are your thoughts on this thought?</h4>
+      <h4 className='adventureBody'>What are your thoughts on this thought?</h4>
 
       {Auth.loggedIn() ? (
         <>
-          <p id='thoughtText'
+          <p id='adventureBody'
             className={`m-0 ${
               characterCount === 280 || error ? 'text-danger' : ''
             }`}
           >
             Character Count: {characterCount}/280
-            {error && <span className="thoughtText ml-2">{error.message}</span>}
+            {error && <span className="adventureBody ml-2">{error.message}</span>}
           </p>
           <form
             className="flex-row justify-center justify-space-between-md align-center"
@@ -79,9 +79,9 @@ const CommentForm = ({ adventureId }) => {
           </form>
         </>
       ) : (
-        <p className='thoughtText'>
+        <p className='adventureBody'>
           You need to be logged in to share your thoughts. Please{' '}
-          <Link className='thoughtText' to="/login">login</Link> or <Link to="/signup">signup.</Link>
+          <Link className='adventureBody' to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}
     </div>

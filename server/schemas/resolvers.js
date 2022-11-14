@@ -19,6 +19,7 @@ const resolvers = {
             return Adventure.find(params).sort({ createdAt: -1 });
         },
         adventure: async (parent, { adventureId }) => {
+            console.log('AdId', adventureId)
             return Adventure.findOne({ _id: adventureId });
         },
         // get All Adventures
