@@ -102,7 +102,7 @@ const AddAdventure = () => {
               className={`m-0 ${characterCount === 280 || error ? 'text-danger' : ''
                 }`}
             >
-              Character Count: {characterCount}/280
+              {/* Character Count: {characterCount}/280 */}
             </p>
             <form
               className="adventureForm flex-row justify-center justify-space-between-md align-center"
@@ -113,14 +113,14 @@ const AddAdventure = () => {
                   name="adventureTitle"
                   placeholder="Title your Adventure"
                   value={adventureForm.adventureTitle}
-                  className="form-input"
+                  className="form-input w-100"
                   onChange={handleChange}
                 ></textarea>
                 <textarea
                   name="adventureBody"
                   placeholder="Once upon in the Marvel Universe..."
                   value={adventureForm.adventureBody}
-                  className="form-input"
+                  className="form-input w-100"
                   onChange={handleChange}
                 ></textarea>
               </div>
