@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
-// import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import { Card, Button, Modal, Nav, Tab, InputGroup, Form } from 'react-bootstrap';
 import { useMutation } from '@apollo/client'
-// import { QUERY_ME } from '../utils/queries';
 import { REMOVE_ADVENTURE, UPDATE_ADVENTURE } from '../utils/mutations';
 import Auth from '../utils/auth';
 import { QUERY_ADVENTURES, QUERY_ME } from '../utils/queries';
-// import { removeAdventureId } from '../utils/localStorage';
 import '../css/viewAdventures.css'
-
 
 const AdventureList = ({
     adventures,
@@ -19,14 +15,13 @@ const AdventureList = ({
         adventureBody: '',
     })
     const [selectedAdventure, setSelectedAdventure] = useState()
+
     const [deleteAdventure] = useMutation(REMOVE_ADVENTURE);
 
     // set modal display state
     const [showModal, setShowModal] = useState(false);
 
     const [updateAdventure, { error }] = useMutation(UPDATE_ADVENTURE, {
-        // const { loading, data } = useQuery(QUERY_ME);
-        // const userData = data?.me || [];
 
         update(cache, { data: { updateAdventure } }) {
             try {
@@ -76,15 +71,11 @@ const AdventureList = ({
                     adventureId: adventureId,
                 },
             });
-            console.log(data);
             setAdventureForm({
                 adventureTitle: '',
                 adventureBody: '',
                 characterCount: 0
             })
-
-            // setAdventureTitle('');
-            // setAdventureBody('');
         } catch (err) {
             console.error(err);
         }
@@ -93,19 +84,11 @@ const AdventureList = ({
     const handleChange = (event) => {
         const { name, value } = event.target;
 
-        // if (name === 'adventureTitle' && value.length <= 500) {
         setAdventureForm({
             ...adventureForm,
             [name]: value,
             characterCount: value.length
         })
-        // setAdventureTitle(value);
-        // setCharacterCount(value.length);
-        // }
-        // else if (name === 'adventureBody' && value.length <= 500) {
-        //   setAdventureBody(value);
-        //   setCharacterCount(value.length);
-        // }
     };
 
     const handleDeleteAdventure = async (adventureId) => {
@@ -128,27 +111,6 @@ const AdventureList = ({
         }
     };
 
-    // const handleUpdateAdventure = async (adventureId) => {
-    //     const token = Auth.loggedIn() ? Auth.getToken() : null;
-
-
-    //     if (!token) {
-    //         return false;
-    //     }
-
-    //     try {
-    //         const updatedAdventure = await updateAdventure({
-    //             variables: { adventureId }
-    //         })
-    //         if (!updatedAdventure) {
-    //             console.log(`ERROR`)
-    //         }
-
-    //     } catch (err) {
-    //         console.error(err);
-    //     }
-    // }
-
     return (
         <>
             {adventures.map(adventure => (
@@ -166,18 +128,6 @@ const AdventureList = ({
                             <Button className='deleteBtn btn-block btn-danger' onClick={() => handleDeleteAdventure(adventure._id)}>Delete Button</Button>
                         </Card.Body>
                     </Card>
-                    {/* 
-            <div>
-                {adventure.comments.length && adventure.comments.map(comment => (
-                    <>
-                        <h5>
-                            {comment.commentText}
-                        </h5>
-                        <h6>by {comment.commentAuthor}</h6>
-                    </>
-                ))}
-                {!adventure.comments.length && <h5>No comments yets.</h5>}
-            </div> */}
                 </>
             ))}
             <Modal

@@ -10,12 +10,10 @@ import '../css/profilePage.css'
 
 const ProfileContent = () => {
     const [currentComponent, setCurrentComponent] = useState("addAdventure");
-
     
 const { data } = useQuery(QUERY_ME);
 
-
-    const user = data?.me || data?.user || [];
+     const user = data?.me || data?.user || [];
     
     const renderComponent = () => {
         if (currentComponent === "addAdventure")
@@ -35,7 +33,6 @@ const { data } = useQuery(QUERY_ME);
         <>
             <div>
                 {/* We are passing the currentComponent from state and the function to update it */}
-                {/* <ProfileAside currentComponent={currentComponent} handleComponentChange={handleComponentChange} /> */}
 
                 <Row className="profileAlignment">
                     <Col>

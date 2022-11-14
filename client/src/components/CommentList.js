@@ -1,7 +1,6 @@
 import React from 'react';
 import '../css/commentsPage.css'
 
-
 const CommentList = ({ comments = [] }) => {
   if (!comments.length) {
     return <h3 className="commentText">No Comments Yet</h3>;
