@@ -5,6 +5,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #e9ecef !important;
 }
+/* 
+input:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-image: none !important;
+  background-color: -internal-light-dark(#880f0054, #700e0154) !important;
+  color: fieldtext !important;
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #880f0054 !important;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem #880f0054;
+} */
 
 /* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

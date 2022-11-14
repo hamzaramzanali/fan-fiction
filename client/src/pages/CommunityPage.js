@@ -10,12 +10,14 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card'
 
-const styles = {
-  text: {
-    margin: 200
-  },
+// const styles = {
+//   text: {
+//     margin: 200
+//   },
 
-}
+// }
+
+// style={styles.text}
 
 
 const CommunityPage = () => {
@@ -24,11 +26,12 @@ const CommunityPage = () => {
   console.log(adventures);
   
   return (
+    <>
     <Container>
       <Row>
         <Col>
           <Card>
-            <Card.Title style={styles.text}>
+            <Card.Title>
               {loading ? (
                 <div>Loading...</div>
               ) : (
@@ -42,6 +45,7 @@ const CommunityPage = () => {
         </Col>
       </Row>
     </Container>
+    </>
   )
 }
 
