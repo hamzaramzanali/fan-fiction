@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import ProfileAside from "./ProfileAside";
 import AddAdventure from "./AddAdventure";
 import AdventureList from "./AdventureList";
@@ -11,12 +11,16 @@ import '../css/profilePage.css'
 const ProfileContent = () => {
     const [currentComponent, setCurrentComponent] = useState("addAdventure");
 
-    const { data } = useQuery(QUERY_ME);
+    
+const { data } = useQuery(QUERY_ME);
+
 
     console.log(`DATA: ${data}`);
 
-    const user = data?.me || data?.user || [];
+     const user = data?.me || data?.user || [];
 
+
+    
     const renderComponent = () => {
         if (currentComponent === "addAdventure")
         {

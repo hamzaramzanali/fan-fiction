@@ -48,30 +48,32 @@ const CommentForm = ({ adventureId }) => {
   return (
     <>
       <div >
-        <h4 className='thoughtText'>What are your thoughts on this adventure?</h4>
+        <h4 className='adventureBody'>What are your thoughts on this adventure?</h4>
 
-        {Auth.loggedIn() ? (
-          <>
-            <p id='thoughtText'
-              className={`m-0 ${characterCount === 280 || error ? 'text-danger' : ''
-                }`}
-            >
-              Character Count: {characterCount}/280
-              {error && <span className="thoughtText ml-2">{error.message}</span>}
-            </p>
-            <form
-              className="flex-row justify-center justify-space-between-md align-center"
-              onSubmit={handleFormSubmit}
-            >
-              <div className="textArea col-12 col-lg-9">
-                <textarea
-                  name="commentText"
-                  placeholder="Add your comment..."
-                  value={commentText}
-                  className="form-input w-100"
-                  onChange={handleChange}
-                ></textarea>
-              </div>
+      {Auth.loggedIn() ? (
+        <>
+          <p id='adventureBody'
+            className={`m-0 ${
+              characterCount === 280 || error ? 'text-danger' : ''
+            }`}
+          >
+            Character Count: {characterCount}/280
+            {error && <span className="adventureBody ml-2">{error.message}</span>}
+          </p>
+          <form
+            className="flex-row justify-center justify-space-between-md align-center"
+            onSubmit={handleFormSubmit}
+          >
+            <div className="col-12 col-lg-9">
+              <textarea
+                name="commentText"
+                placeholder="Add your comment..."
+                value={commentText}
+                className="form-input w-100"
+                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                onChange={handleChange}
+              ></textarea>
+            </div>
 
               <div className="commentBtn col-12 col-lg-3">
                 <button className="addCommentBtn btn btn-primary btn-block py-3" type="submit">
@@ -81,9 +83,9 @@ const CommentForm = ({ adventureId }) => {
             </form>
           </>
         ) : (
-          <p className='thoughtText'>
+          <p className='adventureBody'>
             You need to be logged in to share your thoughts. Please{' '}
-            <Link className='thoughtText' to="/login">login</Link> or <Link to="/signup">signup.</Link>
+            <Link className='adventureBody' to="/login">login</Link> or <Link to="/signup">signup.</Link>
           </p>
         )}
       </div>

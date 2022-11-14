@@ -32,27 +32,15 @@ const SingleAdventure = () => {
     return <div>Loading...</div>;
   }
   return (
-    <>
-      <div className="my-3" style={styles}>
-        <h3 className=" thoughtHeader card-header text-light p-2 m-0">
-          {adventure.adventureAuthor} <br />
-          <span style={{ fontSize: '1rem' }}>
-            created this adventure at {adventure.createdAt}
-          </span>
-        </h3>
-        <div className="bg-light py-4">
-          <blockquote
-            className="p-4"
-            style={{
-              fontSize: '1.5rem',
-              fontStyle: 'italic',
-              border: '2px dotted #880f00',
-              lineHeight: '1.5',
-            }}
-          >
-            {adventure.adventureText}
-          </blockquote>
-        </div>
+    <div className="my-3" style={styles}>
+      <h3 className=" thoughtHeader card-header text-light p-2 m-0">
+        {adventure.adventureAuthor} <br />
+        <span style={{ fontSize: '1rem' }}>
+          created this adventure at {adventure.createdAt}
+        </span>
+      </h3>
+      <div className="bg-light py-4">Adventure: {adventure.adventureBody}
+      </div>
 
         <div className="my-5">
           <CommentList comments={adventure.comments} />

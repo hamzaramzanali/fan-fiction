@@ -63,6 +63,8 @@ const AddAdventure = () => {
         characterCount: 0
       })
 
+      window.location.assign('/')
+
       // setAdventureTitle('');
       // setAdventureBody('');
     } catch (err)
