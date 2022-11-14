@@ -38,18 +38,7 @@ const SingleAdventure = () => {
           created this adventure at {adventure.createdAt}
         </span>
       </h3>
-      <div className="bg-light py-4">
-        <blockquote
-          className="p-4"
-          style={{
-            fontSize: '1.5rem',
-            fontStyle: 'italic',
-            border: '2px dotted #880f00',
-            lineHeight: '1.5',
-          }}
-        >
-          {adventure.adventureText}
-        </blockquote>
+      <div className="bg-light py-4">Adventure: {adventure.adventureBody}
       </div>
 
       <div className="my-5">
