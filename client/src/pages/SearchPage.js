@@ -167,7 +167,7 @@ const SearchCharacters = () => {
                 <Modal.Title id='signup-modal'>
                   <Nav variant='pills'>
                     <Nav.Item>
-                      <Nav.Link className=" updateBtn active" eventKey='updateBtnModal'>Start Adventure for {selectedHero && selectedHero.name}</Nav.Link>
+                      <Nav.Link className=" startTitle active" eventKey='updateBtnModal'>Start Adventure for {selectedHero && selectedHero.name}</Nav.Link>
                     </Nav.Item>
                   </Nav>
                 </Modal.Title>
@@ -190,7 +190,7 @@ const SearchCharacters = () => {
                       value={adventureForm.adventureBody}
                       onChange={handleChange}
                     />
-                    <Button className="btnDesign btn-block mt-2" variant="success" type="submit" >Create This Adventure</Button>
+                    <Button className="addBtn btn-block mt-2" variant="success" type="submit" >Create This Adventure</Button>
                   </Form.Group>
                 </Form>
               </Modal.Body>
