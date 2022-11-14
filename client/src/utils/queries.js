@@ -65,6 +65,7 @@ export const QUERY_SINGLE_ADVENTURE = gql`
   query adventure($adventureId: ID!) {
     adventure(adventureId: $adventureId) {
       _id
+      adventureAuthor
       adventureTitle
       adventureBody
       createdAt

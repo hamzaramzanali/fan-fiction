@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import ProfileAside from "./ProfileAside";
 import AddAdventure from "./AddAdventure";
 import AdventureList from "./AdventureList";
@@ -11,16 +11,20 @@ import '../css/profilePage.css'
 const ProfileContent = () => {
     const [currentComponent, setCurrentComponent] = useState("addAdventure");
 
-    const { data } = useQuery(QUERY_ME);
+    
+const { data } = useQuery(QUERY_ME);
+
 
     const user = data?.me || data?.user || [];
     
     const renderComponent = () => {
-        if (currentComponent === "addAdventure") {
+        if (currentComponent === "addAdventure")
+        {
             return <AddAdventure />
         }
-        if (currentComponent === "viewYourAdventure") {
-            return <AdventureList adventures={user.adventures}/>
+        if (currentComponent === "viewYourAdventure")
+        {
+            return <AdventureList adventures={user.adventures} />
         }
         // last one will be view contributions
     }
@@ -28,26 +32,31 @@ const ProfileContent = () => {
     const handleComponentChange = (component) => setCurrentComponent(component);
 
     return (
-        <div>
-            {/* We are passing the currentComponent from state and the function to update it */}
-            {/* <ProfileAside currentComponent={currentComponent} handleComponentChange={handleComponentChange} /> */}
+        <>
+            <div>
+                {/* We are passing the currentComponent from state and the function to update it */}
+                {/* <ProfileAside currentComponent={currentComponent} handleComponentChange={handleComponentChange} /> */}
 
-            <Row>
-                <Col>
-                    <ProfileAside currentComponent={currentComponent} handleComponentChange={handleComponentChange} className="profileAside mt-3"/>
-                </Col>
-                <Col className="profileContent">
-                    <h2 className="profileHead col-12 col-md-10 text-light p-3 mb-5">
-                        Your Profile
-                    </h2>
-                    {renderComponent()}
-                </Col>
-                <Col className="characterCol">
-                    <h2 className="characterTitle">Random Character</h2>
-                    <DailyCharacter />
-                </Col>
-            </Row>
-        </div>
+                <Row className="profileAlignment">
+                    <Col>
+                        <ProfileAside currentComponent={currentComponent} handleComponentChange={handleComponentChange} className="profileAside mt-3" />
+                    </Col>
+                    <Col className="profileContent">
+                        <h2 className="profileHead col-12 col-md-10 text-light p-3 mb-5">
+                            Your Adventures
+                        </h2>
+                        {renderComponent()}
+                    </Col>
+                    <Col className="characterCol">
+                        <h2 className="characterTitle">Random Character</h2>
+                        <DailyCharacter />
+                    </Col>
+                </Row>
+
+                {/* Here we are calling the renderComponent method which will return a component  */}
+
+            </div>
+        </>
     );
 
 }

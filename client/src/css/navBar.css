@@ -49,6 +49,12 @@ nav {
   outline: 0;
 }
 
-.form-control {
+/* .form-control {
   background-color: #880f0054 !important;
+} */
+
+#inputBackground  {
+ 
+  background-image: none !important;
+  background-color:(#880f0054, #dfc0bc54) !important;
 }

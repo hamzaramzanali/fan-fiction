@@ -46,14 +46,17 @@ const Profile = () => {
     }
     if (!user?.username) {
         return (
+            <>
             <h4>
                 You need to be logged in to see this. Use the navigation links above to
                 sign up or log in!
             </h4>
+            </>
         );
     }
     console.log(user.username);
     return (
+        <>
         <Container className="profile">
                     <ProfileContent />
             {/* {/* <Row> */}
@@ -123,6 +126,7 @@ const Profile = () => {
 
 
          </Container>
+         </>
 
     );
 };

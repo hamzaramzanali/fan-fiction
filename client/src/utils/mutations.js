@@ -77,7 +77,8 @@ export const ADD_COMMENT = gql`
   mutation addComment($adventureId: ID!, $commentText: String!) {
     addComment(adventureId: $adventureId, commentText: $commentText) {
       _id
-      adventureText
+      adventureTitle
+      adventureBody
       adventureAuthor
       createdAt
       comments {
@@ -87,7 +88,7 @@ export const ADD_COMMENT = gql`
       }
     }
   }
-  `;
+`;
 
 
 export const DELETE_ADVENTURE = gql`

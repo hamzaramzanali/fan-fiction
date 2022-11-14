@@ -24,6 +24,7 @@ const typeDefs = gql`
     adventureBody: String
     adventureAuthor: String
     createdAt: String
+    comments: [Comment]!
   }
 
   type Character {
