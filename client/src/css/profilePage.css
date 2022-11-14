@@ -5,8 +5,6 @@
 
 }
 
-
-
 /* Side Nav */
 .profileAside {
     align-content: center;
@@ -90,7 +88,7 @@
 }
 
 .adventureTitle {
-    max-width:max-content !important;
+    max-width: inherit !important; 
     display:inline-block !important;
     width: max-content !important;
 }

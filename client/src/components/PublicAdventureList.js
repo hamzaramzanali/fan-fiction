@@ -3,17 +3,6 @@ import { Link } from 'react-router-dom';
 import { Container, Row, Col, Card, Button, Modal, Form, InputGroup } from 'react-bootstrap';
 import '../css/publicAdventures.css'
 
-//className to text so user can only see a snippet forcing them to click on it to hopefully add their continuation 
-
-
-// const styles = {
-//     card: {
-//         width: 350
-//     },
-// }
-
-// style={styles.card}
-
 const PublicAdventureList = ({
     adventures,
 }) => {
@@ -45,11 +34,6 @@ const PublicAdventureList = ({
                 </Container>
             </div>
         </>
-
-
-
-
-
     );
 };
 

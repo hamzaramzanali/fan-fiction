@@ -5,18 +5,11 @@ import { randomCharacterGenerator } from '../utils/random';
 import Auth from '../utils/auth';
 import '../css/profilePage.css'
 
-// const heroesArr = [
-//     "Captain America",
-//     "Black Widow",
-//     "Hulk"
-// ]
-
 const CharacterGenerator = async () => {
     const [randomCharacter, setRandomCharacter] = useState([]);
 
     try {
         let response = await randomCharacterGenerator();
-        console.log(`RESPONSE: ${response.data}`);
         response = response.data.results;
 
         const characterData = response.map((character) => ({
@@ -32,15 +25,6 @@ const CharacterGenerator = async () => {
     catch (err) {
         console.error(err);
     }
-
-    // console.log(`RESPONSE: ${response.data.results[1].name}`);
-
-
-    // if(response.code === 200) {
-    //     setResults(response.data.results);
-    //     return;
-    // }
-    // setResults(response.data.results);
 
     useEffect(() => {
         randomCharacter();
@@ -60,10 +44,6 @@ const CharacterGenerator = async () => {
                                     <Card.Title>{character.name}</Card.Title>
                                     <p className='small'>Description: {character.description}</p>
                                     <Card.Text>{character.description}</Card.Text>
-                                    {/* <Button
-                                        className='btn-block btn-info'
-                                        onClick
-                                    </Button> */}
                                 </Card.Body>
                             </Card>
                         );
@@ -71,7 +51,6 @@ const CharacterGenerator = async () => {
                 </CardColumns>
             </Container>
         </>
-
     );
 };
 

@@ -19,7 +19,6 @@ const resolvers = {
             return Adventure.find(params).sort({ createdAt: -1 });
         },
         adventure: async (parent, { adventureId }) => {
-            console.log('AdId', adventureId)
             return Adventure.findOne({ _id: adventureId });
         },
         // get All Adventures
@@ -67,7 +66,6 @@ const resolvers = {
         // addAdventure resolver, grabbing user input in a destructured object format in args, context will have user data from the front end
         addAdventure: async (parent, { adventureTitle, adventureBody }, context) => {
             // grabbing user info from context
-            console.log(`CONTEXT USER: ${context.user.username}`);
             if (context.user) {
                 // creating a new adventure
                 const adventure = await Adventure.create({
@@ -90,15 +88,12 @@ const resolvers = {
         },
         saveCharacter: async (parent, { characterInput }, context) => {
             // method 1
-            console.log(`saveCharacter 1`)
             if (context.user) {
-                console.log(`saveCharacter 2`)
                 const updatedUser = await User.findOneAndUpdate(
                     { _id: context.user._id },
                     { $addToSet: { savedCharacters: characterInput } },
                     { new: true, runValidators: true }
                 )
-                console.log(`saveCharacter 3`)
                 return updatedUser;
             }
             throw new AuthenticationError('You need to be logged in!');

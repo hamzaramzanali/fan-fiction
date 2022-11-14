@@ -3,11 +3,9 @@ import search from '../utils/baseAPI';
 import { Button, Card, Modal, Nav, Tab, InputGroup, Form } from 'react-bootstrap';
 import '../css/profilePage.css'
 import { useMutation } from '@apollo/client';
-import { Link } from 'react-router-dom';
 import { ADD_ADVENTURE } from '../utils/mutations';
 import { QUERY_ADVENTURES, QUERY_ME } from '../utils/queries';
 
-import Auth from '../utils/auth';
 
 const DailyCharacter = () => {
   const [character, setCharacter] = useState([]);
@@ -158,4 +156,3 @@ const DailyCharacter = () => {
 
 
 export default DailyCharacter;
-
