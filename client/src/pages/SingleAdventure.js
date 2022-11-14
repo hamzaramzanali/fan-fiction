@@ -31,7 +31,7 @@ const SingleAdventure = () => {
           created this adventure at {adventure.createdAt}
         </span>
       </h3>
-      <div className="bg-light py-4">Adventure: {adventure.adventureBody}
+      <div className="bg-light py-4"> {adventure.adventureBody}
       </div>
 
         <div className="my-5">

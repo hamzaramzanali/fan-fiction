@@ -190,7 +190,7 @@ const SearchCharacters = () => {
                       value={adventureForm.adventureBody}
                       onChange={handleChange}
                     />
-                    <Button className="btn-block mt-2" variant="success" type="submit" >Create This Adventure</Button>
+                    <Button className="btnDesign btn-block mt-2" variant="success" type="submit" >Create This Adventure</Button>
                   </Form.Group>
                 </Form>
               </Modal.Body>

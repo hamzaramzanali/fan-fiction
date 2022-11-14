@@ -5,6 +5,7 @@ import { REMOVE_ADVENTURE, UPDATE_ADVENTURE } from '../utils/mutations';
 import Auth from '../utils/auth';
 import { QUERY_ADVENTURES, QUERY_ME } from '../utils/queries';
 import '../css/viewAdventures.css'
+import { Link } from 'react-router-dom';
 
 const AdventureList = ({
     adventures,
@@ -24,7 +25,8 @@ const AdventureList = ({
     const [updateAdventure, { error }] = useMutation(UPDATE_ADVENTURE, {
 
         update(cache, { data: { updateAdventure } }) {
-            try {
+            try
+            {
                 const { adventure } = cache.readQuery({
                     query:
                         QUERY_ADVENTURES
@@ -34,7 +36,8 @@ const AdventureList = ({
                     query: QUERY_ADVENTURES,
                     data: { adventures: [updateAdventure, ...adventure] },
                 })
-            } catch (err) {
+            } catch (err)
+            {
                 console.error(err);
             }
 
@@ -56,7 +59,8 @@ const AdventureList = ({
         setShowModal(true);
     }
 
-    if (!adventures.length) {
+    if (!adventures.length)
+    {
         return <h4>No adventures, yet. Create a new adventure!</h4>
     }
 
@@ -64,7 +68,8 @@ const AdventureList = ({
         event.preventDefault();
         let adventureId = event.target.dataset.key;
         setShowModal(false);
-        try {
+        try
+        {
             const { data } = await updateAdventure({
                 variables: {
                     ...adventureForm,
@@ -76,7 +81,8 @@ const AdventureList = ({
                 adventureBody: '',
                 characterCount: 0
             })
-        } catch (err) {
+        } catch (err)
+        {
             console.error(err);
         }
     };
@@ -94,19 +100,23 @@ const AdventureList = ({
     const handleDeleteAdventure = async (adventureId) => {
         const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-        if (!token) {
+        if (!token)
+        {
             return false;
         }
 
-        try {
+        try
+        {
             const deletedAdventure = await deleteAdventure({
                 variables: { adventureId }
             })
-            if (!deletedAdventure) {
+            if (!deletedAdventure)
+            {
                 console.log(`ERROR`)
             }
 
-        } catch (err) {
+        } catch (err)
+        {
             console.error(err);
         }
     };
@@ -117,8 +127,9 @@ const AdventureList = ({
                 <>
                     <Card className='viewTitle' key={adventure._id}>
                         <Card.Body>
-                            <Card.Title>{adventure.adventureTitle}</Card.Title>
-                            <p className='small'>by: {adventure.adventureAuthor}</p>
+                            <Nav.Link className="viewTitle active" as={Link} to={`/adventure/${adventure._id}`}>
+                                <Card.Title>{adventure.adventureTitle}</Card.Title>
+                            </Nav.Link>                            <p className='small'>by: {adventure.adventureAuthor}</p>
                             <Card.Body>
                                 <div>
                                     <Card.Text >{adventure.adventureBody}</Card.Text>
@@ -149,8 +160,8 @@ const AdventureList = ({
                     </Modal.Header>
                     <Modal.Body>
                         <Form
-                        data-key={selectedAdventure && selectedAdventure._id} 
-                        onSubmit={handleUpdateFormSubmit}>
+                            data-key={selectedAdventure && selectedAdventure._id}
+                            onSubmit={handleUpdateFormSubmit}>
                             <Form.Group className="mb-3" >
                                 <Form.Label>Adventure Title</Form.Label>
                                 <textarea
@@ -170,10 +181,10 @@ const AdventureList = ({
                                 >
                                     {selectedAdventure && selectedAdventure.adventureBody}
                                 </textarea>
-                                <Button 
-                                
-                                data-key={selectedAdventure && selectedAdventure._id}
-                                className="updateBtnModal btn-block mt-2" variant="success" type="submit" >Update This Adventure</Button>
+                                <Button
+
+                                    data-key={selectedAdventure && selectedAdventure._id}
+                                    className="updateBtnModal btn-block mt-2" variant="success" type="submit" >Update This Adventure</Button>
                             </Form.Group>
                         </Form>
                     </Modal.Body>
