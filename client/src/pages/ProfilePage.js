@@ -11,9 +11,9 @@ import Container from 'react-bootstrap/Container';
 // import ProfileAside from '../components/ProfileAside';
 import ProfileContent from '../components/profileContent';
 // import RandomCharacterGenerator from '../components/RandomCharacter';
-import AddAdventure from '../components/AddAdventure';
-import AdventureList from '../components/AdventureList'
-import DailyCharacter from '../components/DailyCharacter';
+// import AddAdventure from '../components/AddAdventure';
+// import AdventureList from '../components/AdventureList'
+// import DailyCharacter from '../components/DailyCharacter';
 
 import { QUERY_ME } from '../utils/queries';
 // QUERY_USER,

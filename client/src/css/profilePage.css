@@ -29,14 +29,15 @@
 }
 
 #addAdventureNav {
-    color: #e9ecef !important;
-    background-color: #880f00 !important;
+    /* color: #880f00 !important; */
+    /* background-color: #880f00 !important; */
     border-color: #880f00 !important;
 }
 
 #viewAdventuresNav {
-    color: #880f00 !important;
-    background-color: #e9ecef !important;
+    /* color: #880f00 !important; */
+    /* background-color: #e9ecef !important; */
+    border-color: #880f00 !important;
 
 }
 

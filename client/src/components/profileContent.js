@@ -15,11 +15,7 @@ const ProfileContent = () => {
 const { data } = useQuery(QUERY_ME);
 
 
-    console.log(`DATA: ${data}`);
-
-     const user = data?.me || data?.user || [];
-
-
+    const user = data?.me || data?.user || [];
     
     const renderComponent = () => {
         if (currentComponent === "addAdventure")
