@@ -5,6 +5,7 @@ import '../css/profilePage.css'
 import { useMutation } from '@apollo/client';
 import { ADD_ADVENTURE } from '../utils/mutations';
 import { QUERY_ADVENTURES, QUERY_ME } from '../utils/queries';
+import '../css/viewAdventures.css'
 
 
 const DailyCharacter = () => {
@@ -115,7 +116,7 @@ const DailyCharacter = () => {
             <Modal.Title id='signup-modal'>
               <Nav variant='pills'>
                 <Nav.Item>
-                  <Nav.Link className=" updateBtn active" eventKey='updateBtnModal'>Start Adventure for {character.name}</Nav.Link>
+                  <Nav.Link id="characterTitle" className="active" eventKey='updateBtnModal'>Start Adventure for {character.name}</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Modal.Title>
@@ -144,7 +145,7 @@ const DailyCharacter = () => {
                   
                   
                 ></textarea> */}
-                <Button className="btn-block mt-2" variant="success" type="submit" >Create This Adventure</Button>
+                <Button className="updateBtnModal btn-block mt-2" variant="success" type="submit" >Create This Adventure</Button>
               </Form.Group>
             </Form>
           </Modal.Body>

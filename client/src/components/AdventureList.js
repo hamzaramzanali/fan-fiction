@@ -153,7 +153,7 @@ const AdventureList = ({
                         <Modal.Title id='signup-modal'>
                             <Nav variant='pills'>
                                 <Nav.Item>
-                                    <Nav.Link className=" updateBtn active" eventKey='updateBtnModal'>Update Adventure: {selectedAdventure && selectedAdventure.adventureTitle}</Nav.Link>
+                                    <Nav.Link id="adventureTitle" className=" updateBtn active" eventKey='updateBtnModal'>Update Adventure: {selectedAdventure && selectedAdventure.adventureTitle}</Nav.Link>
                                 </Nav.Item>
                             </Nav>
                         </Modal.Title>

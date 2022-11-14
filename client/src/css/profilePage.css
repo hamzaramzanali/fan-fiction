@@ -17,7 +17,7 @@
 
 .adventureAwaits {
     color: #880f00;
-    font-weight: bolder;
+    font-weight: bolder !important;
     font-size: revert;
     text-align: center;
 }
@@ -72,6 +72,7 @@
 .profileContent {
     border: 3px dotted rgb(136 15 0) !important;
     margin: 5rem;
+    flex-basis: max-content !important;
 }
 
 .startAdventure {
@@ -97,7 +98,7 @@
 .adventureTitle {
     max-width: inherit !important; 
     display:inline-block !important;
-    width: max-content !important;
+    /* width: max-content !important; */
 }
 
 /* Random Character */
