@@ -6,7 +6,7 @@ function ProfileAside({ currentComponent, handleComponentChange }) {
   return (
     <>
       <div className='profileAside'>
-        <Card className="nav nav-pills danger nav-justified">
+        <Card className="nav nav-pills nav-justified">
           <Card.Title className="adventureAwaits">
             Your Adventure Awaits!
           </Card.Title>
@@ -22,7 +22,7 @@ function ProfileAside({ currentComponent, handleComponentChange }) {
               <Card.Link id='addAdventureNav'
                 href='#addAdventure'
                 onClick={() => handleComponentChange('addAdventure')}
-                className={currentComponent === 'addAdventure' ? 'nav-item nav-link active text-white' : 'nav-link nav-item text-dark bold font-weight-bold'}
+                className={currentComponent === 'addAdventure' ? 'nav-item nav-link active text-white' : 'nav-link nav-item text-dark font-weight-bold'}
               >
                 Start an Adventure
               </Card.Link>
