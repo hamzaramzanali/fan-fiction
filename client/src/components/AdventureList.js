@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Card, Button, Modal, Nav, Tab } from 'react-bootstrap';
 import { useMutation } from '@apollo/client'
 // import { QUERY_ME } from '../utils/queries';
@@ -53,7 +54,9 @@ const AdventureList = ({
                     <Card className='viewTitle' key={adventure._id}>
                         {console.log(`ADVENTURE ID: ${adventure._id}`)}
                         <Card.Body>
-                            <Card.Title>{adventure.adventureTitle}</Card.Title>
+                            <Nav.Link className="active" as={Link} to={`/adventure/${adventure._id}`}>
+                                <Card.Title>{adventure.adventureTitle}</Card.Title>
+                            </Nav.Link>
                             <p className='small'>by: {adventure.adventureAuthor}</p>
                             <Card.Body>
                                 <div>
