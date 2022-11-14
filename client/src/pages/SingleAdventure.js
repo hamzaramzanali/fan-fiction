@@ -32,6 +32,7 @@ const SingleAdventure = () => {
     return <div>Loading...</div>;
   }
   return (
+    <>
     <div className="my-3" style={styles}>
       <h3 className=" thoughtHeader card-header text-light p-2 m-0">
         {adventure.adventureAuthor} <br />
