@@ -59,6 +59,8 @@ const AddAdventure = () => {
         characterCount: 0
       })
 
+      window.location.assign('/profile')
+
       // setAdventureTitle('');
       // setAdventureBody('');
     } catch (err) {
