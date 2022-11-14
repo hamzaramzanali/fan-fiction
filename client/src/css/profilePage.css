@@ -1,19 +1,20 @@
 .profilePage {
     background-color:#e9ecef !important;
     max-width: fit-content !important;
-    margin-top: 5rem;
+    margin: 5rem;
 
 }
 
+
+
 /* Side Nav */
 .profileAside {
-    display: flex;
     align-content: center;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 5rem;
+    margin: 5rem;
 }
 
 .adventureAwaits {
@@ -49,6 +50,8 @@
 
 .profileHead {
     background-color: #880f00 !important;
+    width: -webkit-fill-available;
+    text-align: center;
 }
 
 .submitAdventure{
@@ -64,7 +67,7 @@
 
 .profileContent {
     border: 3px dotted rgb(136 15 0) !important;
-    margin-top:5rem;
+    margin: 5rem;
 }
 
 .startAdventure {
@@ -88,6 +91,7 @@
 .adventureTitle {
     max-width:max-content !important;
     display:inline-block !important;
+    width: max-content !important;
 }
 
 /* Random Character */
@@ -105,5 +109,5 @@
     display: flex;
     align-content: center;
     flex-direction: column;
-    margin-top: 5rem;
+    margin: 5rem;
 }

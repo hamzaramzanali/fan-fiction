@@ -37,13 +37,13 @@ const ProfileContent = () => {
                 {/* We are passing the currentComponent from state and the function to update it */}
                 {/* <ProfileAside currentComponent={currentComponent} handleComponentChange={handleComponentChange} /> */}
 
-                <Row>
+                <Row className="profileAlignment">
                     <Col>
                         <ProfileAside currentComponent={currentComponent} handleComponentChange={handleComponentChange} className="profileAside mt-3" />
                     </Col>
                     <Col className="profileContent">
                         <h2 className="profileHead col-12 col-md-10 text-light p-3 mb-5">
-                            Your Profile
+                            Your Adventures
                         </h2>
                         {renderComponent()}
                     </Col>

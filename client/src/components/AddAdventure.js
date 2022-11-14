@@ -111,16 +111,14 @@ const AddAdventure = () => {
                   name="adventureTitle"
                   placeholder="Title your Adventure"
                   value={adventureForm.adventureTitle}
-                  className="form-input w-100"
-                  style={{ lineHeight: '1.5', resize: 'vertical' }}
+                  className="form-input"
                   onChange={handleChange}
                 ></textarea>
                 <textarea
                   name="adventureBody"
                   placeholder="Once upon in the Marvel Universe..."
                   value={adventureForm.adventureBody}
-                  className="form-input w-100"
-                  style={{ lineHeight: '1.5', resize: 'vertical' }}
+                  className="form-input"
                   onChange={handleChange}
                 ></textarea>
               </div>

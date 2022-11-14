@@ -12,8 +12,8 @@ import SearchAllCharacters from './pages/SearchAllCharacters';
 import SearchPage from './pages/SearchPage';
 import SavedCharacters from './pages/SavedCharactersPage';
 import CommunityPage from './pages/CommunityPage';
+import AdventureList from './components/AdventureList';
 import SingleAdventure from './pages/SingleAdventure';
-
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({

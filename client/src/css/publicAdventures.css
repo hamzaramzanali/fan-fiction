@@ -15,8 +15,9 @@
 }
 
 .communityCard {
-    max-width: fit-content !important;
+    /* max-width: fit-content !important; */
     background: #e9ecef !important;
+    margin: 5rem;
 
 }
 
@@ -34,6 +35,6 @@
     word-wrap: break-word;
     background-color: #e9ecef !important;
     background-clip: border-box;
-    border: 2px solid rgb(136 15 0) !important;
+    border: 3px dotted rgb(136 15 0) !important;
     border-radius: 0.25rem;
 }

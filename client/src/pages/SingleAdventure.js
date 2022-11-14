@@ -37,7 +37,7 @@ const SingleAdventure = () => {
         <h3 className=" thoughtHeader card-header text-light p-2 m-0">
           {adventure.adventureAuthor} <br />
           <span style={{ fontSize: '1rem' }}>
-            Had this thought on {adventure.createdAt}
+            created this adventure at {adventure.createdAt}
           </span>
         </h3>
         <div className="bg-light py-4">

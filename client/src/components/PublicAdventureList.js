@@ -6,11 +6,13 @@ import '../css/publicAdventures.css'
 //className to text so user can only see a snippet forcing them to click on it to hopefully add their continuation 
 
 
-const styles = {
-    card: {
-        width: 350
-    },
-}
+// const styles = {
+//     card: {
+//         width: 350
+//     },
+// }
+
+// style={styles.card}
 
 const PublicAdventureList = ({
     adventures,
@@ -24,11 +26,11 @@ const PublicAdventureList = ({
                     {adventures.map(adventure => (
                         <Row>
                             <Col>
-                                <Card key={adventure._id} style={styles.card}>
+                                <Card key={adventure._id} >
                                     <Card.Body>
                                         <Card.Title className='cardTitle'>{adventure.adventureTitle} </Card.Title>
                                         <Card.Subtitle className="mb-2 text-muted">Adventure Began with: {adventure.adventureAuthor}</Card.Subtitle>
-                                        <Card.Text className="d-inline-block text-truncate" style={{ maxWidth: 150 }}>{adventure.adventureBody}</Card.Text>
+                                        <Card.Text className="d-inline-block text-truncate" style={{ maxWidth: "150rem" }}>{adventure.adventureBody}</Card.Text>
                                         <Link
                                             className="continueAdventureBtn btn btn-primary btn-block btn-squared"
                                             to={`/adventure/${adventure._id}`}

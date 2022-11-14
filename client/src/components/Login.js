@@ -63,7 +63,7 @@ const LoginForm = () => {
         </Alert>
         <Form.Group>
           <Form.Label className='modalBodyText' htmlFor='username'>Username</Form.Label>
-          <Form.Control className='inputBackground'
+          <Form.Control id='inputBackground'
             type='text'
             placeholder='Your username'
             name='username'

@@ -48,7 +48,7 @@ const CommentForm = ({ adventureId }) => {
   return (
     <>
       <div >
-        <h4 className='thoughtText'>What are your thoughts on this thought?</h4>
+        <h4 className='thoughtText'>What are your thoughts on this adventure?</h4>
 
         {Auth.loggedIn() ? (
           <>
@@ -63,18 +63,17 @@ const CommentForm = ({ adventureId }) => {
               className="flex-row justify-center justify-space-between-md align-center"
               onSubmit={handleFormSubmit}
             >
-              <div className="col-12 col-lg-9">
+              <div className="textArea col-12 col-lg-9">
                 <textarea
                   name="commentText"
                   placeholder="Add your comment..."
                   value={commentText}
                   className="form-input w-100"
-                  style={{ lineHeight: '1.5', resize: 'vertical' }}
                   onChange={handleChange}
                 ></textarea>
               </div>
 
-              <div className="col-12 col-lg-3">
+              <div className="commentBtn col-12 col-lg-3">
                 <button className="addCommentBtn btn btn-primary btn-block py-3" type="submit">
                   Add Comment
                 </button>
