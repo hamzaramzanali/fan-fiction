@@ -8,7 +8,7 @@ const resolvers = {
         // By adding context to our query, we can retrieve the logged in user without specifically searching for them
         me: async (parent, args, context) => {
             if (context.user) {
-                const user = await User.findOne({ _id: context.user._id }).populate('adventures');
+                const user = await User.findOne({ _id: context.user._id }).populate('adventures').sort({ createdAt: -1 });;
                 return user;
             }
             throw new AuthenticationError('You need to be logged in!');
@@ -26,7 +26,7 @@ const resolvers = {
         getAdventures: async (parent, { username }) => {
             const params = username ? { username } : {};
             return Adventure.find(params).sort({ createdAt: -1 });
-          },
+        },
     },
 
     Mutation: {
@@ -123,22 +123,31 @@ const resolvers = {
         // Update adventure
         updateAdventure: async (parent, { adventureTitle, adventureBody, adventureId }, context) => {
             // grabbing user info from context
+            console.log(adventureTitle, adventureBody, adventureId, context.user)
             if (context.user) {
                 // creating a new adventure
                 const adventure = await Adventure.findOneAndUpdate(
                     {_id: adventureId},
+                    // {_id: context.adventures._id},
                     {// these fields comming from typeDefs
-                    $set: {adventure: { adventureTitle,
-                    adventureBody,
-                    // this field comming from context front end
-                    adventureAuthor: context.user.username}},
-                });
+                        $set: { adventureTitle,
+                            adventureBody,
+                            // this field comming from context front end
+                            adventureAuthor: context.user.username},
+                        }, 
+                        {//need this to not refresh
+                            
+                            new: true,
+                        }
+                        );
+
+                        console.log(`CONTEXT DATA: ${adventure}`)
                 // updating the user model to include a new adventure
-                await User.findOneAndUpdate(
-                    { _id: context.user._id },
-                    { $addToSet: { adventures: adventure._id } },
-                    { new: true, runValidators: true }
-                );
+                // await User.findOneAndUpdate(
+                //     { _id: context.user._id },
+                //     { $addToSet: { adventures: adventure._id } },
+                //     { new: true, runValidators: true }
+                // );
 
                 return adventure;
             }
