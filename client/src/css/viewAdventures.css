@@ -1,0 +1,23 @@
+.viewTitle {
+    color: #880f00;
+    font-weight: bold;
+    font-size: revert;
+}
+
+.deleteBtn {
+    color: #f8f9fa !important;
+    background-color: #880f00 !important;
+    border-color: #880f00 !important;
+}
+
+.updateBtn {
+    color: #880f00  !important;
+    background-color: #f8f9fa !important;
+    border-color: #f8f9fa !important;
+}
+
+.updateBtnModal {
+    color: #f8f9fa !important;
+    background-color: #880f00 !important;
+    border-color: #880f00 !important;
+}

@@ -7,17 +7,36 @@
 
 /* Side Nav */
 .profileAside {
-    display: inline !important;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
 }
 
 .adventureAwaits {
     color: #880f00;
-    font-weight: bold;
+    font-weight: bolder;
     font-size: revert;
+    text-align: center;
 }
 
 .searchBy {
     color: #880f00;
+}
+
+#addAdventureNav {
+    color: #e9ecef !important;
+    background-color: #880f00 !important;
+    border-color: #880f00 !important;
+}
+
+#viewAdventuresNav {
+    color: #880f00 !important;
+    background-color: #e9ecef !important;
+
 }
 
 /* View Your Profile Center */
@@ -43,8 +62,9 @@
     max-width: inherit !important;
 }
 
-.adventureBox {
+.profileContent {
     border: 3px dotted rgb(136 15 0) !important;
+    margin-top:5rem;
 }
 
 .startAdventure {
@@ -71,8 +91,19 @@
 }
 
 /* Random Character */
-.title {
+.characterTitle {
     color: #880f00;
-    /* font-weight: bold; */
+    font-weight: bold;
     font-size: revert;
+}
+
+.characterCard {
+    display:grid;
+}
+
+.characterCol {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    margin-top: 5rem;
 }

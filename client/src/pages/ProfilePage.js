@@ -64,7 +64,7 @@ const Profile = () => {
                         </Card.Title>
                         <ListGroup currentComponent={currentComponent} handleComponentChange={handleComponentChange}>
                             <ListGroupItem>
-                                <Card.Link className='searchBy' href='/search'>Search</Card.Link>
+                                <Card.Link className='searchBy' href='/searchSpecific'>Search</Card.Link>
                             </ListGroupItem>
                             <ListGroupItem>
                                 <Card.Link className='searchBy' href='/'>Homepage</Card.Link>
@@ -103,8 +103,8 @@ const Profile = () => {
                                     className="adventureBox col-12 col-md-10 mb-3 p-3"
                                     style={{ border: '1px dotted #1a1a1a' }}
                                 >
-                                    <AddAdventure />
                                     <AdventureList adventures={user.adventures} />
+                                    <AddAdventure />
                                 </div>
                             )} */}
                         {/* </div>

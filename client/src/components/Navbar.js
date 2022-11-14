@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from '../components/SignUp';
 import LoginForm from '../components/Login';
-import './componentsCSS/navbar.css';
 import '../css/navBar.css';
 
 import Auth from '../utils/auth';
@@ -19,10 +18,6 @@ const AppNavbar = () => {
           <Navbar.Brand id="navText" as={Link} to='/'>
             Marvel Fan Fiction
           </Navbar.Brand>
-          <Navbar.Brand id="navText" as={Link} to='/community'>
-            Community Adventures
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Toggle className="toggleIcon" aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
@@ -32,9 +27,17 @@ const AppNavbar = () => {
                   <Nav.Link className="active" onClick={Auth.logout}>Logout</Nav.Link>
                   <Nav.Link className="active" as={Link} to={"/profile"}>Profile</Nav.Link>
                   <Nav.Link className="active" as={Link} target="_blank" to={"/searchSpecific"}>Search</Nav.Link>
+                  <Nav.Link id="navText" as={Link} to={"/community"}>
+                    Community Adventures
+                  </Nav.Link>
                 </>
               ) : (
+                <>
                 <Nav.Link id="navText" onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
+                <Nav.Link id="navText" as={Link} to={'/community'}>
+                  Community Adventures
+                </Nav.Link>
+                </>
               )}
             </Nav>
           </Navbar.Collapse>
@@ -52,10 +55,10 @@ const AppNavbar = () => {
             <Modal.Title id='signup-modal'>
               <Nav variant='pills'>
                 <Nav.Item>
-                  <Nav.Link eventKey='login'>Login</Nav.Link>
+                  <Nav.Link className='loginTitle' eventKey='login'>Login</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey='signup'>Sign Up</Nav.Link>
+                  <Nav.Link className='signupTitle' eventKey='signup'>Sign Up</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Modal.Title>

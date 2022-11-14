@@ -49,7 +49,7 @@ const CharacterGenerator = async () => {
     return (
         <>
             <Container>
-                <CardColumns>
+                <CardColumns className='characterCard'>
                     {randomCharacter?.map((character) => {
                         return (
                             <Card key={character.characterId} border='dark'>

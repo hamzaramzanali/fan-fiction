@@ -1,26 +1,54 @@
 nav {
-    position: absolute;
-    background-color: rgb(137, 15, 0);
-    margin-left: inherit;
-    overflow: sticky;
-  }
-  
-  
-  #navText {
-    color: #c8d3c6;
-  }
-  
+  position: absolute;
+  background-color: rgb(137, 15, 0);
+  margin-left: inherit;
+  overflow: sticky;
+}
 
-  .navbar {
-    background-color: rgb(137, 15, 0);
-    color: #c8c8bf;
-  }
-  
-  /* toggle is an image so this will not work */
- .toggleIcon {
-    color: #c8d3c6 !important;
- }
-  
- .nav-link {
-    color: #c8d3c6 !important;
- }
+
+#navText {
+  color: #c8d3c6;
+}
+
+
+.navbar {
+  background-color: rgb(137, 15, 0);
+  color: #c8c8bf;
+}
+
+/* toggle is an image so this will not work */
+.toggleIcon {
+  color: #c8d3c6 !important;
+}
+
+.nav-link {
+  color: #c8d3c6 !important;
+}
+
+/* Modal */
+.loginTitle {
+  background-color: #880f00 !important;
+  color: #f8f9fa !important;
+}
+
+.signupTitle {
+  background-color: #880f00 !important;
+  color: #f8f9fa !important;
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #e9ecef !important;
+  background-clip: padding-box;
+  border: 5px solid rgb(136 15 0) !important;
+  border-radius: 0.3rem;
+  outline: 0;
+}
+
+.form-control {
+  background-color: #880f0054 !important;
+}

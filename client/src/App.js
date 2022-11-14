@@ -13,6 +13,7 @@ import SearchPage from './pages/SearchPage';
 import SavedCharacters from './pages/SavedCharactersPage';
 import CommunityPage from './pages/CommunityPage';
 import AdventureList from './components/AdventureList';
+import SingleAdventure from './pages/SingleAdventure';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -43,7 +44,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <>
-          <Navbar />
+          <Navbar className="p-5"/>
           <Routes>
             <Route
               path='/'
@@ -57,6 +58,10 @@ function App() {
               path='/community'
               element={<CommunityPage />} 
             />
+            <Route 
+                path="/adventure/:adventureId" 
+                element={<SingleAdventure />}
+              />
             <Route
               path='/search'
               element={<SearchAllCharacters />}
@@ -66,10 +71,10 @@ function App() {
               element={<SearchPage />}
             />
             
-            <Route
+            {/* <Route
               path='/adventureList'
               element={<AdventureList />}
-            />
+            /> */}
 
             {/*<Route
               path='*'
