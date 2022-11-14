@@ -1,5 +1,5 @@
 .viewTitle {
-    color: #880f00;
+    color: #880f00 !important;
     font-weight: bold;
     font-size: revert;
 }
@@ -21,3 +21,4 @@
     background-color: #880f00 !important;
     border-color: #880f00 !important;
 }
+

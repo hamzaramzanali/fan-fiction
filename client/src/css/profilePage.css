@@ -5,8 +5,6 @@
 
 }
 
-
-
 /* Side Nav */
 .profileAside {
     align-content: center;
@@ -39,6 +37,11 @@
     /* background-color: #e9ecef !important; */
     border-color: #880f00 !important;
 
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #8a1101a2 !important;
 }
 
 /* View Your Profile Center */
@@ -76,6 +79,7 @@
     font-weight: bold;
     font-size: revert;
     text-align: center;
+    margin-bottom: revert;
 }
 
 #characterCount {
@@ -85,12 +89,13 @@
     text-align: center;
 }
 
-.adventureForm {
+/* .adventureForm {
     margin:5px !important;
-}
+    max-width: inherit;
+} */
 
 .adventureTitle {
-    max-width:max-content !important;
+    max-width: inherit !important; 
     display:inline-block !important;
     width: max-content !important;
 }

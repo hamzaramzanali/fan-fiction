@@ -5,7 +5,6 @@ nav {
   overflow: sticky;
 }
 
-
 #navText {
   color: #c8d3c6;
 }
@@ -48,10 +47,6 @@ nav {
   border-radius: 0.3rem;
   outline: 0;
 }
-
-/* .form-control {
-  background-color: #880f0054 !important;
-} */
 
 #inputBackground  {
  

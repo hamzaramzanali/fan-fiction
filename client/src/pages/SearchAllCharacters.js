@@ -6,7 +6,6 @@ const SearchAllCharacters = () => {
 
   const searchCharacters = async () => {
     const response = await search();
-    console.log(response);
     setResults(response.data.data.results);
   };
 
