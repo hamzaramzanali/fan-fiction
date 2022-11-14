@@ -26,7 +26,7 @@ const AppNavbar = () => {
                 <>
                   <Nav.Link className="active" onClick={Auth.logout}>Logout</Nav.Link>
                   <Nav.Link className="active" as={Link} to={"/profile"}>Profile</Nav.Link>
-                  <Nav.Link className="active" as={Link} rel={"noopener noreferrer"} target={"_blank"} to={"/searchSpecific"}>Search</Nav.Link>
+                  <Nav.Link className="active" as={Link} to={"/searchSpecific"}>Search</Nav.Link>
                   <Nav.Link id="navText" as={Link} to={"/community"}>
                     Community Adventures
                   </Nav.Link>
