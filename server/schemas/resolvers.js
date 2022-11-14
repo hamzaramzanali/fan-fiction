@@ -122,22 +122,31 @@ const resolvers = {
         // Update adventure
         updateAdventure: async (parent, { adventureTitle, adventureBody, adventureId }, context) => {
             // grabbing user info from context
+            console.log(adventureTitle, adventureBody, adventureId, context.user)
             if (context.user) {
                 // creating a new adventure
                 const adventure = await Adventure.findOneAndUpdate(
                     {_id: adventureId},
+                    // {_id: context.adventures._id},
                     {// these fields comming from typeDefs
-                    $set: {adventure: { adventureTitle,
-                    adventureBody,
-                    // this field comming from context front end
-                    adventureAuthor: context.user.username}},
-                });
+                        $set: { adventureTitle,
+                            adventureBody,
+                            // this field comming from context front end
+                            adventureAuthor: context.user.username},
+                        }, 
+                        {//need this to not refresh
+                            
+                            new: true,
+                        }
+                        );
+
+                        console.log(`CONTEXT DATA: ${adventure}`)
                 // updating the user model to include a new adventure
-                await User.findOneAndUpdate(
-                    { _id: context.user._id },
-                    { $addToSet: { adventures: adventure._id } },
-                    { new: true, runValidators: true }
-                );
+                // await User.findOneAndUpdate(
+                //     { _id: context.user._id },
+                //     { $addToSet: { adventures: adventure._id } },
+                //     { new: true, runValidators: true }
+                // );
 
                 return adventure;
             }

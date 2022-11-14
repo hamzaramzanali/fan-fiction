@@ -140,6 +140,6 @@ const AddAdventure = () => {
       )}
     </div>
   );
- };
+};
 
 export default AddAdventure; 
