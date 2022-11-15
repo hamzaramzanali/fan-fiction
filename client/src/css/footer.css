@@ -1,0 +1,15 @@
+.footer{
+    justify-content: right;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: rgb(137, 15, 0);
+    position: fixed;
+    bottom: 0;
+    color: #c8d3c6;
+    width: 100% !important;
+}
+
+span > a {
+    color: rgb(137, 15, 0) !important;
+}
+
