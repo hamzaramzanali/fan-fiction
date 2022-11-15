@@ -4,7 +4,6 @@ import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from '../components/SignUp';
 import LoginForm from '../components/Login';
 import '../css/navBar.css';
-
 import Auth from '../utils/auth';
 
 const AppNavbar = () => {
@@ -21,7 +20,7 @@ const AppNavbar = () => {
           <Navbar.Toggle className="toggleIcon" aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
-              {/* if user is logged in show saved books and logout */}
+              {/* if user is logged in show logout/profile/community/search pages */}
               {Auth.loggedIn() ? (
                 <>
                   <Nav.Link className="active" onClick={Auth.logout}>Logout</Nav.Link>

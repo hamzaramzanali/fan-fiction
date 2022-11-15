@@ -3,16 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // Apollo Provider to make every request work with the Apollo Server
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
-// import Header from './components/Header';
 import ProfilePage from './pages/ProfilePage'
 import SearchAllCharacters from './pages/SearchAllCharacters';
 import SearchPage from './pages/SearchPage';
-// import SavedCharacters from './pages/SavedCharactersPage';
 import CommunityPage from './pages/CommunityPage';
-import AdventureList from './components/AdventureList';
 import SingleAdventure from './pages/SingleAdventure';
 
 // Construct our main GraphQL API endpoint
@@ -70,16 +66,6 @@ function App() {
               path='/searchSpecific'
               element={<SearchPage />}
             />
-            
-            {/* <Route
-              path='/adventureList'
-              element={<AdventureList />}
-            /> */}
-
-            {/*<Route
-              path='*'
-              element={<h1 className='display-2'>Wrong page!</h1>}
-            /> */}
           </Routes>
         </>
       </Router>

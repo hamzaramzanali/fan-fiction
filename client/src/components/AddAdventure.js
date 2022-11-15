@@ -4,18 +4,14 @@ import { Link } from 'react-router-dom';
 import { ADD_ADVENTURE } from '../utils/mutations';
 import { QUERY_ADVENTURES, QUERY_ME } from '../utils/queries';
 import "../css/profilePage.css"
-
-
 import Auth from '../utils/auth';
 
 const AddAdventure = () => {
   const [adventureForm, setAdventureForm] = useState({
     adventureTitle: '',
     adventureBody: '',
-    // characterCount: 0
+    
   })
-  // const [adventureTitle, setAdventureTitle] = useState('');
-  // const [adventureBody, setAdventureBody] = useState('');
 
   const [characterCount, setCharacterCount] = useState(0);
 
@@ -51,12 +47,8 @@ const AddAdventure = () => {
       const { data } = await addAdventure({
         variables: {
           ...adventureForm,
-          // adventureTitle,
-          // adventureBody,
-          // adventureAuthor: Auth.getProfile().data.username,
         },
       });
-      console.log(data);
       setAdventureForm({
         adventureTitle: '',
         adventureBody: '',
@@ -65,8 +57,6 @@ const AddAdventure = () => {
 
       window.location.assign('/')
 
-      // setAdventureTitle('');
-      // setAdventureBody('');
     } catch (err)
     {
       console.error(err);
@@ -76,19 +66,12 @@ const AddAdventure = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    // if (name === 'adventureTitle' && value.length <= 500) {
+   
     setAdventureForm({
       ...adventureForm,
       [name]: value,
       characterCount: value.length
     })
-    // setAdventureTitle(value);
-    // setCharacterCount(value.length);
-    // }
-    // else if (name === 'adventureBody' && value.length <= 500) {
-    //   setAdventureBody(value);
-    //   setCharacterCount(value.length);
-    // }
   };
 
   return (
@@ -102,7 +85,7 @@ const AddAdventure = () => {
               className={`m-0 ${characterCount === 280 || error ? 'text-danger' : ''
                 }`}
             >
-              Character Count: {characterCount}/280
+              {/* Character Count: {characterCount}/280 */}
             </p>
             <form
               className="adventureForm flex-row justify-center justify-space-between-md align-center"
@@ -113,14 +96,14 @@ const AddAdventure = () => {
                   name="adventureTitle"
                   placeholder="Title your Adventure"
                   value={adventureForm.adventureTitle}
-                  className="form-input"
+                  className="form-input w-100"
                   onChange={handleChange}
                 ></textarea>
                 <textarea
                   name="adventureBody"
                   placeholder="Once upon in the Marvel Universe..."
                   value={adventureForm.adventureBody}
-                  className="form-input"
+                  className="form-input w-100"
                   onChange={handleChange}
                 ></textarea>
               </div>

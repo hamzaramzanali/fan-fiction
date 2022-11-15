@@ -1,11 +1,3 @@
-nav {
-  position: absolute;
-  background-color: rgb(137, 15, 0);
-  margin-left: inherit;
-  overflow: sticky;
-}
-
-
 #navText {
   color: #c8d3c6;
 }
@@ -14,6 +6,8 @@ nav {
 .navbar {
   background-color: rgb(137, 15, 0);
   color: #c8c8bf;
+  overflow: sticky;
+
 }
 
 /* toggle is an image so this will not work */
@@ -48,10 +42,6 @@ nav {
   border-radius: 0.3rem;
   outline: 0;
 }
-
-/* .form-control {
-  background-color: #880f0054 !important;
-} */
 
 #inputBackground  {
  

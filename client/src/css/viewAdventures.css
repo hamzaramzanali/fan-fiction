@@ -1,5 +1,5 @@
 .viewTitle {
-    color: #880f00;
+    color: #880f00 !important;
     font-weight: bold;
     font-size: revert;
 }
@@ -17,6 +17,18 @@
 }
 
 .updateBtnModal {
+    color: #f8f9fa !important;
+    background-color: #880f00 !important;
+    border-color: #880f00 !important;
+}
+
+#characterTitle {
+    color: #f8f9fa !important;
+    background-color: #880f00 !important;
+    border-color: #880f00 !important;
+}
+
+#adventureTitle {
     color: #f8f9fa !important;
     background-color: #880f00 !important;
     border-color: #880f00 !important;

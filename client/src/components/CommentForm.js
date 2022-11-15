@@ -1,12 +1,8 @@
-//this renders but adding is not working
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-
 import { ADD_COMMENT } from '../utils/mutations';
-
 import Auth from '../utils/auth';
-
 import '../css/commentsPage.css'
 
 const CommentForm = ({ adventureId }) => {
@@ -57,14 +53,14 @@ const CommentForm = ({ adventureId }) => {
               characterCount === 280 || error ? 'text-danger' : ''
             }`}
           >
-            Character Count: {characterCount}/280
-            {error && <span className="adventureBody ml-2">{error.message}</span>}
+            {/* Character Count: {characterCount}/280
+            {error && <span className="adventureBody ml-2">{error.message}</span>} */}
           </p>
           <form
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
-            <div className="col-12 col-lg-9">
+            <div className="commentForm col-12 col-lg-9">
               <textarea
                 name="commentText"
                 placeholder="Add your comment..."

@@ -1,14 +1,9 @@
-// NOTE TO SELF: ADD A CONDITION THAT PRINTS WHEN USER ENTERS WRONG CHARACTER
-// 
-
 import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns, Modal, Nav, Tab } from 'react-bootstrap';
 import "../css/searchPage.css"
-
 import { useMutation } from '@apollo/client';
 import { ADD_ADVENTURE } from '../utils/mutations';
 import { QUERY_ADVENTURES, QUERY_ME } from '../utils/queries';
-import Auth from '../utils/auth';
 import { searchMarvelCharacters } from '../utils/searchCharacterAPI';
 
 const SearchCharacters = () => {
@@ -59,9 +54,6 @@ const SearchCharacters = () => {
       const { data } = await addAdventure({
         variables: {
           ...adventureForm,
-          // adventureTitle,
-          // adventureBody,
-          // adventureAuthor: Auth.getProfile().data.username,
         },
       });
       console.log(data);
@@ -70,9 +62,6 @@ const SearchCharacters = () => {
         adventureBody: '',
         characterCount: 0
       })
-
-      // setAdventureTitle('');
-      // setAdventureBody('');
     } catch (err) {
       console.error(err);
     }
@@ -81,19 +70,11 @@ const SearchCharacters = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    // if (name === 'adventureTitle' && value.length <= 500) {
     setAdventureForm({
       ...adventureForm,
       [name]: value,
       characterCount: value.length
     })
-    // setAdventureTitle(value);
-    // setCharacterCount(value.length);
-    // }
-    // else if (name === 'adventureBody' && value.length <= 500) {
-    //   setAdventureBody(value);
-    //   setCharacterCount(value.length);
-    // }
   };
 
 
@@ -116,17 +97,6 @@ const SearchCharacters = () => {
 
       response = response.data.results;
       
-      // console.log(`RESPONSE: ${response.data}`);
-
-      // if (!response) {
-      //   alert('Character input wrong. Please try again');
-      //   // window.location.reload();
-      //   // throw new Error('something went wrong!');
-      // }
-
-      // const { items } = await response.json();
-      // const { items } = await response;
-      // console.log(`ITEMS: ${items}`)
       const characterData = response.map((character) => ({
         // fields correspond to character model
         characterId: character.id,
@@ -136,7 +106,6 @@ const SearchCharacters = () => {
       }));
 
       setSearchedCharacters(characterData);
-      console.log(characterData)
       setSearchInput('');
     } catch (err) {
       console.error(err);
@@ -205,7 +174,7 @@ const SearchCharacters = () => {
                 <Modal.Title id='signup-modal'>
                   <Nav variant='pills'>
                     <Nav.Item>
-                      <Nav.Link className=" updateBtn active" eventKey='updateBtnModal'>Start Adventure for {selectedHero && selectedHero.name}</Nav.Link>
+                      <Nav.Link className=" startTitle active" eventKey='updateBtnModal'>Start Adventure for {selectedHero && selectedHero.name}</Nav.Link>
                     </Nav.Item>
                   </Nav>
                 </Modal.Title>
@@ -228,7 +197,7 @@ const SearchCharacters = () => {
                       value={adventureForm.adventureBody}
                       onChange={handleChange}
                     />
-                    <Button className="btn-block mt-2" variant="success" type="submit" >Create This Adventure</Button>
+                    <Button className="addBtn btn-block mt-2" variant="success" type="submit" >Create This Adventure</Button>
                   </Form.Group>
                 </Form>
               </Modal.Body>

@@ -49,13 +49,6 @@
       -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 75px), 0 100%);
       clip-path: polygon(0 0, 100% 0, 100% calc(100% - 75px), 0 100%);
     } 
-  /* 
-    .hero-item {
-      grid-column: 1 / span 1;
-      grid-row: 1 / 50;
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 75px), 0 100%);
-      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 75px), 0 100%);
-    } */
   
     .standard-item:nth-child(2) {
       grid-column: 1 / span 1;
