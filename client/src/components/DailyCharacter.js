@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import search from '../utils/baseAPI';
-import { Button, Card, Modal, Nav, Tab, InputGroup, Form } from 'react-bootstrap';
+import { Button, Card, Modal, Nav, Tab, Form } from 'react-bootstrap';
 import '../css/profilePage.css'
 import { useMutation } from '@apollo/client';
 import { ADD_ADVENTURE } from '../utils/mutations';
@@ -17,7 +17,7 @@ const DailyCharacter = () => {
     // characterCount: 0
   })
 
-  const [addAdventure, { error }] = useMutation(ADD_ADVENTURE, {
+  const [addAdventure] = useMutation(ADD_ADVENTURE, {
     update(cache, { data: { addAdventure } }) {
       try {
         const { adventure } = cache.readQuery({ query: QUERY_ADVENTURES });
@@ -46,9 +46,6 @@ const DailyCharacter = () => {
       const { data } = await addAdventure({
         variables: {
           ...adventureForm,
-          // adventureTitle,
-          // adventureBody,
-          // adventureAuthor: Auth.getProfile().data.username,
         },
       });
       console.log(data);
@@ -57,9 +54,6 @@ const DailyCharacter = () => {
         adventureBody: '',
         characterCount: 0
       })
-
-      // setAdventureTitle('');
-      // setAdventureBody('');
     } catch (err) {
       console.error(err);
     }
@@ -67,20 +61,11 @@ const DailyCharacter = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-
-    // if (name === 'adventureTitle' && value.length <= 500) {
     setAdventureForm({
       ...adventureForm,
       [name]: value,
       characterCount: value.length
     })
-    // setAdventureTitle(value);
-    // setCharacterCount(value.length);
-    // }
-    // else if (name === 'adventureBody' && value.length <= 500) {
-    //   setAdventureBody(value);
-    //   setCharacterCount(value.length);
-    // }
   };
 
   const searchCharacter = async () => {
@@ -139,12 +124,6 @@ const DailyCharacter = () => {
                   value={adventureForm.adventureBody}
                   onChange={handleChange}
                 />
-                {/* <textarea
-                  name=
-                  className ='form-input form-control'
-                  
-                  
-                ></textarea> */}
                 <Button className="updateBtnModal btn-block mt-2" variant="success" type="submit" >Create This Adventure</Button>
               </Form.Group>
             </Form>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Row, Col, Card, Button, Modal, Form, InputGroup } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import '../css/publicAdventures.css'
 
 const PublicAdventureList = ({
