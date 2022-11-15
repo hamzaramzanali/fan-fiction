@@ -12,6 +12,7 @@ const SearchCharacters = () => {
   const [selectedHero, setSelectedHero] = useState()
   // create state for holding our search field data
   const [searchInput, setSearchInput] = useState('');
+  const [errMessage, setErrMessage] = useState('');
   const [adventureForm, setAdventureForm] = useState({
     adventureTitle: '',
     adventureBody: '',
@@ -82,12 +83,18 @@ const SearchCharacters = () => {
     event.preventDefault();
 
     if (!searchInput) {
-      return false;
+      setErrMessage(`Sorry, ${searchInput} is not in database!`);
     }
 
     try {
       let response = await searchMarvelCharacters(searchInput);
-      console.log(`RESPONSE: ${response.data}`);
+      // if (!response) {
+      //   throw new Error('something went wrong!');
+      // }
+      // else if (response) {
+      //   return response = response.data.results;
+      // };
+
       response = response.data.results;
       
       const characterData = response.map((character) => ({
@@ -134,7 +141,7 @@ const SearchCharacters = () => {
 
       <Container className='resultsPage'>
         <h2 className='searchedTitle'>
-          {searchedCharacters?.length
+        {searchedCharacters?.length
             ? `Viewing ${searchedCharacters.length} results:`
             : 'Search for a character to begin'}
         </h2>

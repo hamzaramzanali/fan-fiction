@@ -131,7 +131,6 @@ const resolvers = {
                             adventureAuthor: context.user.username},
                         }, 
                         {//need this to not refresh
-                            
                             new: true,
                         }
                         );
@@ -154,7 +153,9 @@ const resolvers = {
                 const adventure = await Adventure.findOneAndDelete({
                     _id: adventureId,
                     adventureAuthor: context.user.username,
-                });
+                },
+                { new: true, runValidators: true }
+                );
 
                 await User.findOneAndUpdate(
                     { _id: context.user._id },

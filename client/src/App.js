@@ -10,6 +10,7 @@ import SearchAllCharacters from './pages/SearchAllCharacters';
 import SearchPage from './pages/SearchPage';
 import CommunityPage from './pages/CommunityPage';
 import SingleAdventure from './pages/SingleAdventure';
+import Footer from './components/Footer';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -67,6 +68,7 @@ function App() {
               element={<SearchPage />}
             />
           </Routes>
+          <Footer></Footer>
         </>
       </Router>
     </ApolloProvider>

@@ -2,7 +2,7 @@ import React, { useState,useEffect } from "react";
 import ProfileAside from "./ProfileAside";
 import AddAdventure from "./AddAdventure";
 import AdventureList from "./AdventureList";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Container } from "react-bootstrap";
 import DailyCharacter from "./DailyCharacter";
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
@@ -31,14 +31,14 @@ const { data } = useQuery(QUERY_ME);
 
     return (
         <>
-            <div>
+            <Container>
                 {/* We are passing the currentComponent from state and the function to update it */}
 
                 <Row className="profileAlignment">
                     <Col>
                         <ProfileAside currentComponent={currentComponent} handleComponentChange={handleComponentChange} className="profileAside mt-3" />
                     </Col>
-                    <Col className="profileContent">
+                    <Col xs={5} className="profileContent">
                         {/* <h2 className="profileHead col-12 col-md-10 text-light p-3 mb-5">
                             Your Adventures
                         </h2> */}
@@ -52,7 +52,7 @@ const { data } = useQuery(QUERY_ME);
 
                 {/* Here we are calling the renderComponent method which will return a component  */}
 
-            </div>
+            </Container>
         </>
     );
 
