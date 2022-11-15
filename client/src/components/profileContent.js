@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import ProfileAside from "./ProfileAside";
 import AddAdventure from "./AddAdventure";
 import AdventureList from "./AdventureList";
@@ -10,21 +10,18 @@ import '../css/profilePage.css'
 
 const ProfileContent = () => {
     const [currentComponent, setCurrentComponent] = useState("addAdventure");
-    
-const { data } = useQuery(QUERY_ME);
 
-     const user = data?.me || data?.user || [];
-    
+    const { data } = useQuery(QUERY_ME);
+
+    const user = data?.me || data?.user || [];
+
     const renderComponent = () => {
-        if (currentComponent === "addAdventure")
-        {
+        if (currentComponent === "addAdventure") {
             return <AddAdventure />
         }
-        if (currentComponent === "viewYourAdventure")
-        {
+        if (currentComponent === "viewYourAdventure") {
             return <AdventureList adventures={user.adventures} />
         }
-        // last one will be view contributions
     }
 
     const handleComponentChange = (component) => setCurrentComponent(component);
@@ -32,16 +29,11 @@ const { data } = useQuery(QUERY_ME);
     return (
         <>
             <Container>
-                {/* We are passing the currentComponent from state and the function to update it */}
-
                 <Row className="profileAlignment">
                     <Col>
                         <ProfileAside currentComponent={currentComponent} handleComponentChange={handleComponentChange} className="profileAside mt-3" />
                     </Col>
                     <Col xs={5} className="profileContent">
-                        {/* <h2 className="profileHead col-12 col-md-10 text-light p-3 mb-5">
-                            Your Adventures
-                        </h2> */}
                         {renderComponent()}
                     </Col>
                     <Col className="characterCol">
@@ -49,9 +41,6 @@ const { data } = useQuery(QUERY_ME);
                         <DailyCharacter />
                     </Col>
                 </Row>
-
-                {/* Here we are calling the renderComponent method which will return a component  */}
-
             </Container>
         </>
     );

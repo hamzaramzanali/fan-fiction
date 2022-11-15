@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Button, Modal, Nav, Tab, InputGroup, Form } from 'react-bootstrap';
+import { Card, Button, Modal, Nav, Tab, Form } from 'react-bootstrap';
 import { useMutation } from '@apollo/client'
 import { REMOVE_ADVENTURE, UPDATE_ADVENTURE } from '../utils/mutations';
 import Auth from '../utils/auth';

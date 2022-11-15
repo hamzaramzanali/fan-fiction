@@ -12,7 +12,6 @@ const SearchCharacters = () => {
   const [selectedHero, setSelectedHero] = useState()
   // create state for holding our search field data
   const [searchInput, setSearchInput] = useState('');
-  const [errMessage, setErrMessage] = useState('');
   const [adventureForm, setAdventureForm] = useState({
     adventureTitle: '',
     adventureBody: '',
@@ -20,7 +19,7 @@ const SearchCharacters = () => {
   // set modal display state
   const [showModal, setShowModal] = useState(false);
 
-  const [addAdventure, { error }] = useMutation(ADD_ADVENTURE, {
+  const [addAdventure] = useMutation(ADD_ADVENTURE, {
     update(cache, { data: { addAdventure } }) {
       try {
         const { adventure } = cache.readQuery({ query: QUERY_ADVENTURES });
@@ -83,17 +82,11 @@ const SearchCharacters = () => {
     event.preventDefault();
 
     if (!searchInput) {
-      setErrMessage(`Sorry, ${searchInput} is not in database!`);
+      return;
     }
 
     try {
       let response = await searchMarvelCharacters(searchInput);
-      // if (!response) {
-      //   throw new Error('something went wrong!');
-      // }
-      // else if (response) {
-      //   return response = response.data.results;
-      // };
 
       response = response.data.results;
       
