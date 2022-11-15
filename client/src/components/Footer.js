@@ -23,8 +23,8 @@ const Footer = () => {
                 </h3>
                 <h3 className='text'>
                     <Badge variant="light" className='text'>
-                        <a target='_blank' className='text' href='https://github.com/terrencebudnik'>
-                            @Terrence Budnik
+                        <a target='_blank' className='text' href='https://github.com/RoseThorn10'>
+                            @Leah Roman
                         </a>
                     </Badge>
                 </h3>
